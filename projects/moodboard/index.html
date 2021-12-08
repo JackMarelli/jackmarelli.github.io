@@ -1,0 +1,64 @@
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Moodboard</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+
+<body>
+  <main>
+    <div class="container">
+      <div class="row" id="moodboardRow">
+        <div id="moodboardContainer" class="mx-auto el">
+          <div id="moodboard" class="content">
+            <div id="box1" class="box drag-resize"><img class="se" id="img1" src="images/tessuti/64-tessuto-sera-h-h47-me.jpg" alt=""></div>
+            <div id="box2" class="box drag-resize"><img class="se" id="img2" src="images/tessuti/63-tessuto-sera-h-h44-me.jpg" alt=""></div>
+            <div id="box3" class="box drag-resize"><img class="se" id="img3" src="images/tessuti/62-tessuto-sera-h-h42-me.jpg" alt=""></div>
+            <div id="box4" class="box drag-resize"><img class="se" id="img4" src="images/tessuti/61-velluto-velvet-f-em5-me.jpg" alt=""></div>
+            <div id="box5" class="box drag-resize"><img class="se" id="img5" src="images/tessuti/29-tessuto-clou-d-i72-me.jpg" alt=""></div>
+            <div id="box6" class="box drag-resize"><img class="se" id="img6" src="images/tessuti/66-tessuto-opera-h-h53-me.jpg" alt=""></div>
+            <div id="box7" class="box drag-resize"><img class="se" id="img7" src="images/tessuti/62-tessuto-sera-h-h42-me.jpg" alt=""></div>
+          </div>
+        </div>
+        <div id="footer" class="col-12 d-flex justify-content-center">
+          <button id="btnSalvaMB" type="button" onclick="getImageData()">
+            Salva Moodboard
+          </button>
+        </div>
+      </div>
+    </div>
+  </main>
+  <div id="texts" class="d-none">
+    <div id="text1">Morbi varius finibus aliquet. Etiam scelerisque blandit augue sed dapibus.</div>
+    <div id="text2">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque quis.</div>
+    <div id="text3">Suspendisse facilisis tellus nec tellus suscipit, ut malesuada felis efficitur.</div>
+    <div id="text4">Aenean vulputate quam non elit placerat, sit amet interdum tellus vulputate.</div>
+    <div id="text5">Praesent elementum tellus congue, sollicitudin diam ut, vestibulum nunc.</div>
+    <div id="text6">Aenean et nibh scelerisque, rhoncus velit id, pretium sem.</div>
+    <div id="text7">Aenean et nibh scelerisque, rhoncus velit id, pretium sem.</div>
+  </div>
+    <div id="images" class="d-none">
+      <img src="images/tessuti/64-tessuto-sera-h-h47-me_500.jpg" id="pimg1">
+      <img src="images/tessuti/63-tessuto-sera-h-h44-me_500.jpg" id="pimg2">
+      <img src="images/tessuti/62-tessuto-sera-h-h42-me_500.jpg" id="pimg3">
+      <img src="images/tessuti/61-velluto-velvet-f-em5-me_500.jpg" id="pimg4">
+      <img src="images/tessuti/29-tessuto-clou-d-i72-me_500.jpg" id="pimg5">
+      <img src="images/tessuti/66-tessuto-opera-h-h53-me_500.jpg" id="pimg6">
+      <img src="images/tessuti/62-tessuto-sera-h-h42-me_500.jpg" id="pimg7">
+    </div>
+  <div id="loading">Scaricando il PDF...</div>
+  <img id="hiddenLogo" class="d-none" src="images/logonero.png">
+</body>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.3.4/jspdf.debug.js" integrity="sha512-234m/ySxaBP6BRdJ4g7jYG7uI9y2E74dvMua1JzkqM3LyWP43tosIqET873f3m6OQ/0N6TKyqXG4fLeHN9vKkg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script src="https://cdn.jsdelivr.net/npm/interactjs/dist/interact.min.js"></script>
+<script src="script/modernizr-custom.js"></script>
+<script src="script/dragresize.js"></script>
+<!-- <script src="script/drag-resize-gesture.js"></script> -->
+<script src="script/html2canvas.js"></script>
+<script src="script/savemb.js"></script>
+</html>

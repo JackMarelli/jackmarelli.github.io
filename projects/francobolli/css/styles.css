@@ -1,0 +1,210 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400&display=swap');
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  display: flex;
+  flex-flow: column;
+  width: 100%;
+}
+
+.immagine-grande {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  margin: 0;
+  height: 20em;
+  background-color: lightcoral;
+  background-image: url(../images/img1.jpg);
+  background-position: center;
+  text-align: center;
+}
+
+.immagine-grande span {
+  z-index: 1;
+
+  color: white;
+  font-family: "Montserrat", sans-serif;
+  font-size: 6em;
+}
+
+.immagine-grande:after {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  height: 20em;
+  background-color: rgba(0, 0, 0, 0.808);
+}
+
+.content {
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+  justify-content: center;
+
+  margin-block: 3em;
+  height: fit-content;
+  background-color: white;
+  text-align: center;
+}
+
+.content h1 {
+  font-family: "Montserrat", sans-serif;
+  text-transform: uppercase;
+  color: rgba(0, 0, 0, 0.883);
+}
+
+.continenti {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+  max-width: 1000px;
+  margin-inline: 2em;
+}
+
+.continenti a {
+  text-decoration: none;
+}
+
+.continente {
+  margin: 1em;
+  width: 15em;
+  height: fit-content;
+  text-align: center;
+}
+
+.continente p {
+  color: rgba(0, 0, 0, 0.883);
+  font-family: "Noto Sans", sans-serif;
+  font-size: 1em;
+}
+
+.continente img {
+  width: 15em;
+  height: 15em;
+}
+
+.footer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0;
+  height: 10em;
+  background-color: rgba(0, 0, 0, 0.883);
+  text-align: center;
+  font-family: "Noto Sans", sans-serif;
+  color: white;
+}
+
+.footer p {
+  letter-spacing: unset;
+  transition: 0.3s;
+  
+}
+
+.footer p:hover {
+  letter-spacing: 0.2em;
+  transition: 0.3s;
+}
+
+.footer a {
+  color:white;
+  text-decoration: none;
+}
+/* =================================================================== css liste =================================================================== */
+
+.listheader {
+  display: flex;
+  flex-flow: row wrap;
+  width: 100%;
+
+  font-family: "Montserrat", sans-serif;
+
+}
+
+.continentname p {
+  padding-inline: 2em;
+  padding-block: 1em;
+  margin: 0;
+
+  color: black;
+  font-size: 2em;
+}
+
+.backbutton a p {
+  position: absolute;
+  right: 0;
+
+  padding-inline: 1.5em;
+  padding-block: 0.8em;
+  margin: 0;
+
+  color: black;
+  font-size: 2em;
+  text-decoration: none;
+
+  letter-spacing: unset;
+  transition: 0.3s;
+}
+
+.backbutton a p:hover {
+  letter-spacing: 0.2em;
+  transition: 0.3s;
+}
+
+.listcontent {
+  padding: 0;
+  margin: 0;
+}
+
+.listitem {
+  color: black;
+  font-size: 1.6em;
+  left: 0;
+  width: fit-content;
+  padding-inline: 1em;
+  margin-block: -.8em;
+}
+
+.listitem:hover {
+  cursor: pointer;
+}
+
+.listitem p {
+  font-family: "Poppins", sans-serif;
+}
+
+/* =================================================================== underline =================================================================== */
+
+.underline
+{
+    position: relative;
+}
+
+.underline:before {
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 2px;
+  bottom: 0;
+  left: 0;
+  background-color: #000;
+  visibility: hidden;
+  transition: all 0.3s ease-in-out;
+}
+
+.underline:hover:before {
+  visibility: visible;
+  width: 100%;
+}
