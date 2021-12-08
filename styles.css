@@ -1,0 +1,33 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+ul {
+  list-style: none;
+}
+
+.m-1 {
+  margin: 1em;
+}
+.m-2 {
+  margin: 2em;
+}
+.m-3 {
+  margin: 3em;
+}
+
+.mx-1 {
+  margin: 0 1em;
+}
+.mx-2 {
+  margin: 0 2em;
+}
+.mx-3 {
+  margin: 0 3em;
+}
+
+.my-1 { margin: 1em 0;}
+.my-2 { margin: 2em 0;}
+.my-3 { margin: 3em 0;}
