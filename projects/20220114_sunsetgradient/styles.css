@@ -1,11 +1,17 @@
 * {
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
 }
 
 :root {
   --black: #000000;
   --white: #ffffff;
+}
+
+@font-face {
+  font-family: "Greatelo";
+  src: url("font/greatelo.ttf") format("truetype"); /* Chrome 4+, Firefox 3.5, Opera 10+, Safari 3—5 */
 }
 
 .container {
@@ -16,20 +22,35 @@
 #sky {
   width: 100%;
   height: 80%;
-  background: #1a2a6c; /* fallback for old browsers */
+  background: #040018; /* fallback */
+  background: radial-gradient(
+    350% 120% at 50% 100%,
+    #d38900 10%,
+    #700c0c 25%,
+    #040a25 45%,
+    #040018 60%
+  );
 
-  background: linear-gradient(
-    to top,
-    #fdbb2d,
-    #b21f1f 30%,
-    #1a2a6c 65%
-  ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-flow: column;
+}
+
+#sky:hover {
+  background: #040018;
+  transition: .3s;
+}
+
+#sky img {
+  width: 100%;
 }
 
 #treeline {
+  margin: 0 0 -10px 0;
   height: 100%;
   width: 100%;
-  background-image: url("images/1551213415.png");
+  background-image: url("images/3_treeline.png");
   background-repeat: no-repeat;
   background-size: contain;
   background-position: bottom center;
@@ -44,4 +65,60 @@
   z-index: 1;
   padding: 0 0 100px 0;
   border: 1px solid lime;
+}
+
+.title-container {
+  margin: 2em 0 0 0;
+  width: 100%;
+}
+
+.title {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  line-height: 0.8em;
+  color: var(--white);
+  font-size: 128px;
+  text-transform: uppercase;
+  font-family: "Greatelo";
+}
+
+.subtitle {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  color: var(--white);
+  font-size: 20px;
+  font-family: "Greatelo";
+}
+
+#content {
+  background-color: var(--black);
+}
+
+/* Media Query typography */
+@media (max-width: 1200px) {
+  .title {
+    font-size: 90px;
+  }
+}
+
+@media (max-width: 880px) {
+  .title {
+    font-size: 64px;
+  }
+}
+
+@media screen and (max-width: 660px) {
+  .title {
+    font-size: 40px;
+  }
+}
+
+@media (max-width: 330px) {
+  .title {
+    font-size: 32px;
+  }
 }
