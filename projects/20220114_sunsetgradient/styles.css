@@ -36,10 +36,35 @@
   align-items: center;
   flex-flow: column;
 }
-
+/*
 #sky:hover {
-  background: #040018;
-  transition: .3s;
+  background-image:radial-gradient(
+    350% 120% at 50% 100%,
+    #040a25 25%,
+    #040018 60%
+  );
+  transition: background-image 0.5s linear;
+}
+*/
+#sky::before {
+  position: absolute;
+  content: "";
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-image: radial-gradient(
+    350% 120% at 50% 100%,
+    #040a25 25%,
+    #040018 60%
+  );
+  z-index: -1;
+  transition: opacity 0.5s linear;
+  opacity: 0;
+}
+
+#sky:hover::before {
+  opacity: 10;
 }
 
 #sky img {
