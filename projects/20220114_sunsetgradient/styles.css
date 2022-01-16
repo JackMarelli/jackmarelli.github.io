@@ -22,19 +22,37 @@
 #sky {
   width: 100%;
   height: 80%;
-  background: #040018; /* fallback */
-  background: radial-gradient(
-    350% 120% at 50% 100%,
-    #d38900 10%,
-    #700c0c 25%,
-    #040a25 45%,
-    #040018 60%
-  );
 
   display: flex;
   justify-content: space-between;
   align-items: center;
   flex-flow: column;
+}
+
+.sunset-gradient {
+  background: #040018; /* fallback */
+  background: radial-gradient(
+    350% 120% at 50% 100%,
+    #d38900,
+    #700c0c 30%,
+    #040a25 55%,
+    #040018 70%
+  );
+
+  transition: .5s;
+}
+
+.day-gradient {
+  background: #4898ce; /* fallback */
+  background: radial-gradient(
+    350% 120% at 50% 100%,
+    #1066a0 15%,
+    #2980b9 30%,
+    #6dd5fa,
+    #b3fff9 90%
+  );
+
+  transition: .5s;
 }
 /*
 #sky:hover {
@@ -115,8 +133,10 @@
   align-items: center;
 
   color: var(--white);
-  font-size: 20px;
+  font-size: 30px;
   font-family: "Greatelo";
+
+  /*transform: rotateX(180deg) rotateY(180deg);*/
 }
 
 #content {
