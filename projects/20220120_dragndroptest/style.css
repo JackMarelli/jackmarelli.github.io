@@ -1,0 +1,29 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+#container {
+    width: 100%;
+    height: 100%;
+    border: 1px solid magenta;
+}
+
+.draggable, .resizable, .draggable-resizable, .rotatable {
+    width: 100px;
+    height: 100px;
+}
+
+.draggable {
+    border: 1px solid blue;
+}
+
+.resizable {
+    border: 1px solid red;
+}
+
+.draggable-resizable {
+    border: 1px solid lime;
+    transform: translate(0) rotate(0);
+}
