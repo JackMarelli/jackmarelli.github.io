@@ -1,0 +1,38 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.container {
+  margin: 10px;
+}
+
+.input {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: left;
+  margin: 10px 0;
+}
+
+.input p {
+  width: 80px;
+}
+
+.output {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: left;
+  margin: 25px 0;
+}
+
+.output p, .output .btn {
+    margin: 0 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+    border: 1px solid black;
+}
+
+

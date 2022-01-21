@@ -47,18 +47,18 @@ window.addEventListener('load', (event) => {
         var y = (parseFloat(target.getAttribute('data-y')) || 0)
 
         // update the element's style
-        target.style.width = event.rect.width + 'px'
-        target.style.height = event.rect.height + 'px'
+        target.style.width = event.rect.width + 'px';
+        target.style.height = event.rect.height + 'px';
 
         // translate when resizing from top or left edges
-        x += event.deltaRect.left
-        y += event.deltaRect.top
+        x += event.deltaRect.left;
+        y += event.deltaRect.top;
 
-        target.style.transform = 'translate(' + x + 'px,' + y + 'px)'
+        target.style.transform = 'translate(' + x + 'px,' + y + 'px)';
 
-        target.setAttribute('data-x', x)
-        target.setAttribute('data-y', y)
-        target.textContent = Math.round(event.rect.width) + '\u00D7' + Math.round(event.rect.height)
+        target.setAttribute('data-x', x);
+        target.setAttribute('data-y', y);
+        target.textContent = Math.round(event.rect.width) + '\u00D7' + Math.round(event.rect.height);
       }
     },
     modifiers: [
@@ -96,7 +96,7 @@ window.addEventListener('load', (event) => {
           x += event.deltaRect.left
           y += event.deltaRect.top
 
-          console.log(x + ", " + y);
+          console.log("coordinate: " + parseInt(x) + ", " + parseInt(y));
 
           /*
           // translate the element
@@ -111,7 +111,19 @@ window.addEventListener('load', (event) => {
           //console.log(rotateString);
           target.style.transform = 'translate(' + x + 'px, ' + y + 'px) ' + rotateString;
           */
-          target.style.transform = 'translate(' + x + 'px, ' + y + 'px) '
+
+          let startReplacePos = target.style.transform.search("translate");
+          let endReplacePos = target.style.transform.search(escapeRegExp(")"));
+          console.log("start e end string translate: "+startReplacePos + " " + endReplacePos);
+
+          let exTranslate = target.style.transform.substring(startReplacePos, endReplacePos);
+          let newTranslate = 'translate(' +  parseInt(x) + 'px, ' +  parseInt(y) + 'px) ';
+          target.style.transform.replace(exTranslate, newTranslate);
+          console.log("exTranslate: "+exTranslate);
+          console.log("newTraslate: "+ newTranslate);
+          c
+         
+          //target.style.transform = 'translate(' + x + 'px, ' + y + 'px) ';
 
           target.setAttribute('data-x', x)
           target.setAttribute('data-y', y)
@@ -187,6 +199,10 @@ window.addEventListener('load', (event) => {
     // update the posiion attributes
     target.setAttribute('data-x', x);
     target.setAttribute('data-y', y);
+  }
+
+  function escapeRegExp(str) {
+    return str.replace(/[\-\[\]\/\{\}\(\)\*\+\?\.\\\^\$\|]/g, "\\$&");
   }
 
   // this function is used later in the resizing and gesture demos
