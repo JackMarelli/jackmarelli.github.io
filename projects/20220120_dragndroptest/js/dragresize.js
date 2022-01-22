@@ -112,6 +112,7 @@ window.addEventListener('load', (event) => {
           target.style.transform = 'translate(' + x + 'px, ' + y + 'px) ' + rotateString;
           */
 
+          
           let startReplacePos = target.style.transform.search("translate");
           let endReplacePos = target.style.transform.search(escapeRegExp(")"));
           console.log("start e end string translate: "+startReplacePos + " " + endReplacePos);
@@ -119,9 +120,10 @@ window.addEventListener('load', (event) => {
           let exTranslate = target.style.transform.substring(startReplacePos, endReplacePos);
           let newTranslate = 'translate(' +  parseInt(x) + 'px, ' +  parseInt(y) + 'px) ';
           target.style.transform.replace(exTranslate, newTranslate);
+          console.log("paci was here");
           console.log("exTranslate: "+exTranslate);
           console.log("newTraslate: "+ newTranslate);
-          c
+          
          
           //target.style.transform = 'translate(' + x + 'px, ' + y + 'px) ';
 
