@@ -24,25 +24,21 @@
 
 #whiterect {
   border: 1px solid lime;
-  background-image: url("images/1_whiterect.png");
-  background-size: contain;
-  background-repeat: no-repeat;
-  background-position: center center;
-  width: 398px;
-  height: 628px;
-
-  display: flex;
-  justify-content: right;
-
+  width: fit-content;
+  height: fit-content;
   position: relative;
 }
 
 #whiterect img {
   width: 100%;
-  max-width: 450px;
+}
 
+.testrect {
+  border: 1px solid red;
   position: absolute;
-  top: 0;
-  right: 0;
+  top: 50%;
   transform: translateY(-50%);
+  left: 0;
+  width: 100%;
+  height: 70%;
 }
