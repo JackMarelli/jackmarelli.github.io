@@ -1,0 +1,25 @@
+:root {
+    --gray-dark: #3A454B;
+    --gray-medium: #445159;
+    --gray-light: #EEEEEE;
+    --cscgreen: #469834;
+    --white: #ffffff;
+    --black: #000000;
+}
+
+::-webkit-scrollbar {
+    display: none;
+}
+
+@font-face {
+    font-family: "Open Sans";
+    src: url(../font/Open_Sans/OpenSans-VariableFont_wdth\,wght.ttf);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Open Sans";
+}
+

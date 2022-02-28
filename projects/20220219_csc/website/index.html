@@ -1,0 +1,39 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CSC | Home</title>
+    <link rel="stylesheet" href="css/mybootstrap.css" />
+    <link rel="stylesheet" href="css/styles.css" />
+    <link rel="stylesheet" href="css/nav.css" />
+    <link rel="stylesheet" href="css/carousel.css">
+    <script src="js/animations.js"></script>
+  </head>
+  <body>
+    <div class="all">
+      <nav class="w-100">
+        <div class="logo"><img src="images/logo-green.svg" alt="" /></div>
+        <div class="about">About</div>
+        <div class="contact">Contact</div>
+        <div class="menu"><img src="images/icon-menu.svg" alt="" /></div>
+      </nav>
+      <div id="carousel" class="carousel w-100 h-100">
+          <div id="items" class="w-100 h-100">
+        <div class="item"><img src="images/carousel-os1.jpg" alt="" /></div>
+        <div class="item">
+          <img src="images/carousel-teamsystem.jpg" alt="" />
+        </div>
+        <div class="item"><img src="images/carousel-tgs.png" alt="" /></div>
+    </div><div class="arrows">
+          <div onclick="carouselScrollBack()" class="arrow" id="left" >
+            <img src="images/arrow-svgrepo-com.svg" alt="" />
+          </div>
+          <div onclick="carouselScrollForward()" class="arrow" id="right">
+            <img src="images/arrow-svgrepo-com.svg" alt="" />
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
