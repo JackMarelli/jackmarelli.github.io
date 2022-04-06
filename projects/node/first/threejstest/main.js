@@ -37,7 +37,7 @@ pointLight.position.set(30, 30, 30);
 const ambientLight = new THREE.AmbientLight(0x404040);
 
 //CONTROLS
-//const controls = new OrbitControls(camera, renderer.domElement);
+const controls = new OrbitControls(camera, renderer.domElement);
 
 //HELPERS
 const gridHelper = new THREE.GridHelper(200, 50);
@@ -58,20 +58,22 @@ function animate() {
   cyl.rotation.z += 0.03;
   */
 
-  //controls.update();
+  controls.update();
   renderer.render(scene, camera);
 }
 
 function moveCamera() {
   const t = document.body.getBoundingClientRect().top;
 
+  /*
   cyl.rotation.x = t * -0.0001;
   cyl.rotation.y = t * -0.0001;
   cyl.rotation.z = t * -0.0005;
+  */
 
   //camera.position.x = t * -0.01;
   //camera.position.y = t * -0.02;
-  camera.position.z = t * -0.03;
+  //camera.position.z = t * -0.03;
 }
 
 document.body.onscroll = moveCamera;
