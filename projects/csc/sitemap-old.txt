@@ -1,0 +1,47 @@
+Home
+	Header					FIGMA
+	Carosello					FIGMA	
+	Soluzioni					FIGMA
+	Footer					FIGMA
+Hardware
+	Soluzioni per aziende
+		Backup e business continuity
+	Soluzioni per privati
+	Periferiche e accessori
+	Gruppi di continuità
+Software
+	OS1
+		Descrizione
+		Piani
+			Business
+			Enterprise
+			Platform
+		Link sito ufficiale
+Tabaccheria e ristorazione
+	Ristorazione
+		Gestionale sale e tavoli
+		Asporti e prenotazioni
+		Tablet e Palmari
+		Registratori di cassa
+			Olivetti, Epson, Italretail
+	Tabaccheria
+		Gratta e vinci, Lotto...
+		Distrubutori
+Rete e internet
+	Eolo
+	Soluzioni Cloud
+	Sviluppo Web
+	PEC (Posta Elettronica Certificata)
+	LAN e reti su misura
+Assistenza
+	TeamViewer
+	"Contattaci"
+About
+Contatti
+	Indirizzo (Mappa) +Orari			MANCANO ORARI
+	Telefono + Orari				MANCANO ORARI
+	Email					FIGMA
+		Info				FIGMA
+		Amministrazione			FIGMA
+		Commerciale			FIGMA
+	Contact form				FIGMA

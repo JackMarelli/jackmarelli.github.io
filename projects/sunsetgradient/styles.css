@@ -1,0 +1,169 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --black: #000000;
+  --white: #ffffff;
+}
+
+@font-face {
+  font-family: "Greatelo";
+  src: url("font/greatelo.ttf") format("truetype"); /* Chrome 4+, Firefox 3.5, Opera 10+, Safari 3—5 */
+}
+
+.container {
+  width: 100%;
+  height: 100%;
+}
+
+#sky {
+  width: 100%;
+  height: 80%;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-flow: column;
+}
+
+.sunset-gradient {
+  background: #040018; /* fallback */
+  background: radial-gradient(
+    350% 120% at 50% 100%,
+    #d38900,
+    #700c0c 30%,
+    #040a25 55%,
+    #040018 70%
+  );
+
+  transition: .5s;
+}
+
+.day-gradient {
+  background: #4898ce; /* fallback */
+  background: radial-gradient(
+    350% 120% at 50% 100%,
+    #1066a0 15%,
+    #2980b9 30%,
+    #6dd5fa,
+    #b3fff9 90%
+  );
+
+  transition: .5s;
+}
+/*
+#sky:hover {
+  background-image:radial-gradient(
+    350% 120% at 50% 100%,
+    #040a25 25%,
+    #040018 60%
+  );
+  transition: background-image 0.5s linear;
+}
+*/
+#sky::before {
+  position: absolute;
+  content: "";
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-image: radial-gradient(
+    350% 120% at 50% 100%,
+    #040a25 25%,
+    #040018 60%
+  );
+  z-index: -1;
+  transition: opacity 0.5s linear;
+  opacity: 0;
+}
+
+#sky:hover::before {
+  opacity: 10;
+}
+
+#sky img {
+  width: 100%;
+}
+
+#treeline {
+  margin: 0 0 -10px 0;
+  height: 100%;
+  width: 100%;
+  background-image: url("images/3_treeline.png");
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: bottom center;
+}
+
+#ground {
+  height: 20%;
+  background-color: var(--black);
+}
+
+#ground img {
+  z-index: 1;
+  padding: 0 0 100px 0;
+  border: 1px solid lime;
+}
+
+.title-container {
+  margin: 2em 0 0 0;
+  width: 100%;
+}
+
+.title {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  line-height: 0.8em;
+  color: var(--white);
+  font-size: 128px;
+  text-transform: uppercase;
+  font-family: "Greatelo";
+}
+
+.subtitle {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  color: var(--white);
+  font-size: 30px;
+  font-family: "Greatelo";
+
+  /*transform: rotateX(180deg) rotateY(180deg);*/
+}
+
+#content {
+  background-color: var(--black);
+}
+
+/* Media Query typography */
+@media (max-width: 1200px) {
+  .title {
+    font-size: 90px;
+  }
+}
+
+@media (max-width: 880px) {
+  .title {
+    font-size: 64px;
+  }
+}
+
+@media screen and (max-width: 660px) {
+  .title {
+    font-size: 40px;
+  }
+}
+
+@media (max-width: 330px) {
+  .title {
+    font-size: 32px;
+  }
+}
