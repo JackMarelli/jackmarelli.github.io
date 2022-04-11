@@ -57,3 +57,21 @@ window.addEventListener('DOMContentLoaded', event => {
     });
 
 });
+
+/*
+const portfolio = document.getElementById("portfolio")
+const portfolioWidth = portfolio.scrollWidth
+
+window.addEventListener("load", () => {
+    let i = 0
+    while (i < portfolioWidth) {
+        if (i < 1000) {
+            setTimeout(portfolio.style.transform = "translateX(" + i + "px)", 5000)
+            console.log(i)
+            i++;
+        }
+        else break;
+        
+    }
+});
+*/
