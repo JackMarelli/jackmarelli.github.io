@@ -11887,5 +11887,10 @@ header.masthead .h1 {
 }
 
 #portfolio {
-  overflow-x: hidden;
+  overflow-x: scroll;
+  white-space: nowrap;
+}
+
+::-webkit-scrollbar {
+  display: none;
 }

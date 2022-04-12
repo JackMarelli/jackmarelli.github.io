@@ -26,7 +26,7 @@ window.addEventListener('DOMContentLoaded', event => {
     // Shrink the navbar 
     navbarShrink();
 
-    // Shrink the navbar when page is scrolled
+    // Shrink the navbar when window is scrolled
     document.addEventListener('scroll', navbarShrink);
 
     // Activate Bootstrap scrollspy on the main nav element
@@ -58,20 +58,22 @@ window.addEventListener('DOMContentLoaded', event => {
 
 });
 
-/*
-const portfolio = document.getElementById("portfolio")
-const portfolioWidth = portfolio.scrollWidth
+const portfolio = document.getElementById('portfolio');
+const portfolioWidth = portfolio.scrollWidth;
 
-window.addEventListener("load", () => {
-    let i = 0
-    while (i < portfolioWidth) {
-        if (i < 1000) {
-            setTimeout(portfolio.style.transform = "translateX(" + i + "px)", 5000)
-            console.log(i)
-            i++;
+window.addEventListener('load', () => {
+    let windowWidth = window.innerWidth;
+    let scrollDirection = true; //true = forward, false = backwards
+
+    let intervalForward = setInterval(() => {
+        if (scrollDirection && portfolio.scrollLeft < portfolioWidth - windowWidth - 2) {
+            portfolio.scrollTo(portfolio.scrollLeft + 1, 0);
+        } else {
+            scrollDirection = false;
+            portfolio.scrollTo(portfolio.scrollLeft - 1, 0);
+            if (portfolio.scrollLeft == 0) {
+                scrollDirection = true;
+            }
         }
-        else break;
-        
-    }
+    }, 10);
 });
-*/
