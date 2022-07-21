@@ -54,3 +54,5 @@ window.addEventListener("DOMContentLoaded", (event) => {
     elements: "#portfolio a.portfolio-box",
   });
 });
+
+//TODO: icone, immagine masthead, about ufficiale, immagine cleaning vanessa
