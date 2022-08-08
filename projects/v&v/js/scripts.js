@@ -55,4 +55,4 @@ window.addEventListener("DOMContentLoaded", (event) => {
   });
 });
 
-//TODO: icone, immagine masthead, about ufficiale, immagine cleaning vanessa
+//TODO: immagine masthead
