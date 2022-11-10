@@ -1,0 +1,25 @@
+{
+    "products": [
+        {
+            "id": 0,
+            "desc": "test0",
+            "category": "piz",
+            "price" : "230,00",
+            "imageUrl": "assets/img/fullsize/0001.png"
+        },
+        {
+            "id": 1,
+            "desc": "test1",
+            "category": "gio",
+            "price":"135,00",
+            "imageUrl": "assets/img/fullsize/0001.png"
+        },
+        {
+            "id": 2,
+            "desc": "test2",
+            "category": "cer",
+            "price":"25,00",
+            "imageUrl": "assets/img/fullsize/0001.png"
+        }
+    ]
+}
