@@ -6,19 +6,22 @@ let prodscontainer = document.getElementById("prods-container");
 
 window.onload = function () {
   console.log("load");
-  loadAllProducts();
+  loadProducts("all");
   btnall.addEventListener("click", function () {
     console.log("test btnall");
-    loadAllProducts();
+    loadProducts("all");
   });
   btnpiz.addEventListener("click", function () {
     console.log("test btnpiz");
+    loadProducts("piz");
   });
   btngio.addEventListener("click", function () {
     console.log("test btngio");
+    loadProducts("gio");
   });
   btncer.addEventListener("click", function () {
     console.log("test btncer");
+    loadProducts("cer");
   });
 };
 
@@ -52,61 +55,122 @@ window.onload = function () {
   </div>
 
 */
+function loadProducts(cat) {
+  prodscontainer.innerHTML = "";
 
-function loadAllProducts() {
-  $.getJSON("assets/products.json", function (data) {
-    for (let i = 0; i < data.products.length; i++) {
-      console.log(data.products[i].id);
+  if (cat == "all") {
+    $.getJSON("assets/products.json", function (data) {
+      for (let i = 0; i < data.products.length; i++) {
+        console.log(data.products[i].id);
 
-      //create
-      let divCol = document.createElement("div");
-      let divCardH100 = document.createElement("div");
-      let img = document.createElement("img");
-      let divCardBody = document.createElement("div");
-      let divTextCenter0 = document.createElement("div");
-      let h5 = document.createElement("h5");
-      let p = document.createElement("p");
-      let divCardFooter = document.createElement("div");
-      let divTextCenter1 = document.createElement("div");
-      let aBtn = document.createElement("a");
+        //create
+        let divCol = document.createElement("div");
+        let divCardH100 = document.createElement("div");
+        let img = document.createElement("img");
+        let divCardBody = document.createElement("div");
+        let divTextCenter0 = document.createElement("div");
+        let h5 = document.createElement("h5");
+        let p = document.createElement("p");
+        let divCardFooter = document.createElement("div");
+        let divTextCenter1 = document.createElement("div");
+        let aBtn = document.createElement("a");
 
-      //add classes
-      divCol.classList.add("col");
-      divCol.classList.add("mb-5");
-      divCardH100.classList.add("card");
-      divCardH100.classList.add("h-100");
-      img.classList.add("card-img-top");
-      divCardBody.classList.add("card-body");
-      //divCardBody.classList.add("p-4");
-      divTextCenter0.classList.add("text-center");
-      h5.classList.add("fw-bolder");
-      //h5.classList.add("p-4");
-      h5.classList.add("pt-0");
-      h5.classList.add("border-top-0");
-      h5.classList.add("bg-transparent");
-      divCardFooter.classList.add("card-footer");
-      divTextCenter1.classList.add("text-center");
-      aBtn.classList.add("btn");
-      aBtn.classList.add("btn-outline-dark");
-      //aBtn.classList.add("mt-auto");
+        //add classes
+        divCol.classList.add("col");
+        divCol.classList.add("mb-5");
+        divCardH100.classList.add("card");
+        divCardH100.classList.add("h-100");
+        img.classList.add("card-img-top");
+        divCardBody.classList.add("card-body");
+        //divCardBody.classList.add("p-4");
+        divTextCenter0.classList.add("text-center");
+        h5.classList.add("fw-bolder");
+        //h5.classList.add("p-4");
+        h5.classList.add("pt-0");
+        h5.classList.add("border-top-0");
+        h5.classList.add("bg-transparent");
+        divCardFooter.classList.add("card-footer");
+        divTextCenter1.classList.add("text-center");
+        aBtn.classList.add("btn");
+        aBtn.classList.add("btn-outline-dark");
+        //aBtn.classList.add("mt-auto");
 
-      //content
-      img.src = data.products[i].imageUrl;
-      h5.innerText = data.products[i].price;
-      p.innerText = data.products[i].desc;
-      aBtn.innerText = "Generic Button";
+        //content
+        img.src = data.products[i].imageUrl;
+        h5.innerText = data.products[i].price;
+        p.innerText = data.products[i].desc;
+        aBtn.innerText = "Generic Button";
 
-      //append
-      divTextCenter0.appendChild(h5);
-      divTextCenter0.appendChild(p);
-      divCardBody.appendChild(divTextCenter0);
-      divTextCenter1.appendChild(aBtn);
-      divCardFooter.appendChild(divTextCenter1);
-      divCardH100.appendChild(img);
-      divCardH100.appendChild(divCardBody);
-      //divCardH100.appendChild(divCardFooter);
-      divCol.appendChild(divCardH100);
-      prodscontainer.appendChild(divCol);
-    }
-  });
+        //append
+        divTextCenter0.appendChild(h5);
+        divTextCenter0.appendChild(p);
+        divCardBody.appendChild(divTextCenter0);
+        divTextCenter1.appendChild(aBtn);
+        divCardFooter.appendChild(divTextCenter1);
+        divCardH100.appendChild(img);
+        divCardH100.appendChild(divCardBody);
+        //divCardH100.appendChild(divCardFooter);
+        divCol.appendChild(divCardH100);
+        prodscontainer.appendChild(divCol);
+      }
+    });
+  } else {
+    $.getJSON("assets/products.json", function (data) {
+      for (let i = 0; i < data.products.length; i++) {
+        if (cat == data.products[i].category) {
+          console.log(data.products[i].id);
+
+          //create
+          let divCol = document.createElement("div");
+          let divCardH100 = document.createElement("div");
+          let img = document.createElement("img");
+          let divCardBody = document.createElement("div");
+          let divTextCenter0 = document.createElement("div");
+          let h5 = document.createElement("h5");
+          let p = document.createElement("p");
+          let divCardFooter = document.createElement("div");
+          let divTextCenter1 = document.createElement("div");
+          let aBtn = document.createElement("a");
+
+          //add classes
+          divCol.classList.add("col");
+          divCol.classList.add("mb-5");
+          divCardH100.classList.add("card");
+          divCardH100.classList.add("h-100");
+          img.classList.add("card-img-top");
+          divCardBody.classList.add("card-body");
+          //divCardBody.classList.add("p-4");
+          divTextCenter0.classList.add("text-center");
+          h5.classList.add("fw-bolder");
+          //h5.classList.add("p-4");
+          h5.classList.add("pt-0");
+          h5.classList.add("border-top-0");
+          h5.classList.add("bg-transparent");
+          divCardFooter.classList.add("card-footer");
+          divTextCenter1.classList.add("text-center");
+          aBtn.classList.add("btn");
+          aBtn.classList.add("btn-outline-dark");
+          //aBtn.classList.add("mt-auto");
+
+          //content
+          img.src = data.products[i].imageUrl;
+          h5.innerText = data.products[i].price;
+          p.innerText = data.products[i].desc;
+          aBtn.innerText = "Generic Button";
+
+          //append
+          divTextCenter0.appendChild(h5);
+          divTextCenter0.appendChild(p);
+          divCardBody.appendChild(divTextCenter0);
+          divTextCenter1.appendChild(aBtn);
+          divCardFooter.appendChild(divTextCenter1);
+          divCardH100.appendChild(img);
+          divCardH100.appendChild(divCardBody);
+          //divCardH100.appendChild(divCardFooter);
+          divCol.appendChild(divCardH100);
+          prodscontainer.appendChild(divCol);
+        }
+      }
+    });
+  }
 }
