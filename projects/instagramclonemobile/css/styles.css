@@ -1,86 +1,112 @@
-@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap");
 
 :root {
-    --theme: #fff;
+  --theme: #fff;
 }
 
-*, html {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+*,
+html {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 
-    font-family: "Roboto", sans-serif;
+  font-family: "Roboto", sans-serif;
 }
 
 body {
-    width: 100%;
-    height: 100%;
+  width: 100%;
+  height: 100%;
 
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background: gray;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: gray;
 }
 
 .all {
-    width: 375px;
-    height: 812px;
-    scale: 0.6;
-    border-radius: 32px;
-    z-index: 1;
-    overflow: hidden;
-    background-color: var(--theme);
+  width: 375px;
+  height: 812px;
+  scale: 0.6;
+  border-radius: 32px;
+  z-index: 1;
+  overflow: hidden;
+  background-color: var(--theme);
+}
+
+.row {
+  display: flex;
+  flex-flow: row;
+  margin: 0;
 }
 
 .tendina {
-    background-color: var(--theme);
-    width: 100%;
-    height: 24px;
+  background-color: var(--theme);
+  width: 100%;
+  height: 24px;
 }
 
 .header {
-    width: 100%;
-    height: fit-content;
-    background-color: var(--theme);
+  width: 100%;
+  height: fit-content;
+  background-color: var(--theme);
 
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 
-    padding: 15px;
-    font-weight: 500;
+  padding: 15px 15px 20px;
+  font-weight: 500;
 }
 
-.stats {
-    width: 100%;
-    height: fit-content;
-    background-color: var(--theme);
-
-    display: flex;
-    flex-flow: row nowrap;
-    justify-content: space-between;
-    align-items: center;
-
-    padding: 0 24px;
+.icon {
+  width: 30px;
+  height: 30px;
 }
 
-.propic {
-    width: 100px;
-    border-radius: 50%;
-}
-
-.stat {
-    display: flex;
-    flex-flow: column nowrap;
-    justify-content: center;
-    align-items: center;
-}
-
-.number {
-    font-size: 18px;
+.username {
+    margin: 3px 0 0 15px;
+    font-size: 16px;
     font-weight: 700;
 }
 
+.bell {
+    margin: 0 15px 0 0;
+}
+
+.rotate-90 {
+  transform: rotate(90deg);
+}
+
+.stats {
+  width: 100%;
+  height: fit-content;
+  background-color: var(--theme);
+
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+  align-items: center;
+
+  padding: 0 24px;
+}
+
+.propic {
+  width: 100px;
+  border-radius: 50%;
+}
+
+.stat {
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+  align-items: center;
+}
+
+.number {
+  font-size: 18px;
+  font-weight: 700;
+}
+
 .stat p {
-    font-size: 12px;
+  font-size: 12px;
 }
