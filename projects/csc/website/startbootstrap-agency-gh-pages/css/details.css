@@ -5,3 +5,8 @@
 .fs-xs {
     font-size: 12px;
 }
+
+.img-fluid-reverse {
+    max-height: 100%;
+    width: auto;
+}
