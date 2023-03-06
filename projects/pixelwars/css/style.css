@@ -1,21 +1,22 @@
-*, html {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+*,
+html {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 .container {
-    width: 100vw;
-    height: 100vh;
-    
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  width: 100vw;
+  height: 100vh;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .canvasElement {
-    width: 500px;
-    height: 500px;
+  width: 500px;
+  height: 500px;
 
-    border: 1px solid #f00;
+    border: 1px solid #000;
 }
