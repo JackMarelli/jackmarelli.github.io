@@ -1,0 +1,74 @@
+@import url("https://fonts.googleapis.com/css2?family=Climate+Crisis&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400&display=swap");
+
+:root {
+  --bg-color: #F2EDD7;
+  --text-color: #755139;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+
+  color: var(--text-color);
+  cursor: none;
+}
+
+::-webkit-scrollbar {
+  display: none;
+}
+
+a {
+  cursor: none;
+}
+
+body {
+  background-color: var(--bg-color);
+  overflow: hidden;
+}
+
+.title {
+  font-family: "Climate Crisis";
+  font-size: min(calc(100vw / 10), 4em);
+  margin: 4vh 5vw;
+}
+
+.subtitle {
+  font-family: "Inter";
+  font-weight: 400;
+  font-size: min(max(16px, calc(100vw / 40)), 1.5em);
+  margin: -4vh 0 5vh 5vw;
+}
+
+#scroller {
+  display: flex;
+  justify-content: flex-start;
+  flex-flow: row nowrap;
+  overflow: auto;
+}
+
+.img-container img {
+  min-width: 250px;
+  width: 80vw;
+  max-width: 1000px;
+  height: 70vh;
+  margin: 0 5vw 0 0;
+  object-fit: cover;
+}
+
+#scroller :nth-child(1) img {
+  margin: 0 5vw;
+}
+
+#cursorDiv {
+  position: absolute;
+  top: 0;
+  left: 0;
+
+  width: 50px;
+  height: 50px;
+  border-radius: 100%;
+  background-color: #008b8b;
+  z-index: 100;
+}
