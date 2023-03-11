@@ -1,9 +1,12 @@
 @import url("https://fonts.googleapis.com/css2?family=Climate+Crisis&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400&display=swap");
-
+@import url("https://fonts.googleapis.com/css2?family=Figtree&display=swap");
 :root {
-  --bg-color: #F2EDD7;
-  --text-color: #755139;
+  --bg-color: #f2edd7;
+  --primary-color: #755139;
+  --secondary-color: #be1d1d;
+
+  --title-font: "Climate Crisis";
+  --general-font: "Figtree";
 }
 
 * {
@@ -11,16 +14,21 @@
   padding: 0;
   box-sizing: border-box;
 
-  color: var(--text-color);
+  color: var(--primary-color);
+
+  letter-spacing: -1px;
+  word-spacing: 1px;
+  text-decoration: none;
   cursor: none;
+}
+
+::selection {
+  background-color: var(--primary-color);
+  color: var(--bg-color);
 }
 
 ::-webkit-scrollbar {
   display: none;
-}
-
-a {
-  cursor: none;
 }
 
 body {
@@ -28,17 +36,25 @@ body {
   overflow: hidden;
 }
 
+.container {
+  height: 100vh;
+  display: flex;
+  flex-flow: column;
+  justify-content: space-between;
+  align-items: left;
+}
+
 .title {
-  font-family: "Climate Crisis";
-  font-size: min(calc(100vw / 10), 4em);
-  margin: 4vh 5vw;
+  font-family: var(--title-font);
+  font-size: min(calc(100vw / 15), 4em);
+  margin: 4vh 0;
 }
 
 .subtitle {
-  font-family: "Inter";
+  font-family: var(--general-font);
   font-weight: 400;
   font-size: min(max(16px, calc(100vw / 40)), 1.5em);
-  margin: -4vh 0 5vh 5vw;
+  margin: -4vh 0 4vw 0;
 }
 
 #scroller {
@@ -46,29 +62,100 @@ body {
   justify-content: flex-start;
   flex-flow: row nowrap;
   overflow: auto;
+  flex-grow: 1;
+  user-select: none;
+}
+
+.img-container {
+  height: 100%;
 }
 
 .img-container img {
   min-width: 250px;
   width: 80vw;
   max-width: 1000px;
-  height: 70vh;
-  margin: 0 5vw 0 0;
+  height: 100%;
   object-fit: cover;
 }
 
-#scroller :nth-child(1) img {
-  margin: 0 5vw;
+.cta {
+  margin-block: 5vh;
+  font-size: 32px;
+  font-family: var(--general-font);
+}
+
+.cta .cta-text {
+  color: var(--secondary-color);
+  position: relative;
+  z-index: 20;
+}
+
+.cta .cta-text::after {
+  background-color: var(--secondary-color); 
+  
+  content: '';
+  width: 100%;
+  height: 2px;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  transform: scaleX(0);
+  transform-origin: bottom left;
+  transition: all 0.2s ease-in-out;
+}
+
+.cta .cta-text:hover::after {
+  transform: scaleX(1);
+  transform-origin: bottom right;
+  transition: all 0.2s ease-in-out;
 }
 
 #cursorDiv {
   position: absolute;
   top: 0;
   left: 0;
+  pointer-events: none;
 
-  width: 50px;
-  height: 50px;
+  transition: width .2s ease-out,
+              height .2s ease-out;
+}
+
+.cursorDefault {
+  width: 20px;
+  height: 20px;
   border-radius: 100%;
   background-color: #008b8b;
-  z-index: 100;
+}
+
+.cursorCta {
+  width: 12vh;
+  height: 12vh;
+  border-radius: 100%;
+  background-color: #cf2121c0;
+  position: relative;
+}
+
+.cursorCta::after {
+  content: 'Explore';
+  font-family: var(--general-font);
+  color: var(--bg-color);
+  font-size: 1em;
+
+  display: block;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.m-5vw-x {
+  margin-inline: 5vw;
+}
+
+.m-5vw-left {
+  margin-left: 5vw;
+}
+
+.m-5vw-right {
+  margin-right: 5vw;
 }
