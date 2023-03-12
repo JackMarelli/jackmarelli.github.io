@@ -1,0 +1,30 @@
+*,
+html {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.container {
+  width: 100vw;
+  height: 100vh;
+
+  display: grid;
+  grid-template-columns:
+    [left-gap] 5vw [left-col-0] auto [left-col-1] auto [left-col-2] auto [center-gap] 5vw [right-col-0] auto [right-col-1] auto [right-col-2] auto
+    [right-gap] 5vw;
+
+  grid-template-rows: [top-gap] 5vh [nav-placeholder] 60px [hero] 80vh [salve] 25vh;
+}
+
+.hero {
+  grid-column: left-col-0 / span 7;
+  grid-row: hero;
+  background: #f00;
+}
+
+.salve {
+  grid-column: left-col-1 / span 5;
+  grid-row: salve;
+  background-color: #0f0;
+}
