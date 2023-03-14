@@ -5,6 +5,10 @@ html {
   box-sizing: border-box;
 }
 
+:root {
+  --bg-color: #333333
+}
+
 .grid {
   width: 100%;
   height: fit-content;
@@ -83,11 +87,19 @@ html {
   margin-block: 3vh;
 }
 
-#nav-placeholder
+#nav-placeholder {
+  height: calc(6vh + max(min(38px, 4vh), 32px));
+  background-color: #444;
+}
 
 #logo, #btnMenu {
   position: fixed;
-  top: 3vh
+  top: 3vh;
+}
+
+#logo img, #btnMenu img {
+  height: max(min(38px, 4vh), 32px);
+  width: auto;
 }
 
 #logo {
@@ -98,7 +110,10 @@ html {
   right: 5vw
 }
 
-.test {
-  height: 2000px;
-  background-color: #444;
+.cursor-pointer {
+  cursor: pointer;
+}
+
+.height-fit {
+  height: fit-content;
 }
