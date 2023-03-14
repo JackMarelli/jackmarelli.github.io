@@ -11,32 +11,94 @@ html {
 
   display: grid;
   grid-template-columns:
-    [left-gap] 5vw
-    [left-col-0] auto
-    [left-col-1] auto
-    [left-col-2] auto
-    [center-left-gap] 2.5vw
-    [center-right-gap] 2.5vw
-    [right-col-0] auto
-    [right-col-1] auto
-    [right-col-2] auto
-    [right-gap] 5vw;
-
-  grid-template-rows:
-    [top-gap] 5vh
-    [nav-placeholder] 60px
-    [hero] 80vh
-    [salve] 25vh;
+    [l-gap] 5vw
+    [l-col-0] auto
+    [l-col-1] auto
+    [l-col-2] auto
+    [center-l-gap] 2.5vw
+    [center-r-gap] 2.5vw
+    [r-col-0] auto
+    [r-col-1] auto
+    [r-col-2] auto
+    [r-gap] 5vw;
 }
 
 .gcols-full {
-  grid-column: left-gap / span 10;
+  grid-column: l-gap / span 10;
 }
 
 .gcols-full-gap {
-  grid-column: left-col-0 / span 8;
+  grid-column: l-col-0 / span 8;
 }
 
-.grid-testing-element {
-  background-color: darkorchid;
+.gcols-l {
+  grid-column: l-gap / span 5;
+}
+
+.gcols-l-gap {
+  grid-column: l-col-0 / span 3;
+}
+
+.gcols-r {
+  grid-column: center-r-gap / span 5;
+}
+
+.gcols-r-gap {
+  grid-column: r-col-0 / span 3;
+}
+
+.gcols-l-0 {
+  grid-column: l-col-0;
+}
+
+.gcols-l-1 {
+  grid-column: l-col-1;
+}
+
+.gcols-l-2 {
+  grid-column: l-col-2;
+}
+
+.gcols-r-0 {
+  grid-column: r-col-0;
+}
+
+.gcols-r-1 {
+  grid-column: r-col-1;
+}
+
+.gcols-r-2 {
+  grid-column: r-col-2;
+}
+
+.float-r {
+  float: right;
+}
+
+.float-l {
+  float: left;
+}
+
+.my-3 {
+  margin-block: 3vh;
+}
+
+#nav-placeholder
+
+#logo, #btnMenu {
+  position: fixed;
+  top: 3vh
+}
+
+#logo {
+  left: 5vw;
+}
+
+#btnMenu {
+  right: 5vw
+}
+
+.test {
+  height: 2000px;
+  background-color: #444;
 }
