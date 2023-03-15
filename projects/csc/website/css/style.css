@@ -1,119 +1,62 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap");
+
 *,
 html {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+
+  font-family: "Montserrat", sans-serif;
+  font-weight: 400;
+  letter-spacing: -2px;
 }
 
 :root {
-  --bg-color: #333333
+  --white: #ffffff;
+  --bg-color: #333333;
+  --primary: #6bbd59;
+  --os1: #feb312;
 }
 
-.grid {
-  width: 100%;
-  height: fit-content;
-
-  display: grid;
-  grid-template-columns:
-    [l-gap] 5vw
-    [l-col-0] auto
-    [l-col-1] auto
-    [l-col-2] auto
-    [center-l-gap] 2.5vw
-    [center-r-gap] 2.5vw
-    [r-col-0] auto
-    [r-col-1] auto
-    [r-col-2] auto
-    [r-gap] 5vw;
+.my-bold {
+  font-weight: 600;
+  letter-spacing: -3px;
 }
 
-.gcols-full {
-  grid-column: l-gap / span 10;
+.my-big-text {
+  font-size: 15vw;
+  line-height: 12vw;
 }
 
-.gcols-full-gap {
-  grid-column: l-col-0 / span 8;
+.my-bg-primary {
+  background-color: var(--primary);
 }
 
-.gcols-l {
-  grid-column: l-gap / span 5;
+.my-bg-OS1 {
+  background-color: var(--os1);
 }
 
-.gcols-l-gap {
-  grid-column: l-col-0 / span 3;
+.my-fs-1 {
+  font-size: min(12vw, 192px);
+  line-height: min(9vw, 144px);
 }
 
-.gcols-r {
-  grid-column: center-r-gap / span 5;
+.my-fs-2 {
+  font-size: min(4.8vw, 76px);
 }
 
-.gcols-r-gap {
-  grid-column: r-col-0 / span 3;
+.my-fs-3 {
+  font-size: min(2vw, 32px);
 }
 
-.gcols-l-0 {
-  grid-column: l-col-0;
+.my-fs-4 {
+  font-size: 1.2vw;
 }
 
-.gcols-l-1 {
-  grid-column: l-col-1;
+.my-card {
+  height: 400px;
 }
 
-.gcols-l-2 {
-  grid-column: l-col-2;
-}
-
-.gcols-r-0 {
-  grid-column: r-col-0;
-}
-
-.gcols-r-1 {
-  grid-column: r-col-1;
-}
-
-.gcols-r-2 {
-  grid-column: r-col-2;
-}
-
-.float-r {
-  float: right;
-}
-
-.float-l {
-  float: left;
-}
-
-.my-3 {
-  margin-block: 3vh;
-}
-
-#nav-placeholder {
-  height: calc(6vh + max(min(38px, 4vh), 32px));
-  background-color: #444;
-}
-
-#logo, #btnMenu {
-  position: fixed;
-  top: 3vh;
-}
-
-#logo img, #btnMenu img {
-  height: max(min(38px, 4vh), 32px);
-  width: auto;
-}
-
-#logo {
-  left: 5vw;
-}
-
-#btnMenu {
-  right: 5vw
-}
-
-.cursor-pointer {
-  cursor: pointer;
-}
-
-.height-fit {
-  height: fit-content;
+@media screen and (max-width: 992px) {
+  /* todo: font sizes */
 }
