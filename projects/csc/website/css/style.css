@@ -2,13 +2,9 @@
 
 *,
 html {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-
   font-family: "Montserrat", sans-serif;
   font-weight: 400;
-  letter-spacing: -2px;
+  letter-spacing: -1px;
 }
 
 :root {
@@ -20,12 +16,6 @@ html {
 
 .my-bold {
   font-weight: 600;
-  letter-spacing: -3px;
-}
-
-.my-big-text {
-  font-size: 15vw;
-  line-height: 12vw;
 }
 
 .my-bg-primary {
@@ -39,6 +29,7 @@ html {
 .my-fs-1 {
   font-size: min(12vw, 192px);
   line-height: min(9vw, 144px);
+  letter-spacing: -3px;
 }
 
 .my-fs-2 {
@@ -54,9 +45,25 @@ html {
 }
 
 .my-card {
-  height: 400px;
+  height: max(500px, fit-content);
 }
 
 @media screen and (max-width: 992px) {
-  /* todo: font sizes */
+  .my-fs-1 {
+    font-size: min(24vw, 192px);
+    line-height: min(18vw, 144px);
+    letter-spacing: -3px;
+  }
+  
+  .my-fs-2 {
+    font-size: min(9.6vw, 76px);
+  }
+  
+  .my-fs-3 {
+    font-size: min(5vw, 32px);
+  }
+  
+  .my-fs-4 {
+    font-size: 3vw;
+  }
 }

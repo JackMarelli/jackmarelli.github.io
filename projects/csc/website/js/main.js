@@ -5,11 +5,10 @@ $(document).ready(function () {
         loop: true,
         margin: 30,
         nav: false,
-        autoplay: true,
-        stagePadding: 50,
+        stagePadding: 30,
         responsive: {
             0: {
-                items: 1
+                items: 1,
             },
             600: {
                 items: 2
