@@ -3,6 +3,7 @@
 *,
 html {
   font-family: "Montserrat", sans-serif;
+  font-size: 16px;
   font-weight: 400;
   letter-spacing: -1px;
 }
@@ -30,18 +31,18 @@ html {
   font-size: min(12vw, 192px);
   line-height: min(9vw, 144px);
   letter-spacing: -3px;
-}
+}   
 
 .my-fs-2 {
-  font-size: min(4.8vw, 76px);
+  font-size: 76px;
 }
 
 .my-fs-3 {
-  font-size: min(2vw, 32px);
+  font-size: 32px;
 }
 
 .my-fs-4 {
-  font-size: 1.2vw;
+  font-size: 20px;
 }
 
 .my-card {
@@ -49,21 +50,5 @@ html {
 }
 
 @media screen and (max-width: 992px) {
-  .my-fs-1 {
-    font-size: min(24vw, 192px);
-    line-height: min(18vw, 144px);
-    letter-spacing: -3px;
-  }
-  
-  .my-fs-2 {
-    font-size: min(9.6vw, 76px);
-  }
-  
-  .my-fs-3 {
-    font-size: min(5vw, 32px);
-  }
-  
-  .my-fs-4 {
-    font-size: 3vw;
-  }
+
 }

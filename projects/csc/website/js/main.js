@@ -2,7 +2,7 @@ console.log("main.js loads");
 
 $(document).ready(function () {
     $('.owl-carousel').owlCarousel({
-        loop: true,
+        loop: false,
         margin: 30,
         nav: false,
         stagePadding: 30,

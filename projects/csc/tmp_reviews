@@ -1,0 +1,46 @@
+      <div id="reviews" class="d-flex row my-5">
+        <div
+          class="review d-flex flex-column align-items-center align-items-lg-start text-center text-lg-start mx-3 my-3"
+        >
+          <h3 class="my-fs-3 my-bold">
+            Esperti di informatica aziendale sul mercato da 30 anni!
+          </h3>
+          <p class="my-fs-4">~ Nicola Pagani</p>
+        </div>
+        <div
+          class="review d-flex flex-column align-items-center align-items-lg-end text-center text-lg-end mx-3 my-3"
+        >
+          <h3 class="my-fs-3 my-bold">
+            Fornitissimo, personale disponibile e qualificato.
+          </h3>
+          <p class="my-fs-4">~ Fabio Briccola</p>
+        </div>
+        <div
+          class="review d-flex flex-column align-items-center align-items-lg-start text-center text-lg-start mx-3 my-3"
+        >
+          <h3 class="my-fs-3 my-bold">
+            Ho acquistato un notebook e vari accessori, mi hanno aiutato nella
+            scelta e si sono occupati di tutta la configurazione. Ottimo
+            servizio, sono molto soddisfatto.
+          </h3>
+          <p class="my-fs-4">~ Giacomo Marelli</p>
+        </div>
+        <div
+          class="review d-flex flex-column align-items-center align-items-lg-end text-center text-lg-end mx-3 my-3"
+        >
+          <h3 class="my-fs-3 my-bold">
+            Professionali, efficienti ed un ottimo rapporto qualità/prezzo.
+          </h3>
+          <p class="my-fs-4">~ Matteo Zappa</p>
+        </div>
+        <div
+          class="review d-flex flex-column align-items-center align-items-lg-start text-center text-lg-start mx-3 my-3"
+        >
+          <h3 class="my-fs-3 my-bold">
+            Sono stata accolta in modo professionale e molto preciso nel
+            spiegare le migliori procedure per l’installazione della cassa
+            telematica per lo scontrino elettronico.
+          </h3>
+          <p class="my-fs-4">~ Isabella Loria</p>
+        </div>
+      </div>

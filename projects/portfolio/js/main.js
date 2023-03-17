@@ -6,15 +6,18 @@ const letsTalk = document.querySelector("#letsTalk");
 let sx = 0;
 let dx = sx;
 
+//scroller
 window.addEventListener("wheel", (e) => {
   moveCursor(e);
-  if (sx > scroller.scrollWidth) {
-    sx = scroller.scrollWidth;
+  if (sx > scroller.scrollWidth - scroller.offsetWidth) {
+    sx = scroller.scrollWidth - scroller.offsetWidth;
   } else if (sx < 0) {
     sx = 0;
   } else {
     sx += e.deltaY;
   }
+  console.log(scroller.offsetWidth);
+  console.log(sx);
 });
 
 window.requestAnimationFrame(render);
@@ -35,7 +38,7 @@ function li(a, b, n) {
 
 // Cursor
 window.onload = () => {
-  setLetsTalkCursor();
+  setDefaultCursor();
 };
 
 window.addEventListener("mousemove", (e) => {
