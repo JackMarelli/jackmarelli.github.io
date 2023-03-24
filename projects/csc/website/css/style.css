@@ -6,6 +6,7 @@ html {
   font-size: 16px;
   font-weight: 400;
   letter-spacing: -1px;
+  text-decoration: none;
 }
 
 :root {
@@ -17,6 +18,10 @@ html {
 
 .my-bg-primary {
   background-color: var(--primary);
+}
+
+.my-text-primary {
+  color: var(--primary);
 }
 
 .my-bg-OS1 {
