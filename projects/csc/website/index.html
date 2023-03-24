@@ -20,8 +20,8 @@
     <link rel="stylesheet" href="css/style.css" />
   </head>
   <body>
-    <div class="container-fluid p-0 m-0">
-      <nav class="navbar fixed-top px-3">
+    <div class="container-fluid">
+      <nav class="navbar fixed-top px-5">
         <img
           class="navbar-brand"
           src="assets/icons/logo-black.svg"
@@ -36,57 +36,83 @@
         <img
           src="assets/images/generic_img.png"
           alt="csc"
-          class="col-12 col-lg-6 vh-100 p-0 pb-5 m-0"
+          class="col-12 col-lg-6 vh-100 p-0"
         />
         <div
-          class="col-12 col-lg-6 vh-100 flex-column justify-content-start justify-content-lg-center align-items-center p-0 m-0"
+          class="col-12 col-lg-6 h-100 m-lg-auto d-flex flex-column justify-content-center align-items-start p-5"
         >
-          <h1 class="my-fs-2 my-bold">CSC Centro <br />Sistemi Como</h1>
-          <p class="my-fs-4 pt-5">
+          <h1 class="fs-1 fw-bolder">Centro Sistemi Como</h1>
+          <p class="fs-6 py-3">
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut vel
             velit dapibus, facilisis felis et, porta dui. Lorem ipsum dolor sit
             amet, consectetur adipiscing elit.
           </p>
-          <p class="my-fs-4 pt-3">
+          <p class="fs-6">
             Donec ut interdum ipsum. Aliquam lacus nisi, feugiat eu velit id,
             ornare rutrum sapien. Sed pharetra lobortis neque, ut iaculis ipsum
             elementum eget.
           </p>
         </div>
       </div>
-      <div class="row my-bg-primary">
-        <div class="col-12 px-3 py-5 align-items-end">
-          <div class="col-12 col-lg-6 mt-5">
-            <h1 class="my-fs-1 my-bold text-white p-0">Retail</h1>
-          </div>
-          <div class="col-12 col-lg-6 mt-5">
-            <p class="my-fs-3 text-white p-0">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut vel
-              velit dapibus, facilisis felis et, porta dui. Morbi nec gravida
-              lacus.
+      <div class="row vh-25"></div>
+      <div class="row my-bg-primary pt-3">
+        <h1 id="registratoriDiCassa" class="col-12 text-white fw-bolder px-5 py-3">
+          Registratori di cassa
+        </h1>
+        <div class="col-12 owl-carousel pb-5 p-0">
+          <div
+            class="card my-card text-center align-items-center p-3 rounded-5"
+          >
+            <img
+              class="img-fluid flex-grow-1 p-3 p-lg-5"
+              src="assets/images/olivetti_img_sample.png"
+              alt=""
+            />
+            <h3 class="my-bold my-3">Olivetti</h3>
+            <p class="fs-6 m-0 p-0 pb-3 mx-3">
+              Cutting-edge technology, high flexibility, innovative design and
+              superior performance.
             </p>
           </div>
         </div>
-        <div class="row p-0 m-0">
-          <div class="owl-carousel pb-5">
-            <div
-              class="card my-card text-center align-items-center p-3 rounded-5"
-            >
-              <img
-                class="img-fluid flex-grow-1"
-                src="assets/images/generic_img.png"
-                alt=""
-              />
-              <h3 class="my-bold my-3">Olivetti</h3>
-              <p class="my-fs-4 m-0 p-0 pb-3 mx-3">
-                Cutting-edge technology, high flexibility, innovative design and
-                superior performance
-              </p>
-            </div>
-          </div>
+      </div>
+      <div id="reviews" class="row d-flex flex-column my-5">
+        <div
+          class="review col-12 d-flex flex-column text-center text-lg-start px-5 py-5 py-lg-3"
+        >
+          <p class="text-bold fs-3 m-0">
+            Esperti di informatica aziendale sul mercato da 30 anni!
+          </p>
+          <p class="fs-6">Nicola Pagani</p>
+        </div>
+        <div
+          class="review col-12 d-flex flex-column text-center text-lg-end px-5 py-5 py-lg-3"
+        >
+          <p class="text-bold fs-3 m-0">
+            Fornitissimo, personale disponibile e qualificato.
+          </p>
+          <p class="fs-6">Fabio Briccola</p>
+        </div>
+        <div
+          class="review col-12 d-flex flex-column text-center text-lg-start px-5 py-5 py-lg-3"
+        >
+          <p class="text-bold fs-3 m-0">
+            Ho acquistato un notebook e vari accessori, mi hanno aiutato nella
+            scelta e si sono occupati di tutta la configurazione. Ottimo
+            servizio, sono molto soddisfatto.
+          </p>
+          <p class="fs-6">Giacomo Marelli</p>
+        </div>
+        <div
+          class="review col-12 d-flex flex-column text-center text-lg-end px-5 py-5 py-lg-3"
+        >
+          <p class="text-bold fs-3 m-0">
+            Professionali, efficienti ed un ottimo rapporto qualità/prezzo.
+          </p>
+          <p class="fs-6">Matteo Zappa</p>
         </div>
       </div>
-    </div>
+
     <script
       src="https://code.jquery.com/jquery-3.6.4.min.js"
       integrity="sha256-oP6HI9z1XaZNBrJURtCoUT5SUnxFr8s3BzRl+cbzUq8="

@@ -15,10 +15,6 @@ html {
   --os1: #feb312;
 }
 
-.my-bold {
-  font-weight: 600;
-}
-
 .my-bg-primary {
   background-color: var(--primary);
 }
@@ -27,22 +23,10 @@ html {
   background-color: var(--os1);
 }
 
-.my-fs-1 {
-  font-size: min(12vw, 192px);
-  line-height: min(9vw, 144px);
+#registratoriDiCassa {
+  font-size: 8vw;
   letter-spacing: -3px;
-}   
-
-.my-fs-2 {
-  font-size: 76px;
-}
-
-.my-fs-3 {
-  font-size: 32px;
-}
-
-.my-fs-4 {
-  font-size: 20px;
+  margin: 0 0 0 -10px;
 }
 
 .my-card {
@@ -50,5 +34,8 @@ html {
 }
 
 @media screen and (max-width: 992px) {
-
+  #registratoriDiCassa {
+    font-size: 16vw;
+    margin: 0 0 0 -5px;
+  }
 }
