@@ -38,24 +38,63 @@ html {
   height: max(500px, fit-content);
 }
 
-.my-btn-green {
-  text-decoration: none;
-  color: white;
-  background-color: var(--primary);
-  padding: .6em 2.5em;
+.my-btn {
+  font-weight: bolder;
+  padding: 0.6em 2.5em;
   border-radius: 1000px;
   cursor: pointer;
+  text-decoration: none;
+  text-align: center;
+}
+
+.my-btn-green {
+  color: var(--white);
+  background-color: var(--primary);
 }
 
 .my-btn-green:hover {
-  color: white;
-  filter: brightness(.8);
+  color: var(--white);
+  filter: brightness(0.8);
   transition: linear 100ms;
 }
 
+.my-btn-transparent {
+  color: var(--white);
+  background-color: transparent;
+  border: 1px solid var(--white);
+}
+
+.my-btn-transparent:hover {
+  color: var(--primary);
+  background-color: var(--white);
+  transition: linear 100ms;
+}
+
+.my-hardware-column {
+  position: relative;
+}
+
+.my-hardware-column::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-image: linear-gradient(to bottom, var(--white), transparent 12%, transparent 88%, var(--white));
+}
+
 @media screen and (max-width: 992px) {
+  .my-btn {
+    margin-inline: auto;
+    width: 100%;
+  }
+
   #registratoriDiCassa {
     font-size: 13vw;
     margin: 0 0 0 -5px;
+  }
+
+  #navbarLogo,
+  #navbarMenuBtn {
+    height: 4vh;
   }
 }
