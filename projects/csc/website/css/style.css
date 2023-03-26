@@ -38,9 +38,24 @@ html {
   height: max(500px, fit-content);
 }
 
+.my-btn-green {
+  text-decoration: none;
+  color: white;
+  background-color: var(--primary);
+  padding: .6em 2.5em;
+  border-radius: 1000px;
+  cursor: pointer;
+}
+
+.my-btn-green:hover {
+  color: white;
+  filter: brightness(.8);
+  transition: linear 100ms;
+}
+
 @media screen and (max-width: 992px) {
   #registratoriDiCassa {
-    font-size: 16vw;
+    font-size: 13vw;
     margin: 0 0 0 -5px;
   }
 }

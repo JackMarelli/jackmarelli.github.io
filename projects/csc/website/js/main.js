@@ -8,10 +8,11 @@ _app.owlCarouselSetup = () => {
       margin: 50,
       nav: false,
       stagePadding: 50,
+      autoPlay: true,
+      autoplayTimeout: 1000,
       responsive: {
         0: {
           items: 1,
-          margin: 30
         },
         600: {
           items: 2
