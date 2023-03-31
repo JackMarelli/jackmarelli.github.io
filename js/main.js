@@ -7,7 +7,6 @@ let sx = 0;
 let dx = sx;
 
 if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) {
-  startUpMobile();
 }
 else {
   startUpdeskop();

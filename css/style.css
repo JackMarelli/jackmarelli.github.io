@@ -1,12 +1,13 @@
 @import url("https://fonts.googleapis.com/css2?family=Climate+Crisis&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Figtree&display=swap");
+
 :root {
   --bg-color: #f2edd7;
   --primary-color: #755139;
   --secondary-color: #be1d1d;
 
-  --title-font: "Climate Crisis";
-  --general-font: "Figtree";
+  --title-font: "Climate Crisis", sans-serif;
+  --general-font: "Figtree", sans-serif;
 }
 
 * {
@@ -37,7 +38,7 @@ body {
 }
 
 .container {
-  height: 100vh;
+  height: 100%;
   display: flex;
   flex-flow: column;
   justify-content: space-between;
@@ -48,6 +49,7 @@ body {
   font-family: var(--title-font);
   font-size: min(calc(100vw / 15), 4em);
   margin: 4vh 0;
+  letter-spacing: 1px;
 }
 
 .subtitle {
@@ -61,6 +63,7 @@ body {
   display: flex;
   justify-content: flex-start;
   flex-flow: row;
+  flex-grow: 1;
   overflow: auto;
   user-select: none;
 }
@@ -183,33 +186,15 @@ body {
   }
 
   #scroller {
-    display: flex;
-    justify-content: flex-start;
-    flex-flow: column;
-    user-select: none;
-    margin: 0;
-
-    width: auto;
-    margin-inline: 5vw;
+    flex-flow: row;
   }
 
-  .img-container {
-    height: fit-content;
-    margin: 0 0 3vh 0;
-  }
-
-  .img-container img {
-    width: 100%;
-    height: 60vh;
-    object-fit: cover;
-    margin: 0;
-  }
-
-  .img-container:last-child {
-    margin: 0;
+  .title {
+    font-size: min(calc(100vw / 20), 3em);
   }
 
   .cta {
-    margin-block: 3vh;
+    margin: 5vh 5vw;
+    font-size: 20px;
   }
 }
