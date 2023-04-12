@@ -1,8 +1,8 @@
-@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap");
 
 *,
 html {
-  font-family: "Montserrat", sans-serif;
+  font-family: "Poppins", sans-serif;
   font-size: 16px;
   font-weight: 400;
   letter-spacing: -1px;
@@ -38,9 +38,17 @@ html {
   height: max(500px, fit-content);
 }
 
+.review {
+  margin: 50px 0;
+}
+
+.review * {
+  width: 60%;
+}
+
 .my-btn {
   font-weight: bolder;
-  padding: 0.6em 2.5em;
+  padding: 0.6em 8%;
   border-radius: 1000px;
   cursor: pointer;
   text-decoration: none;
@@ -96,5 +104,13 @@ html {
   #navbarLogo,
   #navbarMenuBtn {
     height: 4vh;
+  }
+
+  .review {
+    margin: 0 0;
+  }
+  
+  .review * {
+    width: 100%;
   }
 }
