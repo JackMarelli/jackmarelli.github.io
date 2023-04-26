@@ -1,0 +1,36 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.container {
+  margin: 20px;
+}
+
+.listone {
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: start;
+  align-items: start;
+}
+
+.event {
+  display: flex;
+  flex-flow: row nowrap;
+  gap: 20px;
+  border: 1px solid;
+  height: 45px;
+}
+
+.event .title {
+  width: 300px;
+}
+
+.event .date {
+  width: 100px;
+}
+
+.event .luogo {
+  width: 100px;
+}
