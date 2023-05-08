@@ -1,0 +1,55 @@
+:root {
+  --black: #000;
+  --white: #fff;
+
+  --primary: #f1f1f1;
+  --secondary: #1c1c1c;
+  --accent: #b08968;
+}
+
+@font-face {
+  font-family: "Neue Haas Grotesk";
+  src: url("../assets/font/NeueHaasGrotesk/NeueHaasDisplay-Roman.woff2");
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+
+  font-family: "Neue Haas Grotesk", sans-serif;
+}
+
+#fold-carousel {
+  object-fit: cover;
+  height: 40vh;
+}
+
+.cursor-pointer {
+  cursor: pointer;
+}
+
+.jm-primary {
+  color: var(--primary);
+}
+.jm-secondary {
+  color: var(--secondary);
+}
+.jm-accent {
+  color: var(--accent);
+}
+.jm-bg-primary {
+  background-color: var(--primary);
+}
+.jm-bg-secondary {
+  background-color: var(--secondary);
+}
+.jm-bg-secondary {
+  background-color: var(--accent);
+}
+
+@media (max-width: 992px) {
+  #fold-carousel {
+    flex-grow: 1;
+  }
+}
