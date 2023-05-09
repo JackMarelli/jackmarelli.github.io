@@ -25,6 +25,10 @@
   height: 40vh;
 }
 
+.navbar {
+  font-size: 32px;
+}
+
 .cursor-pointer {
   cursor: pointer;
 }
@@ -48,8 +52,26 @@
   background-color: var(--accent);
 }
 
+.my-text-justify {
+  text-align: justify;
+}
+
+.work img {
+ object-fit: contain;
+}
+
 @media (max-width: 992px) {
   #fold-carousel {
     flex-grow: 1;
+  }
+
+  .navbar img {
+    scale: 0.7;
+  }
+}
+
+@media (max-width: 576px) {
+  .navbar {
+    font-size: 18px;
   }
 }

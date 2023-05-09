@@ -12,10 +12,11 @@
 
 <body>
   <div class="main">
-    <div class="container-fluid vh-100 d-flex flex-column py-3 px-4">
-      <nav class="navbar navbar-sticky sticky-top p-0">
-        <div class="d-flex justify-content-start align-items-center fs-6 fs-lg-3 text-uppercase">
-          <span class="cursor-pointer">Giacomo Marelli</span>
+    <div class="container-fluid vh-100 d-flex flex-column px-4">
+      <nav class="navbar navbar-sticky sticky-top">
+        <div class="d-flex justify-content-start align-items-center text-uppercase">
+          <span class="cursor-pointer d-block d-sm-none">GM</span>
+          <span class="cursor-pointer d-none d-sm-block">Giacomo Marelli</span>
           <span class="mx-2">-</span>
           <span>Home</span>
         </div>
@@ -23,15 +24,15 @@
           <img src="assets/icons/menu.svg" alt="Menu" />
         </div>
       </nav>
-    <div id="hello" class="text-uppercase display-4 display-lg-1">Hello</div>
+      <div id="hello" class="text-uppercase display-1">Hello</div>
       <div class="d-flex flex-column-reverse flex-lg-row justify-content-between align-items-end flex-grow-1 mb-3">
         <div class="col-12 col-lg-8 col-xl-6 p-0 d-flex flex-column justify-content-end">
-          <div class="text-uppercase fs-6 fs-sm-2 lh-sm">
+          <div class="text-uppercase fs-2 lh-sm my-text-justify">
             Hello, i’m a creative developer located in italy, i mainly design
             and develop websites, but often dabble myself with other works due
             to demand.
           </div>
-        <div class="py-1 fs-6 fs-lg-4">
+          <div class="py-1 fs-6">
             Currently studying in
             <span class="text-decoration-underline">IED</span>
           </div>
@@ -41,8 +42,18 @@
           src="assets/images/fullsize/fold_placeholder.png" alt="" />
       </div>
     </div>
-    <div class="container-fluid m-0 p-0"><img class="w-100" src="assets/images/fullsize/decor.svg" alt=""></div>
+    <div class="container-fluid m-0 p-0 py-3"><img class="w-100" src="assets/images/fullsize/decor.svg" alt=""></div>
+    <div id="works" class="container-fluid d-flex flex-column px-4 py-3">
+      <div class="row work vh-100">
+        <div class="col-12 col-lg-6 w-100">
+          <div class="display-1 text-uppercase">V&V Clean And Edilgarden</div>
+          <div class="fs-3 py-1 p-lg-0 expertice">Website design, Website creation</div>
+        </div>
+        <div class="col-12 col-lg-6"><img class="w-100" src="assets/images/fullsize/vev_balcone.jpg" alt=""></div>
+      </div>
+    </div>
   </div>
+  <script src="js/main.js"></script>
 </body>
 
 </html>
