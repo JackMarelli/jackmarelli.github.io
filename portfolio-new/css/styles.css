@@ -20,6 +20,9 @@
   font-family: "Neue Haas Grotesk", sans-serif;
 }
 
+#fold {
+}
+
 #fold-carousel {
   object-fit: cover;
   height: 40vh;
