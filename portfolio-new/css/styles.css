@@ -42,6 +42,9 @@
 .jm-secondary {
   color: var(--secondary);
 }
+.jm-secondary:hover {
+  color: var(--secondary);
+}
 .jm-accent {
   color: var(--accent);
 }
@@ -69,6 +72,10 @@
 
 .work-thumbnail-container:hover img {
 scale: 2;
+}
+
+#social-icons a {
+padding: 0 24px 0 0;
 }
 
 @media (max-width: 992px) {
