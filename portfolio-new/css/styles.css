@@ -59,8 +59,16 @@
   text-align: justify;
 }
 
-.work-image {
+.work-thumbnail  {
   object-fit: cover;
+}
+
+.work-thumbnail-container {
+  overflow: hidden;
+}
+
+.work-thumbnail-container:hover img {
+scale: 2;
 }
 
 @media (max-width: 992px) {

@@ -5,7 +5,7 @@ _app.hellos = ["Hello", "Ciao", "Hola", "Alo", "Ave", "Salut", "Ahoj", "Privet",
 _app.vHeigth = window.innerHeight;
 
 _app.setFoldHeight = () => {
-    console.log("setting fold height");
+    //console.log("setting fold height");
     let decoHeight = document.querySelector("#fold_deco_img").outerHeight;
     let navHeight = document.querySelector("#nav").outerHeight;
     let customFoldHeight = _app.vHeigth - decoHeight / 2 - navHeight;
