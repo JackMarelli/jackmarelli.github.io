@@ -1,133 +1,46 @@
-const scroller = document.querySelector("#scroller");
-const cursorDiv = document.querySelector("#cursorDiv");
-const sampleScrollerElement = document.querySelector("#sampleScrollerElement");
-const scrollerElements = document.getElementsByClassName("img-container");
-const letsTalk = document.querySelector("#letsTalk");
-let sx = 0;
-let dx = sx;
+const _app = {};
 
-if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
-}
-else {
-  //((parseInt(prompt("num?:")) % 30) == 0) ? console.log("divisibile") : console.log("non divisibile");
-  /*
-  let check3 = false, check5 = false, arr = [3, 2, 3, 5, 1, 5, 6, 4, 4, 5, 5, 6, 3, 4, 6,];
-  arr.forEach((num, i) => {
-    if (num === 3 || num === 5) {
-      ((arr[i + 1]) && (!check3)) ? check3 = (num === 3 && num === arr[i + 1]) : check3 = check3;
-      ((arr[i + 1]) && (!check5)) ? check5 = (num === 5 && num === arr[i + 1]) : check5 = check5;
-    }
-  });
-  console.log('check3, check5', check3, check5);
-  */
-  let arr = [1, 2, 3, 4, 5, 6, 7];
-  console.log('arr', arr);
-  for (let i = 0; i < (arr.length / 2); i++) {
-    [arr[i], arr[arr.length - 1 - i]] = [arr[arr.length - 1 - i], arr[i]];
-  }
-  //console.log(arr.reverse());
-  console.log('arr', arr);
+_app.helloDiv = document.querySelector("#hello");
+_app.hellos = ["Hello", "Ciao", "Hola", "Alo", "Ave", "Salut", "Ahoj", "Privet", "Namaste", "Halo", "Shalom", "Nadzar", "Nin Hao"];
+_app.vHeigth = window.innerHeight;
 
-  startUpdeskop();
+_app.setFoldHeight = () => {
+    //console.log("setting fold height");
+    let decoHeight = document.querySelector("#fold_deco_img").outerHeight;
+    let navHeight = document.querySelector("#nav").outerHeight;
+    let customFoldHeight = _app.vHeigth - decoHeight / 2 - navHeight;
+    document.querySelector("#fold").style = height = `${customFoldHeight}px`;
 }
 
-function startUpdeskop() {
-  //console.log("setting up for desktop");
-
-  //scroller
-  window.addEventListener("wheel", (e) => {
-    moveCursor(e);
-    if (sx > scroller.scrollWidth - scroller.offsetWidth) {
-      sx = scroller.scrollWidth - scroller.offsetWidth;
-    } else if (sx < 0) {
-      sx = 0;
-    } else {
-      sx += e.deltaY;
-    }
-  });
-
-  // Cursor
-  window.onload = () => {
-    setDefaultCursor();
-  };
-  window.addEventListener("mousemove", (e) => {
-    moveCursor(e);
-  });
-  letsTalk.addEventListener("mouseenter", (e) => {
-    setLetsTalkCursor();
-  });
-  letsTalk.addEventListener("mouseleave", (e) => {
-    setDefaultCursor();
-  });
-  for (let i = 0; i < scrollerElements.length; i++) {
-    scrollerElements[i].addEventListener("mouseenter", (e) => {
-      setExploreCursor();
-    });
-    scrollerElements[i].addEventListener("mouseleave", (e) => {
-      setDefaultCursor();
-    });
-  }
-
-
-  function render() {
-    dx = li(dx, sx, 0.04);
-    dx = Math.floor(dx * 100) / 100;
-    scroller.scrollLeft = dx;
-    window.requestAnimationFrame(render);
-  }
-
-  //start recursive rendering
-  window.requestAnimationFrame(render);
+_app.initHelloCarousel = () => {
+    let helloIndex = 0;
+    setInterval(() => {
+        _app.helloDiv.innerHTML = _app.hellos[helloIndex];
+        if (helloIndex < _app.hellos.length - 1) {
+            helloIndex++
+        } else {
+            helloIndex = 0;
+        }
+    }, 800);
 }
 
-function startUpMobile() {
-  //console.log("setting up for mobile");
-
-  //scroller
-  window.addEventListener("wheel", (e) => {
-    console.log("adsasd");
-    if (sx > scroller.scrollHeight - scroller.offsetHeight) {
-      sx = scroller.scrollHeight - scroller.offsetHeight;
-    } else if (sx < 0) {
-      sx = 0;
-    } else {
-      sx += e.deltaY;
-    }
-  });
-
-
-  function render() {
-    dx = li(dx, sx, 0.04);
-    dx = Math.floor(dx * 100) / 100;
-    scroller.scrollTop = dx;
-    window.requestAnimationFrame(render);
-  }
-
-  window.requestAnimationFrame(render);
+_app.startUp = () => {
+    _app.initHelloCarousel();
+    //_app.setFoldHeight();
 }
 
-
-function li(a, b, n) {
-  return (1 - n) * a + n * b;
+_app.handleResize = () => {
+    //_app.setFoldHeight();
 }
 
-function moveCursor(e) {
-  cursorDiv.style.top = `${e.clientY - cursorDiv.offsetWidth / 2}`;
-  cursorDiv.style.left = `${e.clientX - cursorDiv.offsetHeight / 2}`;
-}
+_app.startUp();
+window.onresize = () => _app.handleResize();
 
-function setDefaultCursor() {
-  cursorDiv.className = "";
-  cursorDiv.classList.add("cursorDefault");
-}
+/*
 
-function setExploreCursor() {
-  cursorDiv.className = "";
-  cursorDiv.classList.add("cursorCta");
-}
+ TODO:
+ - immagine semi seria
+ - aggiungere lavori
+ - link social
 
-function setLetsTalkCursor() {
-  cursorDiv.className = "";
-  cursorDiv.classList.add("cursorLetsTalk");
-}
-
+*/
