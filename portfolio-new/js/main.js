@@ -26,11 +26,11 @@ _app.initHelloCarousel = () => {
 
 _app.startUp = () => {
     _app.initHelloCarousel();
-    _app.setFoldHeight();
+    //_app.setFoldHeight();
 }
 
 _app.handleResize = () => {
-    _app.setFoldHeight();
+    //_app.setFoldHeight();
 }
 
 _app.startUp();
