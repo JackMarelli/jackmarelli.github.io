@@ -37,6 +37,16 @@
   cursor: pointer;
 }
 
+a {
+  cursor: pointer;
+  color: var(--secondary);
+  text-decoration: none;
+}
+a:hover {
+  color: var(--secondary);
+  text-decoration: none;
+}
+
 .jm-primary {
   color: var(--primary);
 }
@@ -63,20 +73,12 @@
   text-align: justify;
 }
 
-.work-thumbnail  {
+.work-thumbnail {
   object-fit: cover;
 }
 
-.work-thumbnail-container {
-  overflow: hidden;
-}
-
-.work-thumbnail-container:hover img {
-scale: 2;
-}
-
 #social-icons a {
-padding: 0 24px 0 0;
+  padding: 0 24px 0 0;
 }
 
 @media (max-width: 992px) {

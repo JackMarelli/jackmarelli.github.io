@@ -35,3 +35,12 @@ _app.handleResize = () => {
 
 _app.startUp();
 window.onresize = () => _app.handleResize();
+
+/*
+
+ TODO:
+ - immagine semi seria
+ - aggiungere lavori
+ - link social
+
+*/
