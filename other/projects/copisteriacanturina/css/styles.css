@@ -1,0 +1,101 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+
+  font-family: "Inter", sans-serif;
+}
+
+:root {
+  --white: #fff;
+  --black: #242323;
+  --yellow: #dfe516;
+
+  --horizontal-padding: 2em;
+}
+
+nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  padding: 1em var(--horizontal-padding);
+
+  font-weight: 600;
+  color: var(--white);
+}
+
+nav ul {
+  display: flex;
+  list-style: none;
+  justify-content: end;
+  align-items: center;
+}
+
+nav ul li {
+    padding: 0 0 0 30px;
+}
+
+nav .logo {
+    min-width: 120px;
+    width: 20vw;
+    max-width: 200px;
+}
+
+nav .logo img {
+    width: 100%;
+    height: auto;
+}
+
+header {
+  background: url("../assets/fullsize/hero.png") center center no-repeat;
+  background-size: cover;
+  height: 100vh;
+}
+
+header h2 {
+  position: absolute;
+  bottom: 1em;
+  left: var(--horizontal-padding);
+  right: var(--horizontal-padding);
+  color: var(--white);
+}
+
+#partners-scroller {
+    display: none;
+    align-items: center;
+    overflow: hidden;
+
+    width: 100vw; 
+    height: fit-content;
+}
+
+#partners-scroller .partner {
+    width: fit-content;
+    height: auto;
+}
+
+#partners-scroller .partner img {
+    width: auto;
+    height: 100%;
+}
+
+#small-about {
+    width: 50%;
+    max-width: 800px;
+    padding: var(--horizontal-padding);
+}
+
+@media screen and (max-width: 768px) {
+    .nav-text-link {
+        display: none;
+    }
+
+    #small-about {
+        width: 100%;
+    }
+}
