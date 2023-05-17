@@ -18,10 +18,10 @@
   --horizontal-padding: 24px;
 
   --fs-sm: 1em;
-  --fs-md: 1.2em;
+  --fs-md: 1.5em;
   --fs-lg: 2em;
   --fs-xl: 3em;
-  --fs-xxl: 3.6em;
+  --fs-xxl: 4em;
 }
 
 nav {
@@ -76,6 +76,10 @@ header h2 {
 
 a {
   text-decoration: none;
+}
+
+section {
+  padding: var(--horizontal-padding) 0;
 }
 
 #partners-scroller {
@@ -138,7 +142,7 @@ a {
 }
 
 #servizi-e-prodotti h2 {
-  font-size: var(--fs-xxl);
+  font-size: var(--fs-xl);
 }
 
 #servizi-e-prodotti ul {
@@ -183,7 +187,7 @@ a {
 }
 
 #servizi-e-prodotti .cta img {
-  height: 1em;
+  height: .7em;
   object-fit: contain;
 }
 
@@ -196,27 +200,66 @@ a {
 }
 
 .title-text h1 {
- font-size: var(--fs-xl);
+ font-size: var(--fs-xxl);
+ font-weight: 600;
 }
 
 .title-text p {
   font-size: var(--fs-lg);
   padding: 0 0 var(--horizontal-padding) 0;
+  font-weight: 600;
 }
 
 .title-text a {
   font-size: var(--fs-md);
-  text-decoration: underline;
   cursor: pointer;
+  color: var(--black);
 }
 
-@media screen and (max-width: 768px) {
+.title-text a:hover {
+  text-decoration: underline;
+}
+
+#orari #orari-list {
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: start;
+    align-items: start;
+}
+
+#orari .day {
+ width: 100%;
+ border-bottom: 1px solid black;
+
+ display: flex;
+ flex-flow: row wrap;
+ justify-content: space-between;
+ padding: calc(var(--horizontal-padding) / 2) 1px;
+
+ font-size: var(--fs-sm);
+}
+
+#orari .day:first-child {
+  border-top: 1px solid black
+}
+
+#orari .day > * {
+  width: 30%;
+  text-align: start;
+}
+
+#orari .day > *:first-child {
+  font-weight: 600;
+}
+
+
+@media screen and (max-width: 992px) {
   :root {
     --horizontal-padding: 16px;
 
-    --fs-sm: 0.8em;
+    --fs-sm: .9em;
     --fs-md: 1em;
-    --fs-lg: 1.6em;
+    --fs-lg: 1.2em;
     --fs-xl: 2.4em;
     --fs-xxl: 2.8em;
   }
@@ -232,7 +275,6 @@ a {
 
   #small-about p {
     width: 100%;
-    font-size: var(--fs-md);
   }
 
   .row-to-col {
