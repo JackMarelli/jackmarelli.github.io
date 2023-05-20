@@ -213,7 +213,6 @@ section {
 .title-text a {
   font-size: var(--fs-md);
   cursor: pointer;
-  color: var(--black);
 }
 
 .title-text a:hover {
@@ -229,7 +228,7 @@ section {
 
 #orari .day {
  width: 100%;
- border-bottom: 1px solid black;
+ border-bottom: 1px solid var(--black);
 
  display: flex;
  flex-flow: row wrap;
@@ -240,7 +239,7 @@ section {
 }
 
 #orari .day:first-child {
-  border-top: 1px solid black
+  border-top: 1px solid var(--black)
 }
 
 #orari .day > * {
@@ -252,6 +251,23 @@ section {
   font-weight: 600;
 }
 
+#footer-contacts {
+  background: var(--black);
+  color: var(--white);
+  padding: var(--horizontal-padding) 0 0 0;
+}
+
+#footer-contacts a {
+  columns: var(--white);
+}
+
+.link-dark {
+  color: var(--black);
+}
+
+.link-light {
+  color: var(--white);
+}
 
 @media screen and (max-width: 992px) {
   :root {

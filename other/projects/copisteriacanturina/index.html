@@ -1,100 +1,182 @@
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Copisteria Canturina</title>
-    <link rel="stylesheet" href="css/styles.css">
-</head>
+    <link rel="stylesheet" href="css/styles.css" />
+  </head>
 
-<body>
+  <body>
     <div class="main">
-        <nav>
-            <div class="logo"><img src="assets/fullsize/logo.png" alt=""></div>
+      <nav>
+        <div class="logo"><img src="assets/fullsize/logo.png" alt="" /></div>
+        <ul>
+          <li class="nav-text-link">About</li>
+          <li class="nav-text-link">Contatti</li>
+          <li><img src="assets/icons/ham.svg" alt="Menu" /></li>
+        </ul>
+      </nav>
+      <header>
+        <h2>Copsiteria e cartoleria di prima qualità</h2>
+      </header>
+      <section id="partners-scroller">
+        <div class="partner">
+          <img src="assets/partners/casio_logo.svg" alt="" />
+        </div>
+        <div class="partner">
+          <img src="assets/partners/carandache_logo.svg" alt="" />
+        </div>
+        <div class="partner">
+          <img src="assets/partners/stabilo_logo.svg" alt="" />
+        </div>
+        <div class="partner">
+          <img src="assets/partners/fabriano_logo.svg" alt="" />
+        </div>
+        <div class="partner">
+          <img src="assets/partners/staedler_logo.svg" alt="" />
+        </div>
+      </section>
+      <section id="small-about">
+        <p>
+          Lorem ipsum dolor sit amet consectetur. Morbi malesuada lorem urna
+          libero sed pretium turpis congue in. Amet malesuada dolor pulvinar
+          ipsum commodo quam ac id. Gravida justo diam varius velit proin.
+        </p>
+      </section>
+      <section id="small-about-images">
+        <div class="row-to-col">
+          <img src="https://placehold.jp/1000x640.png" alt="" /><img
+            src="https://placehold.jp/1000x640.png"
+            alt=""
+          />
+        </div>
+        <div class="row-to-col">
+          <img src="https://placehold.jp/1000x640.png" alt="" /><img
+            src="https://placehold.jp/1000x640.png"
+            alt=""
+          />
+        </div>
+      </section>
+      <section id="servizi-e-prodotti">
+        <div class="row-to-col">
+          <div>
+            <h2>Servizi</h2>
             <ul>
-                <li class="nav-text-link">About</li>
-                <li class="nav-text-link">Contatti</li>
-                <li><img src="assets/icons/ham.svg" alt="Menu"></li>
+              <a class="servizio" href="#">Stampa personalizzata</a>
+              <a class="servizio" href="#">Plotting</a>
+              <a class="servizio" href="#">Ricamo</a>
+              <a class="servizio" href="#">Pannellizzazione poster</a>
             </ul>
-        </nav>
-        <header>
-            <h2>Copsiteria e cartoleria di prima qualità</h2>
-        </header>
-        <section id="partners-scroller">
-            <div class="partner"><img src="assets/partners/casio_logo.svg" alt=""></div>
-            <div class="partner"><img src="assets/partners/carandache_logo.svg" alt=""></div>
-            <div class="partner"><img src="assets/partners/stabilo_logo.svg" alt=""></div>
-            <div class="partner"><img src="assets/partners/fabriano_logo.svg" alt=""></div>
-            <div class="partner"><img src="assets/partners/staedler_logo.svg" alt=""></div>
-        </section>
-        <section id="small-about">
-            <p>Lorem ipsum dolor sit amet consectetur. Morbi malesuada lorem urna libero sed pretium turpis congue in.
-                Amet malesuada dolor pulvinar ipsum commodo quam ac id. Gravida justo diam varius velit proin.</p>
-        </section>
-        <section id="small-about-images">
-            <div class="row-to-col">
-                <img src="https://placehold.jp/1000x640.png" alt=""><img src="https://placehold.jp/1000x640.png" alt="">
+            <a class="cta"
+              ><span>Tutti i servizi</span
+              ><img src="assets/icons/arrow.svg" alt=""
+            /></a>
+          </div>
+          <div>
+            <h2>Prodotti</h2>
+            <ul>
+              <a class="prodotto" href="#">Cartoleria</a>
+              <a class="prodotto" href="#">protezione individuale</a>
+              <a class="prodotto" href="#">Accessori</a>
+              <a class="prodotto" href="#">Articoli tecnici</a>
+            </ul>
+            <a class="cta"
+              ><span>Tutti i prodotti</span
+              ><img src="assets/icons/arrow.svg" alt=""
+            /></a>
+          </div>
+        </div>
+      </section>
+      <section id="craft">
+        <div class="row-to-col title-text">
+          <h1>CRAFT</h1>
+          <div>
+            <p>
+              Disponiamo dei materiali CRAFT, leader mondiale nell’abbigliamento
+              sportivo e si evolve in base ai feedback dei migliori atleti
+              internazionali.
+            </p>
+            <a href="#">Visita il sito di CRAFT</a>
+          </div>
+        </div>
+      </section>
+      <section id="craft-images">
+        <div class="row">
+          <img src="https://placehold.jp/1000x640.png" alt="" />
+        </div>
+        <div class="row-to-col">
+          <img src="https://placehold.jp/1000x640.png" alt="" /><img
+            src="https://placehold.jp/1000x640.png"
+            alt=""
+          />
+        </div>
+      </section>
+      <section id="orari">
+        <div class="row-to-col title-text">
+          <h1>Orari</h1>
+          <div id="orari-list">
+            <div class="day">
+              <span>Lunedì</span><span>Chiuso</span><span>15:00 - 19:30</span>
             </div>
-            <div class="row-to-col">
-                <img src="https://placehold.jp/1000x640.png" alt=""><img src="https://placehold.jp/1000x640.png" alt="">
+            <div class="day">
+              <span>Martedì</span><span>8:30 - 12:30</span
+              ><span>15:00 - 19:30</span>
             </div>
-        </section>
-        <section id="servizi-e-prodotti">
-            <div class="row-to-col">
-                <div>
-                    <h2>Servizi</h2>
-                    <ul>
-                        <a class="servizio" href="#">Stampa personalizzata</a>
-                        <a class="servizio" href="#">Plotting</a>
-                        <a class="servizio" href="#">Ricamo</a>
-                        <a class="servizio" href="#">Pannellizzazione poster</a>
-                    </ul>
-                    <a class="cta"><span>Tutti i servizi</span><img src="assets/icons/arrow.svg" alt=""></a>
-                </div>
-                <div>
-                    <h2>Prodotti</h2>
-                    <ul>
-                        <a class="prodotto" href="#">Cartoleria</a>
-                        <a class="prodotto" href="#">protezione individuale</a>
-                        <a class="prodotto" href="#">Accessori</a>
-                        <a class="prodotto" href="#">Articoli tecnici</a>
-                    </ul>
-                    <a class="cta"><span>Tutti i prodotti</span><img src="assets/icons/arrow.svg" alt=""></a>
-                </div>
+            <div class="day">
+              <span>Mercoledì</span><span>8:30 - 12:30</span
+              ><span>15:00 - 19:30</span>
             </div>
-        </section>
-        <section id="craft">
-            <div class="row-to-col title-text">
-                <h1>CRAFT</h1>
-                <div>
-                    <p>Disponiamo dei materiali CRAFT, leader mondiale nell’abbigliamento sportivo e si evolve in
-                        base ai feedback dei migliori atleti internazionali.</p><a href="#">Visita il sito di
-                        CRAFT</a>
-                </div>
+            <div class="day">
+              <span>Giovedì</span><span>8:30 - 12:30</span
+              ><span>15:00 - 19:30</span>
             </div>
-        </section>
-        <section id="craft-images">
-            <div class="row"><img src="https://placehold.jp/1000x640.png" alt=""></div>
-            <div class="row-to-col">
-                <img src="https://placehold.jp/1000x640.png" alt=""><img src="https://placehold.jp/1000x640.png" alt="">
+            <div class="day">
+              <span>Venerdì</span><span>8:30 - 12:30</span
+              ><span>15:00 - 19:30</span>
             </div>
-        </section>
-        <section id="orari">
-            <div class="row-to-col title-text">
-                <h1>Orari</h1>
-                <div id="orari-list">
-                        <div class="day"><span>Lunedì</span><span>Chiuso</span><span>15:00 - 19:30</span></div>
-                        <div class="day"><span>Martedì</span><span>8:30 - 12:30</span><span>15:00 - 19:30</span></div>
-                        <div class="day"><span>Mercoledì</span><span>8:30 - 12:30</span><span>15:00 - 19:30</span></div>
-                        <div class="day"><span>Giovedì</span><span>8:30 - 12:30</span><span>15:00 - 19:30</span></div>
-                        <div class="day"><span>Venerdì</span><span>8:30 - 12:30</span><span>15:00 - 19:30</span></div>
-                        <div class="day"><span>Sabato</span><span>8:30 - 12:30</span><span>Chiuso</span></div>
-                        <div class="day"><span>Domenica</span><span>Chiuso</span><span>Chiuso</span></div>
-                </div>
+            <div class="day">
+              <span>Sabato</span><span>8:30 - 12:30</span><span>Chiuso</span>
             </div>
-        </section>
+            <div class="day">
+              <span>Domenica</span><span>Chiuso</span><span>Chiuso</span>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section id="basket">
+        <div class="row-to-col title-text">
+          <h1>Basket Cantù 1936</h1>
+          <div>
+            <p>
+              Disponiamo dei materiali CRAFT, leader mondiale nell’abbigliamento
+              sportivo e si evolve in base ai feedback dei migliori atleti
+              internazionali.
+            </p>
+            <a class="link-dark" href="#">Visita il sito di CRAFT</a>
+          </div>
+        </div>
+      </section>
+      <section id="basket-images">
+        <div class="row-to-col">
+          <img src="https://placehold.jp/1000x640.png" alt="" /><img
+            src="https://placehold.jp/1000x640.png"
+            alt=""
+          />
+        </div>
+      </section>
+      <footer id="footer-contacts">
+        <div class="row-to-col title-text">
+          <div>
+            <p>
+                Via Rebecchino 7/A <br> 
+                Cantù (CO), 22063
+            </p>
+            <a href="#">Apri in Maps</a>
+          </div>
+          <h1>Qui per risolvere ogni dubbio</h1>
+        </div>
+      </footer>
     </div>
-</body>
-
+  </body>
 </html>
