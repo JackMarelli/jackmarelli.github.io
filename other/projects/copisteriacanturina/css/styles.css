@@ -187,7 +187,7 @@ section {
 }
 
 #servizi-e-prodotti .cta img {
-  height: .7em;
+  height: 0.7em;
   object-fit: contain;
 }
 
@@ -200,8 +200,8 @@ section {
 }
 
 .title-text h1 {
- font-size: var(--fs-xxl);
- font-weight: 600;
+  font-size: var(--fs-xxl);
+  font-weight: 600;
 }
 
 .title-text p {
@@ -220,26 +220,26 @@ section {
 }
 
 #orari #orari-list {
-    display: flex;
-    flex-flow: column nowrap;
-    justify-content: start;
-    align-items: start;
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: start;
+  align-items: start;
 }
 
 #orari .day {
- width: 100%;
- border-bottom: 1px solid var(--black);
+  width: 100%;
+  border-bottom: 1px solid var(--black);
 
- display: flex;
- flex-flow: row wrap;
- justify-content: space-between;
- padding: calc(var(--horizontal-padding) / 2) 1px;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
+  padding: calc(var(--horizontal-padding) / 2) 1px;
 
- font-size: var(--fs-sm);
+  font-size: var(--fs-sm);
 }
 
 #orari .day:first-child {
-  border-top: 1px solid var(--black)
+  border-top: 1px solid var(--black);
 }
 
 #orari .day > * {
@@ -251,14 +251,29 @@ section {
   font-weight: 600;
 }
 
-#footer-contacts {
+#contacts {
   background: var(--black);
   color: var(--white);
   padding: var(--horizontal-padding) 0 0 0;
+
+  display: flex;
+  flex-flow: column;
 }
 
-#footer-contacts a {
+#contacts {
+  height: 100vh;
+}
+
+#contacts a {
   columns: var(--white);
+}
+
+footer {
+  height: fit-content;
+  padding: calc(var(--horizontal-padding) / 2) var(--horizontal-padding);
+  background: var(--yellow);
+  display: flex;
+  justify-content: space-between;
 }
 
 .link-dark {
@@ -273,7 +288,7 @@ section {
   :root {
     --horizontal-padding: 16px;
 
-    --fs-sm: .9em;
+    --fs-sm: 0.9em;
     --fs-md: 1em;
     --fs-lg: 1.2em;
     --fs-xl: 2.4em;
