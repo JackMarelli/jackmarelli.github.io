@@ -1,7 +1,7 @@
 const _app = {};
 
 _app.helloDiv = document.querySelector("#hello");
-_app.hellos = ["Hello", "Ciao", "Hola", "Alo", "Ave", "Salut", "Ahoj", "Privet", "Namaste", "Halo", "Shalom", "Nadzar", "Nin Hao"];
+_app.hellos = ["Hello", "Ciao", "Hola", "Alo", "Ave", "Salut", "Ahoj", "привіт", "नमस्ते", "Halo", "שלום", "Nadzar", "你好" ,"здрасти", "안녕하세요", "سلام", "ਸਤ ਸ੍ਰੀ ਅਕਾਲ", "Здраво", "สวัสดี", "こんにちは", "გამარჯობა"];
 _app.vHeigth = window.innerHeight;
 
 _app.setFoldHeight = () => {
@@ -13,7 +13,7 @@ _app.setFoldHeight = () => {
 }
 
 _app.initHelloCarousel = () => {
-    let helloIndex = 0;
+    let helloIndex = Math.floor(Math.random() * _app.hellos.length);;
     setInterval(() => {
         _app.helloDiv.innerHTML = _app.hellos[helloIndex];
         if (helloIndex < _app.hellos.length - 1) {

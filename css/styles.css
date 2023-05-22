@@ -161,20 +161,18 @@ nav img {
 
 .big .big-contact {
   font-size: 7vw;
-  transform: translateY(90%);
+  transform: translateY(50%);
   position: relative;
 }
 
 .link-decor {
-  display: none;
-
   background-image: url("../assets/images/elements/ellipse.svg");
   position: absolute;
   width: 100%;
   z-index: -1;
   top: 50%;
   left: 50%;
-
+  transform: translateX(-50%) translateY(-50%);
   animation: linkdecormove 3s ease-in-out infinite;
 }
 
