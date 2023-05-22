@@ -192,6 +192,44 @@ nav img {
   font-size: var(--fs-md);
 }
 
+/* WORKS */
+.workslist {
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: start;
+  align-items: start;
+}
+
+.workslist .work {
+  width: 100%;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+  align-items: start;
+  padding: 0 var(--horizontal-padding) var(--horizontal-padding) var(--horizontal-padding);
+  border-bottom: 1px solid var(--black);
+}
+
+.workslist .work .info {
+  height: 100%;
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: space-between;
+  align-items: start;
+}
+
+.workslist .images {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+  align-items: start;
+}
+
+.workslist .images img {
+  width: 100px;
+  height: 100%;
+}
+
 /* UTILS */
 .inline-contain {
   padding: 0 var(--horizontal-padding);
