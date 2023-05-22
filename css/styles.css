@@ -202,12 +202,17 @@ nav img {
 
 .workslist .work {
   width: 100%;
+  height: fit-content;
   display: flex;
   flex-flow: row nowrap;
   justify-content: space-between;
   align-items: start;
-  padding: 0 var(--horizontal-padding) var(--horizontal-padding) var(--horizontal-padding);
+  padding: var(--horizontal-padding) 0;
   border-bottom: 1px solid var(--black);
+}
+
+.workslist .work:first-child {
+  border-top: 1px solid var(--black);
 }
 
 .workslist .work .info {
@@ -218,16 +223,35 @@ nav img {
   align-items: start;
 }
 
+.workslist .work .info .title {
+  font-size: var(--fs-lg);
+  margin: 0 0 calc(var(--horizontal-padding) / 2) 0;
+}
+
+.workslist .work .info .expertiece {
+  font-size: var(--fs-md);
+}
+
 .workslist .images {
   display: flex;
   flex-flow: row nowrap;
   justify-content: space-between;
   align-items: start;
+  height: 100%;
 }
 
-.workslist .images img {
-  width: 100px;
+.workslist .images .square {
+  height: 12vh;
+
+  aspect-ratio: 1 / 1;
+  position: relative; /* If you want text inside of it */
+  margin: 0 0 0 var(--horizontal-padding);
+}
+
+.workslist .images .square img {
+  width: 100%;
   height: 100%;
+  object-fit: cover;
 }
 
 /* UTILS */
@@ -342,5 +366,13 @@ nav img {
 
   .big .big-contact {
     margin: 45vh 0;
+  }
+
+  .workslist .work {
+    flex-flow: column nowrap;
+  }
+
+  .workslist .images .square {
+    display: none;
   }
 }
