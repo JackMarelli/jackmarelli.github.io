@@ -218,18 +218,20 @@ nav img {
 .workslist .work .info {
   height: 100%;
   display: flex;
+  font-weight: bold;
   flex-flow: column nowrap;
   justify-content: space-between;
   align-items: start;
 }
 
 .workslist .work .info .title {
-  font-size: var(--fs-lg);
+  font-size: var(--fs-md);
+  font-weight: boldZZ;
   margin: 0 0 calc(var(--horizontal-padding) / 2) 0;
 }
 
 .workslist .work .info .expertiece {
-  font-size: var(--fs-md);
+  font-size: var(--fs-sm);
 }
 
 .workslist .images {
