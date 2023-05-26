@@ -13,8 +13,8 @@ _app.randomizeColors = () => {
 
 _app.updateBlur = () => {
     _app.blurSliderValue = _app.blurSlider.value;
-    _app.canvas.style.filter = `blur(${_app.blurSliderValue}) contrast(1000)`
-    console.log('new blur value:', _app.blurSliderValue);
+    _app.canvas.style.filter = `blur(${_app.blurSliderValue}px) contrast(1000)`;
+    console.log('_app.canvas.style.filter', _app.canvas.style);
 }
 
 function setup() {
@@ -144,6 +144,6 @@ function run() {
     calculate();
 }
 
-_app.blurSlider.addEventListener("click", _app.updateBlur)
+_app.blurSlider.addEventListener("input", _app.updateBlur)
 
 setup();

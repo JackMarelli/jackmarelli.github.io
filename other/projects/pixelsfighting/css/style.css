@@ -4,6 +4,10 @@
   box-sizing: border-box;
 }
 
+p {
+  margin: 1em 0;
+}
+
 .container {
   width: 100vw;
   height: 100vh;
@@ -21,14 +25,32 @@
 }
 
 #arena {
-    filter: blur(5px) contrast(1000);
-    transition: .5s;
+  filter: contrast(1000);
+  transform: scale(1.1);
   /* animation: nyan 2s infinite; */
 }
 
-#arena:hover {
-  filter: blur(100px) contrast(1000);
-  transition: .5s;
+#arena::before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100vh;
+  backdrop-filter: blur(5px);
+}
+
+.custom-slider {
+  -webkit-appearance: none;
+  width: 300px;
+  height: 25px;
+  background: #d3d3d3;
+  outline: none;
+}
+.custom-slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  width: 25px;
+  height: 25px;
+  background: gray;
+  cursor: pointer;
 }
 
 @keyframes nyan {
