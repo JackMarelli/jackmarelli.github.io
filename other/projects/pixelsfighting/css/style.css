@@ -1,5 +1,41 @@
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.container {
+  width: 100vw;
+  height: 100vh;
+
+  display: flex;
+  flex-flow: column;
+  justify-content: center;
+  align-items: center;
+}
+
+#arena-container {
+  width: fit-content;
+  height: fit-content;
+  overflow: hidden;
+}
+
+#arena {
+    filter: blur(5px) contrast(1000);
+    transition: .5s;
+  /* animation: nyan 2s infinite; */
+}
+
+#arena:hover {
+  filter: blur(100px) contrast(1000);
+  transition: .5s;
+}
+
+@keyframes nyan {
+  0% {
+    filter: blur(100px) hue-rotate(0deg) contrast(1000);
+  }
+  100% {
+    filter: blur(100px) hue-rotate(360deg) contrast(1000);
+  }
 }
