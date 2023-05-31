@@ -22,20 +22,19 @@ _app.initHelloCarousel = () => {
 
 _app.loadNav = (pageName, pathToMenuIcon) => {
     if (_app.navTag) {
-        console.log('_app.pageName', _app.pageName);
-        console.log('_app.defaultMenuIconPath', _app.defaultMenuIconPath);
-        
+
+        if(pageName != "Home") {
+            pathToMenuIcon = "../" + pathToMenuIcon;
+        }
         _app.navTag.innerHTML  = `<div><a id="jm" class="link-dark" href="https://jackmarelli.com">JM</a><a id="jackmarelli" class="link-dark" href="https://jackmarelli.com">Jack Marelli</a><span class="nav-separator">-</span><span>${pageName}</span></div><div><img class="d-none" src="${pathToMenuIcon}" alt="Menu" /></div>`;
+        console.log('navbar successfully loaded :)');
     }
 }
 
 _app.startUp = () => {
-    _app.initHelloCarousel();
-
-    if( _app.pageName != "Home") {
-        _app.defaultMenuIconPath = "../" + _app.defaultMenuIconPath;
+    if (_app.pageName === "Home") {
+        _app.initHelloCarousel();
     }
-
     _app.loadNav(_app.pageName, _app.defaultMenuIconPath);
 }
 
