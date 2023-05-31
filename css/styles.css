@@ -10,8 +10,8 @@
 
   --fs-xs: 14px;
   --fs-sm: 16px;
-  --fs-md: 24px;
-  --fs-lg: 48px;
+  --fs-md: 20px;
+  --fs-lg: 32px;
   --fs-xl: 124px;
 }
 
@@ -48,7 +48,7 @@ a {
 nav {
   align-items: center;
   display: flex;
-  font: var(--fs-lg) sans-serif;
+  font: var(--fs-md) sans-serif;
   height: 6vh;
   justify-content: space-between;
   position: sticky;
@@ -97,11 +97,15 @@ nav .nav-separator {
 }
 
 #my-pic img {
-  height: 320px;
+  min-width: 220px;
+  min-height: 220px;
+  width: 10vh;
+  height: 10vh;
+
+
   margin: 0 0 0 var(--horizontal-padding);
   object-fit: cover;
   object-position: top;
-  width: 320px;
 }
 
 #my-pic img:hover {
@@ -381,8 +385,8 @@ nav .nav-separator {
     --fs-xs: 12px;
     --fs-sm: 14px;
     --fs-md: 20px;
-    --fs-lg: 32px;
-    --fs-xl: 76px;
+    --fs-lg: 24px;
+    --fs-xl: 54px;
   }
 
   nav {
@@ -408,19 +412,17 @@ nav .nav-separator {
 
   #hello {
     padding: 0;
-    font-size: var(--fs-lg);
   }
 
   #fold-bottom {
     flex-flow: column-reverse nowrap;
   }
 
-  #fold-about {
-    font-size: var(--fs-md);
-  }
-
   #my-pic {
+    min-width: 100%;
     width: 100%;
+    max-width: 100%;
+
     object-fit: cover;
   }
 
