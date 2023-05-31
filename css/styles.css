@@ -276,8 +276,8 @@ nav .nav-separator {
 
 #works-scroller {
   display: flex;
-  flex-flow: row nowrap;
-  flex-shrink: 0;
+  justify-content: flex-start;
+  flex-flow: row;
   overflow: auto;
 }
 

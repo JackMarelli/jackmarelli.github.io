@@ -24,13 +24,14 @@ function startUpdeskop() {
         } else {
             sx += e.deltaY;
         }
-        console.log('sx', sx)
     });
-
+    
     function render() {
         dx = li(dx, sx, 0.04);
         dx = Math.floor(dx * 100) / 100;
         scroller.scrollLeft = dx;
+        console.log('dx', dx);
+        console.log('scroller.scrollLeft', scroller.scrollLeft);
         window.requestAnimationFrame(render);
     }
 
