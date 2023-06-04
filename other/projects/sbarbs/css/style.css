@@ -1,0 +1,27 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.main {
+  position: relative;
+}
+
+.fold {
+  height: 100vh;
+}
+
+.fold,
+.scroller {
+  width: 100%;
+  position: sticky;
+  top: -200px;
+}
+
+.scroller img {
+  width: 100%;
+  height: auto;
+
+  user-select: none;
+}
