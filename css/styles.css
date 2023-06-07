@@ -82,7 +82,7 @@ nav .nav-separator {
   height: 100vh;
 
   z-index: 111;
-  display: flex;
+  display: none;
   justify-content: start;
   align-items: center;
   padding: var(--horizontal-padding);
