@@ -1,0 +1,29 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: sans-serif;
+}
+
+#wrapper {
+  width: fit-content;
+  display: flex;
+  justify-content: space-between;
+}
+
+#wrapper section {
+  width: 100vw;
+  height: 100vh;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+    
+  font-size: 6em;
+  color: #fff;
+  background-color: #abcabc;
+}
+
+#wrapper section:nth-child(even) { 
+  background-color: #abc;
+}
