@@ -1,32 +1,43 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
+  <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>THC</title>
-    <link href="
+    <link
+      href="
 https://cdn.jsdelivr.net/npm/locomotive-scroll@4.1.4/dist/locomotive-scroll.min.css
-" rel="stylesheet" />
-    <link rel="stylesheet" href="css/styles.css">
-</head>
+"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/styles.css" />
+  </head>
 
-<body>
+  <body>
     <div class="main">
-        <div data-scroll-container>
-            <div id="wrapper" data-scroll>
-                <section>1</section>
-                <section>2</section>
-                <section>3</section>
-                <section>4</section>
-                <section>5</section>
-            </div>
+      <div data-scroll-container>
+        <div id="wrapper" data-scroll>
+          <section>
+            <img
+              data-scroll
+              data-scroll-speed="2"
+              data-scroll-position="left"
+              class="parallax-background"
+              src="assets/images/fullsize/fabbrica-coraggiosa.png"
+              alt=""
+            />
+            <div class="content"></div>
+          </section>
+          <section>2</section>
+          <section>3</section>
+          <section>4</section>
+          <section>5</section>
         </div>
+      </div>
     </div>
     <script src="
 https://cdn.jsdelivr.net/npm/locomotive-scroll@4.1.4/dist/locomotive-scroll.min.js
 "></script>
     <script src="js/main.js"></script>
-</body>
-
+  </body>
 </html>

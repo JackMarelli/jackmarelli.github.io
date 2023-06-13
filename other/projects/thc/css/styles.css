@@ -8,6 +8,7 @@
 #wrapper {
   width: fit-content;
   display: flex;
+  flex-flow: row nowrap;
   justify-content: space-between;
 }
 
@@ -15,15 +16,28 @@
   width: 100vw;
   height: 100vh;
 
-  display: flex;
-  justify-content: center;
-  align-items: center;
-    
   font-size: 6em;
   color: #fff;
   background-color: #abcabc;
+  position: relative;
 }
 
-#wrapper section:nth-child(even) { 
+.parallax-background {
+  position: absolute;
+  top: 0;
+  left: 0;
+
+  width: 120vw;
+  height: auto;
+}
+
+#wrapper section:nth-child(even) {
   background-color: #abc;
+}
+
+@media (max-aspect-ratio: 10/6) {
+  .parallax-background {
+    height: 100vh;
+    width: auto;
+  }
 }
