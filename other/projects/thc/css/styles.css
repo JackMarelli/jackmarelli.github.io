@@ -1,8 +1,22 @@
+@font-face {
+  font-family: "Pantelegraph";
+  src: url(../assets/fonts/pantelegraph.ttf);
+}
+
+@import url("https://fonts.googleapis.com/css2?family=Oswald:wght@300&display=swap");
+
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
   font-family: sans-serif;
+}
+
+:root {
+  --black: #000010;
+  --white: #fffff1;
+
+  --hp: 24px;
 }
 
 #wrapper {
@@ -29,10 +43,29 @@
 
   width: 120vw;
   height: auto;
+
+  z-index: 0;
+}
+
+.content {
+  z-index: 1;
+  position: absolute;
+  top: var(--hp);
+  left: var(--hp);
+  bottom: var(--hp);
+  right: var(--hp);
 }
 
 #wrapper section:nth-child(even) {
   background-color: #292929;
+}
+
+#fold-desc {
+  position: absolute;
+  bottom: var(--hp);
+  left: 0;
+  width: 33vw;
+  white-space: wrap;
 }
 
 @media (max-aspect-ratio: 10/6) {
@@ -40,4 +73,55 @@
     height: 100vh;
     width: auto;
   }
+}
+
+@media (max-width: 680px) {
+  #fold-desc {
+    width: 100%;
+  }
+}
+
+.bg-black {
+  background-color: var(--black);
+}
+
+.bg-white {
+  background-color: var(--white);
+}
+
+.cl-black {
+  color: var(--black);
+}
+
+.cl-white {
+  color: var(--white);
+}
+
+.f-display {
+  font-family: "Pantelegraph";
+  font-size: 16vw;
+  line-height: 100%;
+  letter-spacing: -0.1vw;
+}
+
+.f-l {
+  font-family: "Oswald";
+  font-size: 32px;
+  font-weight: 300;
+  line-height: 100%;
+}
+
+.f-s {
+  font-family: sans-serif;
+  font-size: 16px;
+  font-weight: 300;
+  line-height: 100%;
+}
+
+.px {
+  padding: 0 calc(var(--hp) / 2);
+}
+
+.py {
+  padding: calc(var(--hp) / 2) 0;
 }
