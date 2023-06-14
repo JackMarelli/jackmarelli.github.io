@@ -18,7 +18,7 @@
 
   font-size: 6em;
   color: #fff;
-  background-color: #abcabc;
+  background-color: #000010;
   position: relative;
 }
 
@@ -32,7 +32,7 @@
 }
 
 #wrapper section:nth-child(even) {
-  background-color: #abc;
+  background-color: #292929;
 }
 
 @media (max-aspect-ratio: 10/6) {
