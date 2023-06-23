@@ -17,13 +17,11 @@ html.has-scroll-dragging {
 [data-scroll-direction="horizontal"] [data-scroll-container] {
   display: inline-block;
   height: 100vh;
-  white-space: nowrap;
 }
 [data-scroll-direction="horizontal"] [data-scroll-section] {
   display: inline-block;
   height: 100%;
   vertical-align: top;
-  white-space: nowrap;
 }
 .c-scrollbar {
   height: 100%;

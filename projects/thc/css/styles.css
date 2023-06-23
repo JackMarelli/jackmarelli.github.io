@@ -8,6 +8,16 @@
   font-kerning: auto;
 }
 
+*,
+* > img {
+  user-drag: none;
+  -webkit-user-drag: none;
+  user-select: none;
+  -moz-user-select: none;
+  -webkit-user-select: none;
+  -ms-user-select: none;
+}
+
 :root {
   --black: #101010;
   --white: #f1f1f1;
@@ -31,6 +41,7 @@
   position: absolute;
   top: 0;
   left: 0;
+  height: 100vh;
 
   z-index: -99 !important;
 }
@@ -39,6 +50,11 @@
   overflow: hidden;
 }
 
+.parallax-background img,
+.parallax-image img {
+  height: 100%;
+  width: auto;
+}
 .content {
   z-index: 1;
   position: absolute;
@@ -63,25 +79,24 @@
   width: auto;
 }
 
-.content-section {
-  width: fit-content;
-}
-
 #agenda {
   width: fit-content;
   height: 100%;
   display: flex;
   flex-flow: column;
   justify-content: space-between;
-  align-items: start; 
+  align-items: start;
+
+  padding-right: 30vh;
+  border-left: 1px solid var(--black);
 }
 
 #agenda h2 {
   font-size: 12vw;
   font-family: "Deutschlander";
   font-weight: 300;
-  text-transform: uppercase ;
-  letter-spacing: .1vw;
+  text-transform: uppercase;
+  letter-spacing: 0.1vw;
   line-height: 70%;
 }
 
@@ -95,29 +110,48 @@
   justify-content: start;
   align-items: end;
   height: fit-content;
-  padding: 1vh 0;
+  padding: 0.3vh 0;
 }
 
 #agenda .number {
   font-family: "Pantelegraph";
-  padding: 0 var(--hp);
-  font-size: 2.4vh;
-  line-height: 80%;
+  padding: 0 20px 0 0;
+  font-size: 1.6vh;
+  line-height: 1.6vh;
 }
 
-#agenda .title {
-  font-family: "Oswald";
-  font-weight: 300;
-  font-size: 4.2vh;
-  line-height: 90%;
+.cit {
+  display: flex;
+  flex-flow: column;
+  justify-content: start;
+  align-items: start;
+}
+
+.cit .text {
+  white-space: normal;
+}
+
+.cit .info {
+  padding: 2vh 0 0 0;
+}
+
+.text-small {
+  font-size: 1.4vh;
+  line-height: 2vh;
 }
 
 #fold-desc {
   position: absolute;
   bottom: 0;
   left: 0;
-  width: 33vw;    
+  width: 33vw;
   white-space: wrap;
+}
+
+#s-1 {
+  display: flex;
+  flex-flow: column;
+  justify-content: space-between;
 }
 
 @media (max-aspect-ratio: 10/6) {
