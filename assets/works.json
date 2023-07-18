@@ -1,0 +1,32 @@
+{
+    "works": [
+        {
+            "title": "UNIQ",
+            "expertiece": [
+                "Identity concept",
+                "Mood",
+                "Business cards"
+            ],
+            "imageName": "uniq-thumb.png",
+            "detailPageName": "uniq"
+        },
+        {
+            "title": "V&V",
+            "expertiece": [
+                "Website development"
+            ],
+            "imageName": "vev-thumb.png",
+            "detailPageName": "vev"
+        },
+        {
+            "title": "Jack Marelli",
+            "expertiece": [
+                "Creative resume",
+                "Personal identity",
+                "Website design",
+                "Website development"
+            ],
+            "imageName": "jm-thumb.png"
+        }
+    ]
+}

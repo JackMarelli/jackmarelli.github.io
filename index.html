@@ -7,19 +7,18 @@
     <link rel="stylesheet" href="css/styles.css" />
   </head>
 
-  <body>
+  <body class="theme-light">
     <div id="pageName" class="d-none">Home</div>
     <div class="main">
       <div id="overlayMenu">
-          <div class="links">
-            <div class="menu-link">About</div>
-            <div class="menu-link">Projects</div>
-            <div class="menu-link">Contact</div>
-          </div>
+        <div class="links">
+          <div class="menu-link">About</div>
+          <div class="menu-link">Projects</div>
+          <div class="menu-link">Contact</div>
+        </div>
       </div>
-      <nav class="inline-contain">
-      </nav>
-      <section id="fold" class="inline-contain">
+      <nav class="inline-contain theme-light"></nav>
+      <section id="fold" class="inline-contain theme-light">
         <div id="hello"></div>
         <div id="fold-bottom">
           <div id="fold-about">
@@ -28,7 +27,12 @@
             to demand.
             <div id="ied">
               Currently studying in
-              <a class="link-dark hover-underline-animation" href="https://www.ied.it/" target="_blank">IED</a>
+              <a
+                class="hover-underline-animation theme-light"
+                href="https://www.ied.it/"
+                target="_blank"
+                >IED</a
+              >
             </div>
           </div>
           <div id="my-pic">
@@ -37,36 +41,17 @@
         </div>
       </section>
       <section id="works" class="inline-contain">
-        <h2>Recent projects:</h2>
-        <div>
-          <a class="works-item link-dark" href="https://www.behance.net/gallery/169770509/UNIQ-Bar-Restourant-Identity-Concept" target="_blank">
-            <div class="info">
-              <span class="name">Uniq</span
-              ><span class="expertiece"
-                >Identity concept, Mood, Business cards</span
-              >
-            </div>
-            <div><img src="assets/images/fullsize/uniq.png" alt="" /></div>
-          </a>
-          <a class="works-item link-dark" href="http://vev-cleangarden.it/" target="_blank">
-            <div class="info">
-              <spa class="name">V&V</spa  n
-              ><span class="expertiece">Website development</span>
-            </div>
-            <div>
-              <img src="assets/images/fullsize/albero-vev.png" alt="" />
-            </div>
-          </a>
-        </div>
-        <a class="link-dark hover-underline-animation d-none" href="pages/works.html"
-          >See all projects</a
-        >
+        <h2>Explore my work:</h2>
+        <ul id="worksList">
+          <!-- items appended from json via js -->
+        </ul>
       </section>
-      <section id="contacts" class="inline-contain">
+      <section id="contacts" class="inline-contain theme-dark">
+        <h2>Let's talk about your needs or ideas:</h2>
         <div class="big">
           <a
             href="mailto:marelligiacomo@gmail.com"
-            class="big-contact link-dark hover-underline-animation"
+            class="big-contact hover-underline-animation theme-dark"
             >marelligiacomo@gmail.com
             <img
               class="link-decor d-none"
@@ -75,25 +60,39 @@
             />
           </a>
         </div>
-        <div class="footer">
-        <div class="social-icons">
-          <a class="icon" href="https://www.instagram.com/jack.marelli/">
-            <img src="assets/icons/instagram.svg" alt="Instagram" />
-          </a>
-          <a class="icon" href="https://www.fiverr.com/giacomomarelli?up_rollout=true">
-            <img src="assets/icons/fiverr.svg" alt="Fiverr" />
-          </a>
-          <a class="icon" href="https://www.linkedin.com/in/giacomo-marelli-6a8866230/">
-            <img src="assets/icons/linkedin.svg" alt="Linkedin" />
-          </a>
-          <a class="icon" href="https://git hub.com/JackMarelli">
-            <img src="assets/icons/github.svg" alt="Github" />
-          </a>
-          <a href="#" class="link-dark back-to-top hover-underline-animation">Back to top</a>
+        <div class="footer theme-dark">
+          <div class="social-icons">
+            <a class="icon" href="https://www.instagram.com/jack.marelli/">
+              <img src="assets/icons/instagram.svg" alt="Instagram" />
+            </a>
+            <a
+              class="icon"
+              href="https://www.fiverr.com/giacomomarelli?up_rollout=true"
+            >
+              <img src="assets/icons/fiverr.svg" alt="Fiverr" />
+            </a>
+            <a
+              class="icon"
+              href="https://www.linkedin.com/in/giacomo-marelli-6a8866230/"
+            >
+              <img src="assets/icons/linkedin.svg" alt="Linkedin" />
+            </a>
+            <a class="icon" href="https://git hub.com/JackMarelli">
+              <img src="assets/icons/github.svg" alt="Github" />
+            </a>
+            <a href="#" class="back-to-top hover-underline-animation theme-dark"
+              >Back to top</a
+            >
+          </div>
         </div>
-      </div>
       </section>
     </div>
-    <script src="js/main.js"></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"
+      integrity="sha512-16esztaSRplJROstbIIdwX3N97V1+pZvV33ABoG1H2OyTttBxEGkTsoIVsiP1iaTtM8b3+hu2kB6pQ4Clr5yug=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+    <script src="js/main.js"><  /script>
   </body>
 </html>
