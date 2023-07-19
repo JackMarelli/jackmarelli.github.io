@@ -251,18 +251,6 @@ nav .nav-separator {
   height: 40%;
 }
 
-.work img.swipeimage {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 300px;
-  height: 200px;
-  object-fit: cover;
-  z-index: 999;
-  opacity: 0;
-  visibily: hidden;
-  pointer-events: none;
-}
 
 /* UTILS */
 .inline-contain {
@@ -422,12 +410,12 @@ nav .nav-separator {
   }
 
   /* CONTACTS */
-  #contacts {
-    height: fit-content;
+  #contacts h2 {
+    font-size: large;
   }
 
-  .big .big-contact {
-    margin: 45vh 0;
+  .big-contact {
+    text-decoration: underline double;
   }
 
   .social-icons * {
@@ -444,6 +432,10 @@ nav .nav-separator {
   }
 
   .work .exp {
+    display: none;
+  }
+
+  .seekingImg {
     display: none;
   }
 }

@@ -8,14 +8,15 @@
                 "Business cards"
             ],
             "imageName": "uniq-thumb.png",
-            "detailPageName": "uniq"
+            "redirect": "https://www.behance.net/gallery/169770509/UNIQ-Bar-Restourant-Identity-Concept"
         },
         {
             "title": "V&V",
             "expertiece": [
                 "Website development"
             ],
-            "imageName": "vev-thumb.png"
+            "imageName": "vev-thumb.png",
+            "redirect": "http://www.vev-cleangarden.it/"
         },
         {
             "title": "Jack Marelli",
@@ -25,7 +26,8 @@
                 "Website design",
                 "Website development"
             ],
-            "imageName": "jm-thumb.png"
+            "imageName": "jm-thumb.png",
+            "redirect": "https://pitch.com/public/a11bd9a9-6432-4e14-8989-5f6288e39d51"
         }
     ]
 }

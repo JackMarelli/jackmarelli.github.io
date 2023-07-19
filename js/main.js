@@ -57,6 +57,7 @@ _app.loadNav = (pageName, pathToMenuIcon) => {
 
 _app.loadWorks = () => {
   _app.seekingImg.style.visibility = "hidden";
+  _app.seekingImg.className = "seekingImg";
   _app.seekingImg.style.position = "absolute";
   _app.seekingImg.style.width = 1.625 * 200;
   _app.seekingImg.style.height = 1 * 200;
@@ -69,8 +70,10 @@ _app.loadWorks = () => {
     .then((json) => {
       json.works.forEach((item) => {
         //new work
-        let work = document.createElement("li");
-        work.className = "work";
+        let work = document.createElement("a");
+        work.className = "work theme-light";
+        work.href = item.redirect;
+        work.target = "_blank";
 
         //work title
         let title = document.createElement("div");
@@ -93,7 +96,6 @@ _app.loadWorks = () => {
 
         //image
         let img = document.createElement("img");
-        img.className = "swipeimage";
         img.src = `assets/images/thumbnails/${item.imageName}`;
 
         //image following mouse
@@ -107,7 +109,6 @@ _app.loadWorks = () => {
         work.appendChild(title);
         work.appendChild(expertiece);
         work.appendChild(redirArrow);
-        work.appendChild(img);
         _app.worksListNode.append(work);
       });
     });
