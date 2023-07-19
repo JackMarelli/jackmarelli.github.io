@@ -117,7 +117,7 @@ _app.startUp = () => {
   if (_app.pageName === "Home") {
     _app.initHelloCarousel();
     _app.loadWorks();
-    //_app.loadGsapWorksImages();
+    //_app.loadGsapWorksImages(); test
   }
   _app.loadNav(_app.pageName, _app.defaultMenuIconPath);
 };
