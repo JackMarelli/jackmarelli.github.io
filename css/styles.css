@@ -11,7 +11,7 @@
   --fs-xs: 14px;
   --fs-sm: 16px;
   --fs-md: 20px;
-  --fs-lg: 32px;
+  --fs-lg: 48px;
   --fs-xl: 124px;
 }
 
@@ -173,6 +173,7 @@ nav .nav-separator {
 
 #contacts h2 {
   padding: 2em 0 0 0;
+  text-align: center;
 }
 
 .big {
@@ -363,7 +364,7 @@ nav .nav-separator {
     --fs-xs: 12px;
     --fs-sm: 14px;
     --fs-md: 20px;
-    --fs-lg: 24px;
+    --fs-lg: 32px;
     --fs-xl: 54px;
   }
 
@@ -411,11 +412,17 @@ nav .nav-separator {
 
   /* CONTACTS */
   #contacts h2 {
-    font-size: large;
+    font-size: var(--fs-sm);
   }
 
-  .big-contact {
-    text-decoration: underline double;
+  .big {
+    margin: 1em 0;
+    padding: 1em 0;
+    border: 1px solid var(--white);
+    border-radius: 8px;
+  }
+
+  .big a {
   }
 
   .social-icons * {

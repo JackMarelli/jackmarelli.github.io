@@ -99,11 +99,14 @@ _app.loadWorks = () => {
         img.src = `assets/images/thumbnails/${item.imageName}`;
 
         //image following mouse
-        work.addEventListener("mouseover", (e) => {
+        work.addEventListener("mouseenter", (e) => {
           _app.seekingImg.src = img.src;
           _app.seekingImg.style.visibility = "visible";
           _app.seekingImg.style.top = e.pageY - _app.seekingImg.height / 2;
           _app.seekingImg.style.left = e.pageX + _app.seekingImg.height / 2;
+        });
+        work.addEventListener("mouseleave", (e) => {
+          _app.seekingImg.style.visibility = "hidden";
         });
 
         work.appendChild(title);
