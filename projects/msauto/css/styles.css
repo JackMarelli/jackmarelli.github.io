@@ -11334,7 +11334,7 @@ header.masthead .masthead-heading {
 }
 
 #portfolio .portfolio-item .img-fluid {
-  height: 16rem;
+  height: 16rem !important;
   width: 100%;
   object-fit: cover;
 }
