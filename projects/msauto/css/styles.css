@@ -11321,16 +11321,34 @@ header.masthead .masthead-heading {
     margin-bottom: 4rem;
   }
 }
+
 #portfolio .portfolio-item {
-  max-width: 26rem;
   margin-left: auto;
   margin-right: auto;
 }
+
 #portfolio .portfolio-item .portfolio-link {
   position: relative;
   display: block;
   margin: 0 auto;
 }
+
+#portfolio .portfolio-item .img-fluid {
+  height: 16rem;
+  width: 100%;
+  object-fit: cover;
+}
+
+@media (max-width: 768px) {
+  #portfolio .portfolio-item {
+    width: 100%;
+  }
+
+  #portfolio .portfolio-item .img-fluid {
+    height: 14rem;
+  }
+}
+
 #portfolio .portfolio-item .portfolio-link .portfolio-hover {
   display: flex;
   position: absolute;
