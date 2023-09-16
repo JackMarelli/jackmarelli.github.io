@@ -1,23 +1,6 @@
 {
     "works": [
-        {
-            "title": "UNIQ",
-            "expertiece": [
-                "Identity concept",
-                "Mood",
-                "Business cards"
-            ],
-            "imageName": "uniq-thumb.png",
-            "redirect": "https://www.behance.net/gallery/169770509/UNIQ-Bar-Restourant-Identity-Concept"
-        },
-        {
-            "title": "V&V",
-            "expertiece": [
-                "Website development"
-            ],
-            "imageName": "vev-thumb.png",
-            "redirect": "http://www.vev-cleangarden.it/"
-        },
+        
         {
             "title": "Jack Marelli",
             "expertiece": [
@@ -28,6 +11,24 @@
             ],
             "imageName": "jm-thumb.png",
             "redirect": "https://pitch.com/public/a11bd9a9-6432-4e14-8989-5f6288e39d51"
+        },
+        {
+            "title": "UNIQ",
+            "expertiece": [
+                 "Brand itendity",
+                 "Storytelling",
+                 "Business cards"
+            ],
+            "imageName": "uniq-thumb.png",
+            "redirect": "https://www.behance.net/gallery/169770509/UNIQ-Bar-Restourant-Identity-Concept"
+        },
+        {
+            "title": "V&V",
+            "expertiece": [
+                "Website development"
+            ],
+            "imageName": "vev-thumb.webp",
+            "redirect": "http://www.vev-cleangarden.it/"
         }
     ]
 }

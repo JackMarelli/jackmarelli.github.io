@@ -25,6 +25,10 @@ _app.hellos = [
   "こんにちは",
   "გამარჯობა",
 ];
+_app.locoScroll = new LocomotiveScroll({
+  el: document.querySelector("[data-scroll-container]"),
+  smooth: true,
+});
 _app.navTag = document.querySelector("nav");
 _app.pageName = document.querySelector("#pageName").innerHTML;
 _app.seekingImg = document.createElement("img");
@@ -56,24 +60,19 @@ _app.loadNav = (pageName, pathToMenuIcon) => {
 };
 
 _app.loadWorks = () => {
-  _app.seekingImg.style.visibility = "hidden";
-  _app.seekingImg.className = "seekingImg";
-  _app.seekingImg.style.position = "absolute";
-  _app.seekingImg.style.width = 1.625 * 200;
-  _app.seekingImg.style.height = 1 * 200;
-  _app.seekingImg.style.objectFit = "cover";
-  _app.seekingImg.style.pointerEvents = "none";
-  _app.worksListNode.appendChild(_app.seekingImg);
-
   fetch(_app.worksJsonPath)
     .then((response) => response.json())
     .then((json) => {
       json.works.forEach((item) => {
         //new work
         let work = document.createElement("a");
-        work.className = "work theme-light";
+        work.className = "w inline-contain block-contain";
         work.href = item.redirect;
         work.target = "_blank";
+
+        //work text container
+        let text = document.createElement("div");
+        text.className = "text";
 
         //work title
         let title = document.createElement("div");
@@ -89,31 +88,21 @@ _app.loadWorks = () => {
         }
         expertiece.innerText = expText.slice(0, expText.length - 2);
 
-        //redir arrow
-        let redirArrow = document.createElement("img");
-        redirArrow.className = "redir";
-        redirArrow.src = `assets/icons/arrow.svg`;
-
         //image
         let img = document.createElement("img");
         img.src = `assets/images/thumbnails/${item.imageName}`;
 
-        //image following mouse
-        work.addEventListener("mouseenter", (e) => {
-          _app.seekingImg.src = img.src;
-          _app.seekingImg.style.visibility = "visible";
-          _app.seekingImg.style.top = e.pageY - _app.seekingImg.height / 2;
-          _app.seekingImg.style.left = e.pageX + _app.seekingImg.height / 2;
-        });
-        work.addEventListener("mouseleave", (e) => {
-          _app.seekingImg.style.visibility = "hidden";
-        });
-
-        work.appendChild(title);
-        work.appendChild(expertiece);
-        work.appendChild(redirArrow);
-        _app.worksListNode.append(work);
+        //append everything
+        text.appendChild(title);
+        text.appendChild(expertiece);
+        work.appendChild(text);
+        work.appendChild(img);
+        _app.worksListNode.insertBefore(work, document.querySelector("#yp"));
       });
+    })
+    .then(() => {
+      console.log("loco scroll update");
+      _app.locoScroll.update();
     });
 };
 
@@ -123,7 +112,12 @@ _app.startUp = () => {
     _app.loadWorks();
     //_app.loadGsapWorksImages(); test
   }
+
   _app.loadNav(_app.pageName, _app.defaultMenuIconPath);
 };
 
 _app.startUp();
+
+window.onresize = () => {
+  _app.locoScroll.update();
+}
