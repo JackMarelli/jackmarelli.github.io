@@ -1,10 +1,11 @@
 :root {
   --accent: #bca480;
   --black: #000;
-  --fs-lg: 48px;
+  --fs-lg: 28px;
   --fs-md: 20px;
   --fs-sm: 16px;
-  --fs-xl: 124px;
+  --fs-xl: 48px;
+  --fs-xxl: 124px;
   --fs-xs: 14px;
   --hm: #e325ca;
   --horizontal-padding: 24px;
@@ -84,12 +85,12 @@ nav .nav-separator {
 }
 
 #fold-about {
-  font-size: var(--fs-lg);
+  font-size: var(--fs-xl);
   max-width: 1200px;
 }
 
 #hello {
-  font-size: var(--fs-xl);
+  font-size: var(--fs-xxl);
   padding: 1rem 0 0 0;
 }
 
@@ -169,6 +170,10 @@ nav .nav-separator {
   transform: scaleX(1);
 }
 
+#skills {
+  margin-bottom: calc(var(--horizontal-padding) * 3);
+}
+
 #works {
   margin: 3em 0 3em 0;
 }
@@ -206,7 +211,7 @@ nav .nav-separator {
 
 .hover-underline-animation::after {
   background-color: inherit;
-  bottom: -1px;
+  bottom: -2px;
   content: "";
   height: 2px;
   left: 0;
@@ -254,6 +259,10 @@ nav .nav-separator {
   margin: 0 0 calc(var(--horizontal-padding) / 4) 0;
 }
 
+.social:hover {
+  opacity: 0.7;
+}
+
 .theme-light {
   background-color: var(--primary);
   color: var(--secondary);
@@ -276,6 +285,22 @@ nav .nav-separator {
   background-color: var(--primary);
 }
 
+.tool {
+  margin-inline: var(--horizontal-padding);
+  font-size: var(--fs-lg);
+}
+
+.tool > :not(div:nth-child(1)) {
+  padding-block: calc(var(--horizontal-padding) / 3);
+  border-top: 2px solid var(--secondary);
+}
+
+.tool .title {
+  padding-top: calc(var(--horizontal-padding) / 2);
+  border-top: 2px solid var(--secondary);
+  font-size: var(--fs-lg);
+}
+
 .w {
   align-items: start;
   border-radius: 20px;
@@ -291,7 +316,7 @@ nav .nav-separator {
 }
 
 .w:hover {
-  border: 1px solid var(--secondary);
+  border: 2px solid var(--secondary);
 }
 
 .w:hover > img {
@@ -335,7 +360,7 @@ nav .nav-separator {
   display: flex;
   justify-content: center;
   align-items: center;
-  border: 1px solid var(--secondary);
+  border: 2px solid var(--secondary);
 }
 
 .your-project div {
@@ -353,7 +378,6 @@ nav .nav-separator {
   white-space: nowrap;
   margin: 0 0 var(--horizontal-padding) 0;
 }
-
 
 .your-project:hover > img {
   transform: rotate(270deg);
@@ -378,19 +402,19 @@ nav .nav-separator {
     transform: translate(1px, 1px) rotate(0deg);
   }
   10% {
-    transform: translate(-1px, -2px) rotate(-1deg);
+    transform: translate(-1px, -1px) rotate(-1deg);
   }
   20% {
     transform: translate(-3px, 0px) rotate(1deg);
   }
   30% {
-    transform: translate(3px, 2px) rotate(0deg);
+    transform: translate(3px, 1px) rotate(0deg);
   }
   40% {
     transform: translate(1px, -1px) rotate(1deg);
   }
   50% {
-    transform: translate(-1px, 2px) rotate(-1deg);
+    transform: translate(-1px, 1px) rotate(-1deg);
   }
   60% {
     transform: translate(-3px, 1px) rotate(0deg);
@@ -402,10 +426,10 @@ nav .nav-separator {
     transform: translate(-1px, -1px) rotate(1deg);
   }
   90% {
-    transform: translate(1px, 2px) rotate(0deg);
+    transform: translate(1px, 1px) rotate(0deg);
   }
   100% {
-    transform: translate(1px, -2px) rotate(-1deg);
+    transform: translate(1px, -1px) rotate(-1deg);
   }
 }
 
@@ -436,12 +460,18 @@ nav .nav-separator {
     justify-content: start;
   }
 
+  #fold-about {
+    margin-top: calc(var(--horizontal-padding) * 2.4);
+    font-size: var(--fs-lg);
+  }
+
   #fold-bottom {
     flex-flow: column-reverse nowrap;
   }
 
   #hello {
     padding: 0;
+    font-size: var(--fs-xl);
   }
 
   #jackmarelli {
@@ -466,10 +496,35 @@ nav .nav-separator {
   }
 
   .big {
-    border: 1px solid var(--white);
+    border: 2px solid var(--white);
     border-radius: 8px;
     margin: 1em 0;
     padding: 1em 0;
+  }
+
+  .tool {
+    margin-inline: var(--horizontal-padding);
+    font-size: var(--fs-md);
+  }
+
+  .tool > :not(div:nth-child(1)) {
+    padding-block: calc(var(--horizontal-padding) / 3);
+    border-top: none;
+  }
+
+  .tool > div:nth-child(n + 3) {
+    padding-block: calc(var(--horizontal-padding) / 3);
+    border-top: 1px solid var(--secondary);
+  }
+
+  .tool-list .tool:last-child {
+    padding-bottom: var(--horizontal-padding);
+  }
+
+  .tool .title {
+    padding-block: calc(var(--horizontal-padding) / 2);
+    border-top: 1px solid var(--secondary);
+    font-size: var(--fs-md);
   }
 
   .w {
@@ -485,5 +540,9 @@ nav .nav-separator {
 
   .w:nth-child(even) {
     margin-left: 0;
+  }
+
+  .your-project {
+    border: 1px solid var(--secondary);
   }
 }

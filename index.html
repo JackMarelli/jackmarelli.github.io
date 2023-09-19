@@ -1,102 +1,129 @@
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Jack Marelli</title>
-    <link
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css"
-      rel="stylesheet"
-      integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9"
-      crossorigin="anonymous"
-    />
-    <link rel="stylesheet" href="css/locomotive-scroll.css" />
-    <link rel="stylesheet" href="css/styles.css" />
-  </head>
 
-  <body class="theme-light">
-    <div id="pageName" class="d-none">Home</div>
-    <div class="main" data-scroll data-scroll-container>
-      <div id="overlayMenu">
-        <div class="links">
-          <div class="menu-link">About</div>
-          <div class="menu-link">Projects</div>
-          <div class="menu-link">Contact</div>
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous" />
+  <link rel="stylesheet" href="css/locomotive-scroll.css" />
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+
+<body class="theme-light">
+  <div id="pageName" class="d-none">Home</div>
+  <div class="main" data-scroll data-scroll-container>
+    <div id="overlayMenu">
+      <div class="links">
+        <div class="menu-link">About</div>
+        <div class="menu-link">Projects</div>
+        <div class="menu-link">Contact</div>
+      </div>
+    </div>
+    <nav class="inline-contain theme-light" data-scroll data-scroll-sticky data-scroll-target=".main"></nav>
+    <section id="fold" class="inline-contain theme-light">
+      <div id="hello">Hello</div>
+      <div id="fold-bottom">
+        <div id="fold-about">
+          I'm Giacomo, a creative developer based near Milano. I mainly design
+          and build websites but also often dabble myself with other tasks due
+          to demand.
+          <div id="ied">
+            Currently studying in
+            <a class="hover-underline-animation theme-light" href="https://www.ied.it/" target="_blank">IED</a>
+          </div>
+        </div>
+        <div id="my-pic">
+          <img src="assets/images/fullsize/rosa.jpeg" alt="" />
         </div>
       </div>
-      <nav
-        class="inline-contain theme-light"
-        data-scroll
-        data-scroll-sticky
-        data-scroll-target=".main"
-      ></nav>
-      <section id="fold" class="inline-contain theme-light">
-        <div id="hello">Hello</div>
-        <div id="fold-bottom">
-          <div id="fold-about" data-scroll data-scroll-speed="2" data-scroll-target="#fold">
-            I'm Giacomo, a creative developer based in Milano. I mainly design
-            and build websites but also often dabble myself with other tasks due
-            to demand.
-            <div id="ied">
-              Currently studying in
-              <a
-                class="hover-underline-animation theme-light"
-                href="https://www.ied.it/"
-                target="_blank"
-                >IED</a
-              >
-            </div>
-          </div>
-          <div id="my-pic" data-scroll data-scroll-speed="4" data-scroll-target="#fold">
-            <img src="assets/images/fullsize/rosa.jpeg" alt="" />
-          </div>
+    </section>
+    <section id="works">
+      <div class="inline-contain fs-3 mb-3">Featured work</div>
+      <div id="worksList" class="container-fluid inline-contain d-flex flex-wrap">
+        <!-- works added via js/json -->
+        <a id="yp" class="w your-project">
+          <img src="assets/icons/sharp/plus.svg" alt="">
+          <div class="fs-2">Your project</div>
+        </a>
+      </div>
+    </section>
+    <section id="skills">
+      <div class="inline-contain fs-1 mb-3">What i use</div>
+      <div class="container-fluid tool-list p-0">
+        <div class="row tool">
+          <div class="col-12 col-md-3 px-0 title">Tools</div>
+          <div class="col-4 col-md-0 d-md-none"></div>
+          <div class="col-8 col-md-3 px-0">Figma</div>
+          <div class="col-0 d-none d-md-block col-md-6">UI design and prototyping</div>
         </div>
-      </section>
-      <section id="works">
-        <div class="display-1 text-center mb-5">My Work</div>
-        <div
-          id="worksList"
-          class="container-fluid inline-contain d-flex flex-wrap"
-        >
-          <!-- works added via js/json -->
-          <a id="yp" class="w your-project">
-            <img src="assets/icons/sharp/plus.svg" alt="">
-            <div class="fs-2">Your project</div>
-          </a>
+        <div class="row tool">
+          <div class="col-12 col-md-3 px-0"></div>
+          <div class="col-4 col-md-0 d-md-none"></div>
+          <div class="col-8 col-md-3 px-0">Illustrator</div>
+          <div class="col-0 d-none d-md-block col-md-6">Logo and visual elements creation</div>
         </div>
-      </section>
-      <footer class="theme-dark">
-        <div class="container-fluid inline-contain block-contain">
-          <div class="row">
-            <div class="col-12 col-md-6 fs-3 mb-5">
-              Hire me at<a
-                id="hireCtaMail" 
-                class="mx-1"
-                href="mailto:marellgiacomo@gmail.com"
-                >marelligiacomo@gmail.com</a
-              >or throught any of my social pages.
-            </div>
-            <div class="col-12 col-md-3 mb-4">
-              <ul class="social-list">
-                <li class="social fs-2"><a href="https://www.linkedin.com/in/giacomo-marelli-6a8866230/">Linkedin</a></li>
-                <li class="social fs-2"><a href="https://github.com/JackMarelli">Github</a></li>
-                <li class="social fs-2"><a href="https://www.instagram.com/jack.marelli/">Instagram</a></li>
-                <li class="social fs-2"><a href="https://twitter.com/jackmareIIi">Twitter</a></li>
-                <li class="social fs-2 m-0"><a href="https://www.behance.net/giacomomarelli1">Behance</a></li>
-              </ul>
-            </div>
-            <div class="col-12 col-md-3 fs-3">Via Amatore Sciesa 4, Milano</div>
+        <div class="row tool">
+          <div class="col-12 col-md-3 px-0"></div>
+          <div class="col-4 col-md-0 d-md-none"></div>
+          <div class="col-8 col-md-3 px-0">Photoshop</div>
+          <div class="col-0 d-none d-md-block col-md-6">Images manipulation and mockup creation</div>
+        </div>
+        <div class="row tool">
+          <div class="col-12 col-md-3 px-0"></div>
+          <div class="col-4 col-md-0 d-md-none"></div>
+          <div class="col-8 col-md-3 px-0">VS Code</div>
+          <div class="col-0 d-none d-md-block col-md-6">Coding</div>
+        </div>
+      </div>
+      <div class="container-fluid tool-list p-0">
+        <div class="row tool">
+          <div class="col-12 col-md-3 px-0 title">Languages</div>
+          <div class="col-4 col-md-0 d-md-none"></div>
+          <div class="col-8 col-md-3 px-0">HTML</div>
+          <div class="col-0 d-none d-md-block col-md-6">Website structure</div>
+        </div>
+        <div class="row tool">
+          <div class="col-12 col-md-3 px-0"></div>
+          <div class="col-4 col-md-0 d-md-none"></div>
+          <div class="col-8 col-md-3 px-0">CSS</div>
+          <div class="col-0 d-none d-md-block col-md-6">Website style, shapes, positioning and colors</div>
+        </div>
+        <div class="row tool">
+          <div class="col-12 col-md-3 px-0"></div>
+          <div class="col-4 col-md-0 d-md-none"></div>
+          <div class="col-8 col-md-3 px-0">Javascript</div>
+          <div class="col-0 d-none d-md-block col-md-6">Website functionality and complex animations</div>
+        </div>
+      </div>
+    </section>
+    <footer class="theme-dark">
+      <div class="container-fluid inline-contain block-contain">
+        <div class="row">
+          <div class="col-12 col-md-4 fs-3 mb-5">
+            Hire me at<a id="hireCtaMail" class="mx-1"
+              href="mailto:marellgiacomo@gmail.com">marelligiacomo@gmail.com</a>or throught any of my social pages.
           </div>
+          <div class="col-12 col-md-2"></div>
+          <div class="col-12 col-md-3 mb-4">
+            <ul class="social-list">
+              <li class="social fs-2"><a href="https://www.linkedin.com/in/giacomo-marelli-6a8866230/">Linkedin</a></li>
+              <li class="social fs-2"><a href="https://github.com/JackMarelli">Github</a></li>
+              <li class="social fs-2"><a href="https://www.instagram.com/jack.marelli/">Instagram</a></li>
+              <li class="social fs-2"><a href="https://twitter.com/jackmareIIi">Twitter</a></li>
+              <li class="social fs-2 m-0"><a href="https://www.behance.net/giacomomarelli1">Behance</a></li>
+            </ul>
+          </div>
+          <div class="col-12 col-md-3 fs-3">Cantù, Italy</div>
         </div>
-      </footer>
-    </div>
-    <script
-      src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"
-      integrity="sha512-16esztaSRplJROstbIIdwX3N97V1+pZvV33ABoG1H2OyTttBxEGkTsoIVsiP1iaTtM8b3+hu2kB6pQ4Clr5yug=="
-      crossorigin="anonymous"
-      referrerpolicy="no-referrer"
-    ></script>
-    <script src="js/locomotive-scroll.min.js"></script>
-    <script src="js/main.js" type="module"></script>
-  </body>
+      </div>
+    </footer>
+  </div>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"
+    integrity="sha512-16esztaSRplJROstbIIdwX3N97V1+pZvV33ABoG1H2OyTttBxEGkTsoIVsiP1iaTtM8b3+hu2kB6pQ4Clr5yug=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <script src="js/locomotive-scroll.min.js"></script>
+  <script src="js/main.js" type="module"></script>
+</body>
+
 </html>
