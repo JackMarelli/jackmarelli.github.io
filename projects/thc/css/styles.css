@@ -20,7 +20,7 @@
 
 :root {
   --black: #101010;
-  --white: #f1f1f1;
+  --white: #acacac;
 
   --hp: 2.4vw;
 }
@@ -32,7 +32,7 @@
   justify-content: space-between;
 }
 
-#wrapper section {
+#wrapper > section {
   height: 100vh;
   position: relative;
 }
@@ -41,20 +41,24 @@
   position: absolute;
   top: 0;
   left: 0;
+  
   height: 100vh;
+  width: 150%;
+  object-fit: cover;
 
   z-index: -99 !important;
 }
 
-.parallax-image {
-  overflow: hidden;
-}
-
-.parallax-background img,
-.parallax-image img {
+.parallax-background img {
   height: 100%;
   width: auto;
 }
+
+.parallax-image img {
+  height: 100vh;
+  width: 150%;
+}
+
 .content {
   z-index: 1;
   position: absolute;
