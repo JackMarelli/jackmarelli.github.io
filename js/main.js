@@ -1,6 +1,8 @@
 const _app = {};
 
-_app.defaultMenuIconPath = "assets/icons/menu.svg";
+_app.allWorksContainer = document.querySelector(".all-works-container");
+_app.defaultPathToLogo = "assets/icons/logo_black.svg";
+_app.defaultPathToMenuIcon = "assets/icons/menu.svg";
 _app.helloDiv = document.querySelector("#hello");
 _app.hellos = [
   "Hello",
@@ -27,7 +29,7 @@ _app.hellos = [
 ];
 _app.locoScroll = new LocomotiveScroll({
   el: document.querySelector("[data-scroll-container]"),
-  smooth: true,
+  smooth: true
 });
 _app.navTag = document.querySelector("nav");
 _app.pageName = document.querySelector("#pageName").innerHTML;
@@ -49,17 +51,49 @@ _app.initHelloCarousel = () => {
   }
 };
 
-_app.loadNav = (pageName, pathToMenuIcon) => {
+_app.loadNav = () => {
+  let pathToMenuIcon = _app.defaultPathToMenuIcon;
+  let pathToLogo = _app.defaultPathToLogo;
+
   if (_app.navTag) {
-    if (pageName != "Home") {
+
+    //go back a folder if page is in /pages
+    if (_app.pageName != "Home") {
       pathToMenuIcon = "../" + pathToMenuIcon;
+      pathToLogo = "../" + pathToLogo;
     }
-    _app.navTag.innerHTML = `<div id="navBrand"><a href="https://www.jackmarelli.com/"><img src="assets/icons/logo_black.svg"></a><span class="nav-separator">-</span><span>${pageName}</span></div><div><img class="d-none" src="${pathToMenuIcon}" alt="Menu" /></div>`;
-    console.log("navbar successfully loaded :)");
+
+    _app.navTag.innerHTML = `<div id="navBrand"><a href="https://www.jackmarelli.com/"><img src="${pathToLogo}"></a><span class="nav-separator">-</span><span>${_app.pageName}</span></div><div><img class="d-none" src="${pathToMenuIcon}" alt="Menu" /></div>`;
+  } else {
+    console.log("missing <nav> tag");
   }
 };
 
-_app.loadWorks = () => {
+_app.loadAllWork = () => {
+  fetch(_app.worksJsonPath)
+    .then((response) => response.json())
+    .then((json) => {
+      json.works.forEach((item) => {
+        //new work
+        let work = document.createElement("a");
+        work.className = "work";
+        work.href = item.redirect;
+        work.target = "_blank";
+
+        //work img
+        let img = document.createElement("img");
+        img.src = `../assets/images/thumbnails/${item.imageName}`;
+
+        work.append(img);
+        _app.allWorksContainer.append(work);
+      });
+    }).then(() => {
+      console.log("loco scroll update");
+      _app.locoScroll.update();
+    });
+}
+
+_app.loadFeaturedWork = () => {
   fetch(_app.worksJsonPath)
     .then((response) => response.json())
     .then((json) => {
@@ -109,11 +143,13 @@ _app.loadWorks = () => {
 _app.startUp = () => {
   if (_app.pageName === "Home") {
     _app.initHelloCarousel();
-    _app.loadWorks();
-    //_app.loadGsapWorksImages(); test
+    _app.loadFeaturedWork();
+  }
+  if (_app.pageName === "Works") {
+    _app.loadAllWork();
   }
 
-  _app.loadNav(_app.pageName, _app.defaultMenuIconPath);
+  _app.loadNav();
 };
 
 _app.startUp();

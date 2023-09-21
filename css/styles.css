@@ -172,9 +172,14 @@ nav .nav-separator {
   margin: 3em 0 3em 0;
 }
 
-#works h2 {
-  font-size: xx-large;
-  margin: 0 0 1em 0;
+.all-works-container {
+  display: flex;
+  flex-flow: column wrap;
+  width: 100%;
+  justify-content: start;
+  align-items: flex-start;
+  align-content: space-between;
+  height: 30vw;
 }
 
 .big {
@@ -220,6 +225,12 @@ nav .nav-separator {
 
 .fs-xxl {
   font-size: var(--fs-xxl);
+}
+
+.full-width-hr {
+  margin: 0 var(--horizontal-padding);
+  height: 2px;
+  background-color: var(--secondary);
 }
 
 .hover-underline-animation {
@@ -304,7 +315,6 @@ nav .nav-separator {
 
 .tool {
   margin-inline: var(--horizontal-padding);
-  font-size: var(--fs-lg);
 }
 
 .tool > :not(div:nth-child(1)) {
@@ -373,6 +383,19 @@ nav .nav-separator {
   margin-left: calc(var(--horizontal-padding) / 2);
 }
 
+.work {
+  width: calc(33.33333333% - var(--horizontal-padding) * 2 / 3);
+  margin-bottom: var(--horizontal-padding);
+  border-radius: 16px;
+  height: fit-content;
+  overflow: hidden;
+}
+
+.work img {
+  width: 100%;
+  height: 100%;
+}
+
 .your-project {
   display: flex;
   justify-content: center;
@@ -404,10 +427,10 @@ nav .nav-separator {
 
 @media (max-width: 768px) {
   :root {
-    --fs-lg: calc(24px - 1vw);
-    --fs-md: 20px;
+    --fs-lg: calc(29px - 1vw);
+    --fs-md: 18px;
     --fs-sm: 14px;
-    --fs-xl: 44px;
+    --fs-xl: 31px;
     --fs-xs: 12px;
     --fs-xxl: 54px;
     --horizontal-padding: 16px;
@@ -432,7 +455,6 @@ nav .nav-separator {
 
   #fold-about {
     margin-top: calc(var(--horizontal-padding) * 2.4);
-    font-size: var(--fs-lg);
   }
 
   #fold-bottom {
@@ -464,6 +486,10 @@ nav .nav-separator {
     width: 100%;
   }
 
+  .all-works-container {
+    height: fit-content;
+  }
+
   .big {
     border: 2px solid var(--white);
     border-radius: 8px;
@@ -473,7 +499,6 @@ nav .nav-separator {
 
   .tool {
     margin-inline: var(--horizontal-padding);
-    font-size: var(--fs-md);
   }
 
   .tool > :not(div:nth-child(1)) {
@@ -493,7 +518,6 @@ nav .nav-separator {
   .tool .title {
     padding-block: calc(var(--horizontal-padding) / 2);
     border-top: 1px solid var(--secondary);
-    font-size: var(--fs-md);
   }
 
   .w {
@@ -511,7 +535,16 @@ nav .nav-separator {
     margin-left: 0;
   }
 
+  .work {
+    width: 100%;
+  }
+
   .your-project {
     border: 1px solid var(--secondary);
+  }
+
+  .your-project img {
+    width: 20vw;
+    height: 20vw;
   }
 }
