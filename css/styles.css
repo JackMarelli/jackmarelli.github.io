@@ -26,6 +26,7 @@
   margin: 0;
   padding: 0;
   text-decoration: none;
+  cursor: url(https://cur.cursors-4u.net/others/oth-7/oth647.cur), auto !important;
 }
 
 a {
@@ -75,6 +76,8 @@ nav .nav-separator {
   flex-flow: column nowrap;
   height: 94vh;
   justify-content: space-between;
+
+  margin-bottom: 24vh;
 }
 
 #fold-bottom {
@@ -165,11 +168,11 @@ nav .nav-separator {
 }
 
 #skills {
-  margin-bottom: calc(var(--horizontal-padding) * 3);
+  margin-bottom: 24vh;
 }
 
 #works {
-  margin: 3em 0 3em 0;
+  margin: 3em 0 24vh 0;
 }
 
 .all-works-container {
@@ -287,7 +290,7 @@ nav .nav-separator {
   margin: 0 0 calc(var(--horizontal-padding) / 4) 0;
 }
 
-.social:hover {
+.social a:hover {
   opacity: 0.7;
 }
 
