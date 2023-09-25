@@ -158,12 +158,12 @@ _app.loadFooter = () => {
         </div>
         <div class="col-12 col-md-3 fs-lg">Cantù, Italy</div>
       </div>
-      <div class="row flex-grow-1 d-flex align-items-end align-content-end">
-        <div class="col-12 col-md-6"></div>
-        <div class="col-12 col-md-3 footer-logo">
+      <div class="row flex-grow-1">
+        <div class="col-6 d-none d-md-block"></div>
+        <div class="col-12 col-md-3 footer-logo d-flex align-items-start align-items-md-end">
           ${_app.logoSvgString}
         </div>
-        <div class="col-12 col-md-3">
+        <div class="col-12 col-md-3 d-flex align-items-end">
           <div id="backToTopBtn" class="back-to-top" data-scroll>Back to top</div></div>
         </div>
       <div class="row footer-footer" data-scroll data-scroll-repeat data-scroll-call="_app.updateNav()"></div>

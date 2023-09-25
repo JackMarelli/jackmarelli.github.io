@@ -550,7 +550,7 @@ nav svg {
   }
 
   .footer-logo svg {
-    margin-bottom: calc(var(--horizontal-padding) * 16);
+    margin-top: calc(var(--horizontal-padding) * 2);
   }
 
   .tool {
