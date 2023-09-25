@@ -1,8 +1,10 @@
 const _app = {};
 
 _app.allWorksContainer = document.querySelector(".all-works-container");
+_app.backToTopBtn = null;
 _app.defaultPathToLogo = "assets/icons/logo_black.svg";
 _app.defaultPathToMenuIcon = "assets/icons/menu.svg";
+_app.footerTag = document.querySelector("footer");
 _app.helloDiv = document.querySelector("#hello");
 _app.hellos = [
   "Hello",
@@ -31,6 +33,15 @@ _app.locoScroll = new LocomotiveScroll({
   el: document.querySelector("[data-scroll-container]"),
   smooth: true
 });
+_app.logoSvgString = `
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 400">
+    <g>
+      <polygon class="cls-1" points="225 0 225 400 0 400 0 200 100 200 100 300 125 300 125 100 0 100 0 0 225 0"/>
+      <rect class="cls-1" x="250" y="0" width="100" height="400"/>
+      <rect class="cls-1" x="375" y="0" width="100" height="400"/>
+      <rect class="cls-1" x="500" y="0" width="100" height="400"/>
+    </g>
+  </svg>`
 _app.navTag = document.querySelector("nav");
 _app.pageName = document.querySelector("#pageName").innerHTML;
 _app.seekingImg = document.createElement("img");
@@ -48,24 +59,6 @@ _app.initHelloCarousel = () => {
         helloIndex = 0;
       }
     }, 800);
-  }
-};
-
-_app.loadNav = () => {
-  let pathToMenuIcon = _app.defaultPathToMenuIcon;
-  let pathToLogo = _app.defaultPathToLogo;
-
-  if (_app.navTag) {
-
-    //go back a folder if page is in /pages
-    if (_app.pageName != "Home") {
-      pathToMenuIcon = "../" + pathToMenuIcon;
-      pathToLogo = "../" + pathToLogo;
-    }
-
-    _app.navTag.innerHTML = `<div id="navBrand"><a href="https://www.jackmarelli.com/"><img src="${pathToLogo}"></a><span class="nav-separator">-</span><span>${_app.pageName}</span></div><div><img class="d-none" src="${pathToMenuIcon}" alt="Menu" /></div>`;
-  } else {
-    console.log("missing <nav> tag");
   }
 };
 
@@ -140,6 +133,87 @@ _app.loadFeaturedWork = () => {
     });
 };
 
+_app.loadFooter = () => {
+  if (_app.footerTag) {
+    _app.footerTag.innerHTML = `
+    <div class="container-fluid inline-contain block-contain h-100 d-flex flex-column justify-content-between">
+      <div class="row">
+        <div class="col-12 col-md-4 fs-lg mb-5">
+          Hire me at
+          <a id="hireCtaMail" class="mx-1" href="mailto:marellgiacomo@gmail.com">
+            marelligiacomo@gmail.com
+          </a>
+          or throught any of my social pages.
+        </div>
+        <div class="col-12 col-md-2"></div>
+        <div class="col-12 col-md-3 mb-4">
+          <ul class="social-list">
+            <li class="social fs-lg"><a href="https://www.linkedin.com/in/giacomo-marelli-6a8866230/">Linkedin</a>
+            </li>
+            <li class="social fs-lg"><a href="https://github.com/JackMarelli">Github</a></li>
+            <li class="social fs-lg"><a href="https://www.instagram.com/jack.marelli/">Instagram</a></li>
+            <li class="social fs-lg"><a href="https://twitter.com/jackmareIIi">Twitter</a></li>
+            <li class="social fs-lg m-0"><a href="https://www.behance.net/giacomomarelli1">Behance</a></li>
+          </ul>
+        </div>
+        <div class="col-12 col-md-3 fs-lg">Cantù, Italy</div>
+      </div>
+      <div class="row flex-grow-1 d-flex align-items-end align-content-end">
+        <div class="col-12 col-md-6"></div>
+        <div class="col-12 col-md-3 footer-logo">
+          ${_app.logoSvgString}
+        </div>
+        <div class="col-12 col-md-3">
+          <div id="backToTopBtn" class="back-to-top" data-scroll>Back to top</div></div>
+        </div>
+      <div class="row footer-footer" data-scroll data-scroll-repeat data-scroll-call="_app.updateNav()"></div>
+    </div>`
+
+    _app.backToTopBtn = document.querySelector("#backToTopBtn");
+    _app.backToTopBtn.addEventListener("click", () => {
+      _app.locoScroll.scrollTo("top")
+    });
+  } else {
+    console.log("missing <footer> tag");
+  }
+}
+
+_app.loadNav = () => {
+  let pathToMenuIcon = _app.defaultPathToMenuIcon;
+
+  if (_app.navTag) {
+
+    //go back a folder if page is in /pages
+    if (_app.pageName != "Home") {
+      pathToMenuIcon = "../" + pathToMenuIcon;
+    }
+
+    _app.navTag.innerHTML = `
+    <div id="navBrand">
+      <a href="https://www.jackmarelli.com/">
+        ${_app.logoSvgString}
+      </a>
+      <span class="nav-separator">-</span>
+      <span class="page-name fs-md">${_app.pageName}</span>
+    </div>
+    <div>
+      <img class="d-none" src="${pathToMenuIcon}" alt="Menu" />
+    </div>`;
+
+  } else {
+    console.log("missing <nav> tag");
+  }
+};
+
+_app.locoScroll.on("call", (e) => {
+  eval(e);
+});
+
+_app.updateNav = () => {
+  _app.navTag.classList.toggle("theme-dark");
+  console.log("nav theme toggle");
+}
+
 _app.startUp = () => {
   if (_app.pageName === "Home") {
     _app.initHelloCarousel();
@@ -150,6 +224,7 @@ _app.startUp = () => {
   }
 
   _app.loadNav();
+  _app.loadFooter();
 };
 
 _app.startUp();

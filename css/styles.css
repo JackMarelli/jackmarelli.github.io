@@ -9,6 +9,7 @@
   --fs-xs: 14px;
   --hm: #e325ca;
   --horizontal-padding: 24px;
+  --nav-h: 6vh;
   --primary: #fbfbfb;
   --secondary: #1a1a1a;
   --white: #fff;
@@ -34,6 +35,11 @@ a {
   text-decoration: none;
 }
 
+footer {
+  height: 100vh;
+  padding-top: calc(var(--nav-h) * 1.5);
+}
+
 h1,
 h2,
 h3,
@@ -47,19 +53,23 @@ nav {
   align-items: center;
   display: flex;
   font: var(--fs-md) sans-serif;
-  height: 6vh;
+  height: var(--nav-h);
   justify-content: space-between;
   position: sticky;
   top: 0;
   z-index: 99;
 }
 
-nav img {
-  height: 24px;
-}
-
 nav .nav-separator {
   padding: 0 calc(var(--horizontal-padding) / 2);
+}
+
+nav .page-name {
+  line-height: 0; /* to fix: il nome pagina non è centrato con il logo */
+}
+
+nav svg {
+  height: 24px;
 }
 
 #contacts {
@@ -185,6 +195,20 @@ nav .nav-separator {
   height: 30vw;
 }
 
+.back-to-top {
+  border: 1px solid var(--primary);
+  border-radius: 999px;
+  opacity: 0.5;
+  padding-block: calc(var(--horizontal-padding) / 3);
+  padding-inline: calc(var(--horizontal-padding) / 1);
+  width: fit-content;
+}
+
+.back-to-top:hover {
+  opacity: 1;
+  transition: all 200ms ease;
+}
+
 .big {
   align-items: center;
   display: flex;
@@ -204,6 +228,14 @@ nav .nav-separator {
 
 .d-none {
   display: none;
+}
+
+.footer-logo svg {
+  height: 8vmax;
+}
+
+.footer-footer {
+  height: var(--nav-h);
 }
 
 .fs-xs {
@@ -297,11 +329,21 @@ nav .nav-separator {
 .theme-light {
   background-color: var(--primary);
   color: var(--secondary);
+  transition: background-color 200ms ease;
+}
+
+.theme-light svg .cls-1 {
+  fill: var(--secondary);
 }
 
 .theme-dark {
   background-color: var(--secondary);
   color: var(--primary);
+  transition: background-color 200ms ease;
+}
+
+.theme-dark svg .cls-1 {
+  fill: var(--primary);
 }
 
 .theme-dark a {
@@ -493,11 +535,22 @@ nav .nav-separator {
     height: fit-content;
   }
 
+  .back-to-top {
+    width: 100%;
+    padding-block: calc(var(--horizontal-padding) / 1);
+    text-align: center;
+    opacity: 1;
+  }
+
   .big {
     border: 2px solid var(--white);
     border-radius: 8px;
     margin: 1em 0;
     padding: 1em 0;
+  }
+
+  .footer-logo svg {
+    margin-bottom: calc(var(--horizontal-padding) * 16);
   }
 
   .tool {
