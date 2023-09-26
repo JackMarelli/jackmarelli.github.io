@@ -1,9 +1,12 @@
 const _app = {};
 
 _app.allWorksContainer = document.querySelector(".all-works-container");
+_app.aspectRatioTolerance = 0.3;
 _app.backToTopBtn = null;
-_app.cursorCarouselDetectionZone = document.querySelector("#cursorCarouselDetectionZone");
-_app.cursorCarouselElementsNum = 3;
+_app.cursorCarouselDetectionZone = document.querySelector(
+  "#cursorCarouselDetectionZone"
+);
+_app.cursorCarouselElementsNum = 4;
 _app.defaultPathToLogo = "assets/icons/logo_black.svg";
 _app.defaultPathToMenuIcon = "assets/icons/menu.svg";
 _app.dots = [];
@@ -37,7 +40,7 @@ _app.initialX = 0;
 _app.initialY = 0;
 _app.locoScroll = new LocomotiveScroll({
   el: document.querySelector("[data-scroll-container]"),
-  smooth: true
+  smooth: true,
 });
 _app.logoSvgString = `
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 400">
@@ -47,7 +50,7 @@ _app.logoSvgString = `
       <rect class="cls-1" x="375" y="0" width="100" height="400"/>
       <rect class="cls-1" x="500" y="0" width="100" height="400"/>
     </g>
-  </svg>`
+  </svg>`;
 _app.navTag = document.querySelector("nav");
 _app.nidProgress = 0;
 _app.pageName = document.querySelector("#pageName").innerHTML;
@@ -60,12 +63,14 @@ _app.worksListNode = document.querySelector("#worksList");
 _app.cursorCarouselDetectionZone.addEventListener("mousemove", (e) => {
   const currentX = e.clientX;
   const currentY = e.clientY;
-  const distance = Math.sqrt((currentX - _app.initialX) ** 2 + (currentY - _app.initialY) ** 2);
+  const distance = Math.sqrt(
+    (currentX - _app.initialX) ** 2 + (currentY - _app.initialY) ** 2
+  );
 
   if (distance > _app.step) {
     _app.createDot(200, e.clientX, e.clientY);
   }
-})
+});
 
 _app.createDot = (width, x, y) => {
   if (_app.dots.length >= _app.cursorCarouselElementsNum) {
@@ -75,7 +80,7 @@ _app.createDot = (width, x, y) => {
     width: width,
     x: x,
     y: y + _app.scrollProgressPx,
-    nid: _app.nidProgress
+    nid: _app.nidProgress,
   };
 
   _app.dots.push(newDot);
@@ -89,14 +94,12 @@ _app.createDot = (width, x, y) => {
   if (_app.nidProgress >= _app.cursorCarouselElementsNum) {
     _app.nidProgress = 0;
   }
-
-}
+};
 
 _app.updateDots = () => {
-
   let currentImgList = document.querySelectorAll(".floating-img");
   if (currentImgList) {
-    currentImgList.forEach(i => {
+    currentImgList.forEach((i) => {
       i.remove();
     });
   }
@@ -108,14 +111,27 @@ _app.updateDots = () => {
     d.style.transform = "translateX(-50%) translateY(-50%)";
     d.style.left = `${_app.dots[i].x}px`;
     d.style.top = `${_app.dots[i].y}px`;
-    d.style.height = `450px`;
-    d.style.width = `auto`;
     d.src = `assets/images/fold_cursor_carousel/fold${_app.dots[i].nid}.png`;
+    d.aspectRatio = d.width / d.height;
+
+      if (Math.abs(1 - d.aspectRatio) <= _app.aspectRatioTolerance) {
+        //img is approximatively square
+        d.style.width = "400px";
+        d.style.height = "auto";
+      } else {
+        //img is NOT approximatively square
+        if (d.width > d.height) {
+          d.style.height = "200px";
+          d.style.width = "auto";
+        } else {
+          d.style.width = "200px";
+          d.style.height = "auto";
+        }
+      }
 
     _app.fold.appendChild(d);
   }
-
-}
+};
 
 _app.initHelloCarousel = () => {
   if (_app.helloDiv) {
@@ -149,11 +165,12 @@ _app.loadAllWork = () => {
         work.append(img);
         _app.allWorksContainer.append(work);
       });
-    }).then(() => {
+    })
+    .then(() => {
       console.log("loco scroll update");
       _app.locoScroll.update();
     });
-}
+};
 
 _app.loadFeaturedWork = () => {
   fetch(_app.worksJsonPath)
@@ -236,22 +253,21 @@ _app.loadFooter = () => {
           <div id="backToTopBtn" class="back-to-top" data-scroll>Back to top</div></div>
         </div>
       <div class="row footer-footer" data-scroll data-scroll-repeat data-scroll-call="_app.updateNav()"></div>
-    </div>`
+    </div>`;
 
     _app.backToTopBtn = document.querySelector("#backToTopBtn");
     _app.backToTopBtn.addEventListener("click", () => {
-      _app.locoScroll.scrollTo("top")
+      _app.locoScroll.scrollTo("top");
     });
   } else {
     console.log("missing <footer> tag");
   }
-}
+};
 
 _app.loadNav = () => {
   let pathToMenuIcon = _app.defaultPathToMenuIcon;
 
   if (_app.navTag) {
-
     //go back a folder if page is in /pages
     if (_app.pageName != "Home") {
       pathToMenuIcon = "../" + pathToMenuIcon;
@@ -268,7 +284,6 @@ _app.loadNav = () => {
     <div>
       <img class="d-none" src="${pathToMenuIcon}" alt="Menu" />
     </div>`;
-
   } else {
     console.log("missing <nav> tag");
   }
@@ -278,14 +293,14 @@ _app.locoScroll.on("call", (e) => {
   eval(e);
 });
 
-_app.locoScroll.on('scroll', ({ scroll }) => {
+_app.locoScroll.on("scroll", ({ scroll }) => {
   _app.scrollProgressPx = scroll.y;
-})
+});
 
 _app.updateNav = () => {
   _app.navTag.classList.toggle("theme-dark");
   console.log("nav theme toggle");
-}
+};
 
 _app.startUp = () => {
   if (_app.pageName === "Home") {
@@ -304,4 +319,4 @@ _app.startUp();
 
 window.onresize = () => {
   _app.locoScroll.update();
-}
+};
