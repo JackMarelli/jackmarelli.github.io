@@ -2,8 +2,12 @@ const _app = {};
 
 _app.allWorksContainer = document.querySelector(".all-works-container");
 _app.backToTopBtn = null;
+_app.cursorCarouselDetectionZone = document.querySelector("#cursorCarouselDetectionZone");
+_app.cursorCarouselElementsNum = 3;
 _app.defaultPathToLogo = "assets/icons/logo_black.svg";
 _app.defaultPathToMenuIcon = "assets/icons/menu.svg";
+_app.dots = [];
+_app.fold = document.querySelector("#fold");
 _app.footerTag = document.querySelector("footer");
 _app.helloDiv = document.querySelector("#hello");
 _app.hellos = [
@@ -29,6 +33,8 @@ _app.hellos = [
   "こんにちは",
   "გამარჯობა",
 ];
+_app.initialX = 0;
+_app.initialY = 0;
 _app.locoScroll = new LocomotiveScroll({
   el: document.querySelector("[data-scroll-container]"),
   smooth: true
@@ -43,10 +49,73 @@ _app.logoSvgString = `
     </g>
   </svg>`
 _app.navTag = document.querySelector("nav");
+_app.nidProgress = 0;
 _app.pageName = document.querySelector("#pageName").innerHTML;
+_app.scrollProgressPx = 0;
 _app.seekingImg = document.createElement("img");
+_app.step = 100;
 _app.worksJsonPath = "../assets/works.json";
 _app.worksListNode = document.querySelector("#worksList");
+
+_app.cursorCarouselDetectionZone.addEventListener("mousemove", (e) => {
+  const currentX = e.clientX;
+  const currentY = e.clientY;
+  const distance = Math.sqrt((currentX - _app.initialX) ** 2 + (currentY - _app.initialY) ** 2);
+
+  if (distance > _app.step) {
+    _app.createDot(200, e.clientX, e.clientY);
+  }
+})
+
+_app.createDot = (width, x, y) => {
+  if (_app.dots.length >= _app.cursorCarouselElementsNum) {
+    _app.dots.shift();
+  }
+  const newDot = {
+    width: width,
+    x: x,
+    y: y + _app.scrollProgressPx,
+    nid: _app.nidProgress
+  };
+
+  _app.dots.push(newDot);
+
+  _app.initialX = x;
+  _app.initialY = y;
+
+  _app.updateDots();
+
+  _app.nidProgress++;
+  if (_app.nidProgress >= _app.cursorCarouselElementsNum) {
+    _app.nidProgress = 0;
+  }
+
+}
+
+_app.updateDots = () => {
+
+  let currentImgList = document.querySelectorAll(".floating-img");
+  if (currentImgList) {
+    currentImgList.forEach(i => {
+      i.remove();
+    });
+  }
+
+  for (let i = 0; i < _app.dots.length; i++) {
+    let d = document.createElement("img");
+    d.className = "floating-img";
+    d.style.position = "absolute";
+    d.style.transform = "translateX(-50%) translateY(-50%)";
+    d.style.left = `${_app.dots[i].x}px`;
+    d.style.top = `${_app.dots[i].y}px`;
+    d.style.height = `450px`;
+    d.style.width = `auto`;
+    d.src = `assets/images/fold_cursor_carousel/fold${_app.dots[i].nid}.png`;
+
+    _app.fold.appendChild(d);
+  }
+
+}
 
 _app.initHelloCarousel = () => {
   if (_app.helloDiv) {
@@ -208,6 +277,10 @@ _app.loadNav = () => {
 _app.locoScroll.on("call", (e) => {
   eval(e);
 });
+
+_app.locoScroll.on('scroll', ({ scroll }) => {
+  _app.scrollProgressPx = scroll.y;
+})
 
 _app.updateNav = () => {
   _app.navTag.classList.toggle("theme-dark");

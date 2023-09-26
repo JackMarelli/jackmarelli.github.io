@@ -81,13 +81,24 @@ nav svg {
   text-align: center;
 }
 
+#cursorCarouselDetectionZone {
+  height: 100vh;
+  width: 100vw;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 999;
+}
+
 #fold {
   display: flex;
   flex-flow: column nowrap;
   height: 94vh;
   justify-content: space-between;
-
+  overflow: hidden;
   margin-bottom: 24vh;
+
+  position: relative;
 }
 
 #fold-bottom {
@@ -95,10 +106,6 @@ nav svg {
   display: flex;
   justify-content: space-between;
   padding: var(--horizontal-padding) 0;
-}
-
-#fold-about {
-  max-width: 1200px;
 }
 
 #hello {
@@ -491,6 +498,10 @@ nav svg {
 
   #contacts h2 {
     font-size: var(--fs-sm);
+  }
+
+  #cursorCarouselDetectionZone {
+    display: none;
   }
 
   #fold {
