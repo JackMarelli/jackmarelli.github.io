@@ -6,7 +6,7 @@ _app.backToTopBtn = null;
 _app.cursorCarouselDetectionZone = document.querySelector(
   "#cursorCarouselDetectionZone"
 );
-_app.cursorCarouselElementsNum = 4;
+_app.cursorCarouselElementsNum = 7;
 _app.defaultPathToLogo = "assets/icons/logo_black.svg";
 _app.defaultPathToMenuIcon = "assets/icons/menu.svg";
 _app.dots = [];
