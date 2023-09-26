@@ -27,7 +27,6 @@
   margin: 0;
   padding: 0;
   text-decoration: none;
-  cursor: url(https://cur.cursors-4u.net/others/oth-7/oth647.cur), auto !important;
 }
 
 a {
@@ -115,7 +114,6 @@ nav svg {
 
 #hireCtaMail {
   color: var(--hm);
-  cursor: cell;
 }
 
 #hireCtaMail .hover-underline-animation::after {

@@ -60,17 +60,19 @@ _app.step = 100;
 _app.worksJsonPath = "../assets/works.json";
 _app.worksListNode = document.querySelector("#worksList");
 
-_app.cursorCarouselDetectionZone.addEventListener("mousemove", (e) => {
-  const currentX = e.clientX;
-  const currentY = e.clientY;
-  const distance = Math.sqrt(
-    (currentX - _app.initialX) ** 2 + (currentY - _app.initialY) ** 2
-  );
+_app.initFoldCursorCarousel = () => {
+  _app.cursorCarouselDetectionZone.addEventListener("mousemove", (e) => {
+    const currentX = e.clientX;
+    const currentY = e.clientY;
+    const distance = Math.sqrt(
+      (currentX - _app.initialX) ** 2 + (currentY - _app.initialY) ** 2
+    );
 
-  if (distance > _app.step) {
-    _app.createDot(200, e.clientX, e.clientY);
-  }
-});
+    if (distance > _app.step) {
+      _app.createDot(200, e.clientX, e.clientY);
+    }
+  });
+};
 
 _app.createDot = (width, x, y) => {
   if (_app.dots.length >= _app.cursorCarouselElementsNum) {
@@ -114,20 +116,20 @@ _app.updateDots = () => {
     d.src = `assets/images/fold_cursor_carousel/fold${_app.dots[i].nid}.png`;
     d.aspectRatio = d.width / d.height;
 
-      if (Math.abs(1 - d.aspectRatio) <= _app.aspectRatioTolerance) {
-        //img is approximatively square
-        d.style.width = "400px";
-        d.style.height = "auto";
+    if (Math.abs(1 - d.aspectRatio) <= _app.aspectRatioTolerance) {
+      //img is approximatively square
+      d.style.width = "400px";
+      d.style.height = "auto";
+    } else {
+      //img is NOT approximatively square
+      if (d.width > d.height) {
+        d.style.height = "200px";
+        d.style.width = "auto";
       } else {
-        //img is NOT approximatively square
-        if (d.width > d.height) {
-          d.style.height = "200px";
-          d.style.width = "auto";
-        } else {
-          d.style.width = "200px";
-          d.style.height = "auto";
-        }
+        d.style.width = "200px";
+        d.style.height = "auto";
       }
+    }
 
     _app.fold.appendChild(d);
   }
@@ -221,6 +223,7 @@ _app.loadFeaturedWork = () => {
 
 _app.loadFooter = () => {
   if (_app.footerTag) {
+    console.log("loading footer");
     _app.footerTag.innerHTML = `
     <div class="container-fluid inline-contain block-contain h-100 d-flex flex-column justify-content-between">
       <div class="row">
@@ -250,8 +253,9 @@ _app.loadFooter = () => {
           ${_app.logoSvgString}
         </div>
         <div class="col-12 col-md-3 d-flex align-items-end">
-          <div id="backToTopBtn" class="back-to-top" data-scroll>Back to top</div></div>
+          <a id="backToTopBtn" class="back-to-top" data-scroll>Back to top</a>
         </div>
+      </div>
       <div class="row footer-footer" data-scroll data-scroll-repeat data-scroll-call="_app.updateNav()"></div>
     </div>`;
 
@@ -299,11 +303,11 @@ _app.locoScroll.on("scroll", ({ scroll }) => {
 
 _app.updateNav = () => {
   _app.navTag.classList.toggle("theme-dark");
-  console.log("nav theme toggle");
 };
 
 _app.startUp = () => {
   if (_app.pageName === "Home") {
+    _app.initFoldCursorCarousel();
     _app.initHelloCarousel();
     _app.loadFeaturedWork();
   }
@@ -313,6 +317,8 @@ _app.startUp = () => {
 
   _app.loadNav();
   _app.loadFooter();
+
+  _app.locoScroll.update();
 };
 
 _app.startUp();
