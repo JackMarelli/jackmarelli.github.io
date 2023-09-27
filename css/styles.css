@@ -4,7 +4,7 @@
   --fs-lg: 28px;
   --fs-md: 20px;
   --fs-sm: 16px;
-  --fs-xl: 48px;
+  --fs-xl: min(5vw, 48px);
   --fs-xxl: 124px;
   --fs-xs: 14px;
   --hm: #e325ca;
@@ -18,6 +18,16 @@
 @font-face {
   font-family: "Neue Haas";
   src: url("../assets/font/NeueHaas/NeueHaasDisplay-Roman.woff2");
+}
+
+@font-face {
+  font-family: "Silvermist Regular";
+  src: url("../assets/font/silvermistregular-dodam.otf");
+}
+
+@font-face {
+  font-family: "Silvermist Italic";
+  src: url("../assets/font/silvermistitalic-al3m2.otf");
 }
 
 * {
@@ -322,6 +332,18 @@ nav svg {
   z-index: -1;
 }
 
+.silvermist {
+  font-family: "Silvermist Regular";
+  font-size: 6vmax;
+  letter-spacing: 1.1px;
+  text-align: justify;
+}
+
+.silvermist-italic {
+  font-family: "Silvermist Italic";
+  text-align: justify;
+}
+
 .social-list {
   list-style: none;
   padding: 0;
@@ -564,6 +586,10 @@ nav svg {
 
   .footer-logo svg {
     margin-top: calc(var(--horizontal-padding) * 2);
+  }
+
+  .silvermist {
+    font-size: 12vw;
   }
 
   .tool {

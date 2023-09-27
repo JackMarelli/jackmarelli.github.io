@@ -118,15 +118,15 @@ _app.updateDots = () => {
 
     if (Math.abs(1 - d.aspectRatio) <= _app.aspectRatioTolerance) {
       //img is approximatively square
-      d.style.width = "400px";
+      d.style.width = "250px";
       d.style.height = "auto";
     } else {
       //img is NOT approximatively square
       if (d.width > d.height) {
-        d.style.height = "200px";
+        d.style.height = "100px";
         d.style.width = "auto";
       } else {
-        d.style.width = "200px";
+        d.style.width = "150px";
         d.style.height = "auto";
       }
     }
@@ -229,32 +229,31 @@ _app.loadFooter = () => {
     _app.footerTag.innerHTML = `
     <div class="container-fluid inline-contain block-contain h-100 d-flex flex-column justify-content-between">
       <div class="row">
-        <div class="col-12 col-md-4 fs-lg mb-5">
+        <div class="col-12 col-md-6 fs-xl mb-5">
           Hire me at
-          <a id="hireCtaMail" class="mx-1" href="mailto:marellgiacomo@gmail.com">
+          <a id="hireCtaMail" href="mailto:marellgiacomo@gmail.com">
             marelligiacomo@gmail.com
           </a>
           or throught any of my social pages.
         </div>
         <div class="col-12 col-md-2"></div>
-        <div class="col-12 col-md-3 mb-4">
+        <div class="col-12 col-md-2 mb-4">
           <ul class="social-list">
-            <li class="social fs-lg"><a href="https://www.linkedin.com/in/giacomo-marelli-6a8866230/">Linkedin</a>
-            </li>
+            <li class="social fs-lg"><a href="https://www.linkedin.com/in/giacomo-marelli-6a8866230/">Linkedin</a></li>
             <li class="social fs-lg"><a href="https://github.com/JackMarelli">Github</a></li>
             <li class="social fs-lg"><a href="https://www.instagram.com/jack.marelli/">Instagram</a></li>
             <li class="social fs-lg"><a href="https://twitter.com/jackmareIIi">Twitter</a></li>
             <li class="social fs-lg m-0"><a href="https://www.behance.net/giacomomarelli1">Behance</a></li>
           </ul>
         </div>
-        <div class="col-12 col-md-3 fs-lg">Cantù, Italy</div>
+        <div class="col-12 col-md-2 fs-lg">Cantù, Italy</div>
       </div>
       <div class="row flex-grow-1">
-        <div class="col-6 d-none d-md-block"></div>
-        <div class="col-12 col-md-3 footer-logo d-flex align-items-start align-items-md-end">
+        <div class="col-8 d-none d-md-block"></div>
+        <div class="col-12 col-md-2 footer-logo d-flex align-items-start align-items-md-end">
           ${_app.logoSvgString}
         </div>
-        <div class="col-12 col-md-3 d-flex align-items-end">
+        <div class="col-12 col-md-2 d-flex align-items-end">
           <a id="backToTopBtn" class="back-to-top" data-scroll>Back to top</a>
         </div>
       </div>
