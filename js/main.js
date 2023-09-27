@@ -56,7 +56,7 @@ _app.nidProgress = 0;
 _app.pageName = document.querySelector("#pageName").innerHTML;
 _app.scrollProgressPx = 0;
 _app.seekingImg = document.createElement("img");
-_app.step = 100;
+_app.step = 60;
 _app.worksJsonPath = "../assets/works.json";
 _app.worksListNode = document.querySelector("#worksList");
 
