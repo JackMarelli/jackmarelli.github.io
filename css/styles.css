@@ -194,10 +194,10 @@ nav svg {
   display: flex;
   flex-flow: column wrap;
   width: 100%;
-  justify-content: start;
+  justify-content: flex-start;
   align-items: flex-start;
   align-content: space-between;
-  height: 30vw;
+  height: 39.5vw;
 }
 
 .back-to-top {
@@ -233,6 +233,10 @@ nav svg {
 
 .d-none {
   display: none;
+}
+
+.floating-img {
+  filter: none;
 }
 
 .footer-logo svg {

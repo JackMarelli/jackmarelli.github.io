@@ -179,40 +179,42 @@ _app.loadFeaturedWork = () => {
     .then((response) => response.json())
     .then((json) => {
       json.works.forEach((item) => {
-        //new work
-        let work = document.createElement("a");
-        work.className = "w inline-contain block-contain";
-        work.href = item.redirect;
-        work.target = "_blank";
+        if (item.featured) {
+          //new work
+          let work = document.createElement("a");
+          work.className = "w inline-contain block-contain";
+          work.href = item.redirect;
+          work.target = "_blank";
 
-        //work text container
-        let text = document.createElement("div");
-        text.className = "text";
+          //work text container
+          let text = document.createElement("div");
+          text.className = "text";
 
-        //work title
-        let title = document.createElement("div");
-        title.className = "title";
-        title.innerText = item.title;
+          //work title
+          let title = document.createElement("div");
+          title.className = "title";
+          title.innerText = item.title;
 
-        //work expertiece
-        let expertiece = document.createElement("div");
-        expertiece.className = "exp";
-        let expText = "";
-        for (let i = 0; i < item.expertiece.length; i++) {
-          expText += item.expertiece[i] += ", ";
+          //work expertiece
+          let expertiece = document.createElement("div");
+          expertiece.className = "exp";
+          let expText = "";
+          for (let i = 0; i < item.expertiece.length; i++) {
+            expText += item.expertiece[i] += ", ";
+          }
+          expertiece.innerText = expText.slice(0, expText.length - 2);
+
+          //image
+          let img = document.createElement("img");
+          img.src = `assets/images/thumbnails/${item.imageName}`;
+
+          //append everything
+          text.appendChild(title);
+          text.appendChild(expertiece);
+          work.appendChild(text);
+          work.appendChild(img);
+          _app.worksListNode.insertBefore(work, document.querySelector("#yp"));
         }
-        expertiece.innerText = expText.slice(0, expText.length - 2);
-
-        //image
-        let img = document.createElement("img");
-        img.src = `assets/images/thumbnails/${item.imageName}`;
-
-        //append everything
-        text.appendChild(title);
-        text.appendChild(expertiece);
-        work.appendChild(text);
-        work.appendChild(img);
-        _app.worksListNode.insertBefore(work, document.querySelector("#yp"));
       });
     })
     .then(() => {
