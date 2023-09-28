@@ -506,7 +506,7 @@ nav svg {
     --fs-lg: calc(29px - 1vw);
     --fs-md: 18px;
     --fs-sm: 14px;
-    --fs-xl: 31px;
+    --fs-xl: min(7.5vw, 31px);
     --fs-xs: 12px;
     --fs-xxl: 54px;
     --horizontal-padding: 16px;
