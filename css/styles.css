@@ -332,6 +332,40 @@ nav svg {
   z-index: -1;
 }
 
+.mp {
+  overflow: hidden;
+  border-bottom: 2px solid var(--secondary);
+  padding-block: calc(var(--horizontal-padding) / 3);
+
+  background-image: linear-gradient(
+    to bottom,
+    var(--secondary) 50%,
+    transparent 50%
+  );
+  background-size: 100% 200%;
+  background-position: bottom;
+  transition: background-position 300ms ease;
+}
+
+.mp div {
+  color: var(--secondary);
+}
+
+.mp:first-child {
+  border-top: 2px solid var(--secondary);
+}
+
+.mp:hover {
+  background-position: top;
+  color: var(--primary);
+  transition: background-position 200ms ease;
+}
+
+.mp:hover > div {
+  color: var(--primary);
+  transition: color 200ms ease;
+}
+
 .silvermist {
   font-family: "Silvermist Regular";
   font-size: 6vmax;
