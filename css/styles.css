@@ -344,7 +344,7 @@ nav svg {
   );
   background-size: 100% 200%;
   background-position: bottom;
-  transition: background-position 300ms ease;
+  transition: background-position 800ms ease-in;
 }
 
 .mp div {
@@ -358,7 +358,7 @@ nav svg {
 .mp:hover {
   background-position: top;
   color: var(--primary);
-  transition: background-position 200ms ease;
+  transition: background-position 100ms ease;
 }
 
 .mp:hover > div {

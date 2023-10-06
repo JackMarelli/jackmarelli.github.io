@@ -1,0 +1,39 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@800&display=swap");
+
+html,
+body {
+  margin: 0;
+}
+
+.cont {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex: column wrap;
+  justify-content: center;
+  align-items: center;
+
+  background-color: burlywood;
+}
+
+.toFill {
+  position: relative;
+  display: inline-block;
+  font-size: 120px;
+  font-family: "Poppins", sans-serif;
+  text-transform: uppercase;
+  -webkit-text-stroke: 1px white;
+
+  background: linear-gradient(to right, white 50%, transparent 50%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-size: 200% 100%;
+  background-position: 100%;
+
+  transition: 0.3s cubic-bezier(1, 0.58, 0, 0.99);
+}
+
+.toFill:hover {
+  background-position: 0 100%;
+}

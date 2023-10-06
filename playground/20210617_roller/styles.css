@@ -1,0 +1,168 @@
+@import url("https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Cormorant+SC:wght@700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@800&display=swap");
+
+:root {
+  --myPurple: #402683;
+
+  --transitionTime: 0.7s;
+  --transitionDelayBase: 0.05s;
+  --transitionDelay: calc(var(--transitionDelayBase) * var(--delayMult));
+  --transitionEase: cubic-bezier(0.23, 1, 0.32, 1);
+
+  --delayChar1: 0.06s;
+  --delayChar2: 0.12s;
+  --delayChar3: 0.18s;
+  --delayChar4: 0.24s;
+  --delayChar5: 0.3s;
+
+  --positiveYt3d: 70%;
+  --negativeYt3d: -70%;
+
+  --positiveRotateXVal: 90deg;
+  --negativeRotateXVal: -90deg;
+
+  --positiveRotateVal: 22deg;
+  --negativeRotateVal: -22deg;
+}
+
+* {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+html,
+body {
+  margin: 0;
+}
+
+.cont {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: var(--myPurple);
+
+  display: flex;
+  flex-flow: column;
+  justify-content: center;
+  align-items: center;
+}
+
+#menu {
+  list-style: none;
+}
+
+.list__link {
+  text-decoration: none;
+  display: flex;
+  flex: column;
+}
+
+.list__item {
+  height: fit-content;
+  overflow: hidden;
+}
+
+.word {
+  /* per far sparire meglio la parola */
+  height: 100px;
+  line-height: 100px;
+  margin: 20px;
+  overflow: hidden;
+}
+
+.char {
+  display: inline-block;
+  font-size: 120px;
+  font-weight: normal;
+  font-family: "Cormorant Garamond", serif;
+  /* font-family: 'Cormorant SC', serif; */
+  /* font-family: 'Poppins', sans-serif; */
+
+  /* testo in linear gradient */
+  background: linear-gradient(to bottom, whitesmoke, var(--myPurple) 95%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.hiddenword {
+  position: absolute;
+}
+
+/* PAROLONE UNICO SOPRA */
+#list__item1 .list__link .hiddenword {
+  position: absolute;
+  transform: translate3d(0, var(--negativeYt3d), 0)
+    rotateX(var(--negativeRotateXVal)) rotate(var(--negativeRotateVal));
+  transition: var(--transitionTime) var(--transitionEase);
+}
+#list__item1 .list__link:hover .hiddenword,
+#list__item1 .list__link .roller {
+  transform: translate3d(0, 0, 0) rotateX(0);
+  transition: var(--transitionTime) var(--transitionEase);
+  transition-delay: 0.1s;
+}
+#list__item1 .list__link:hover .roller {
+  transform: translate3d(0, var(--positiveYt3d), 0)
+    rotateX(var(--positiveRotateXVal)) rotate(var(--positiveRotateVal));
+  transition: var(--transitionTime) var(--transitionEase);
+}
+
+/* TUTTE LE LETTERE */
+#list__item2 .list__link .hiddenword .char {
+  transform: translate3d(0, var(--negativeYt3d), 0)
+    rotateX(var(--negativeRotateXVal)) rotate(var(--negativeRotateVal));
+  transition: var(--transitionTime) var(--transitionEase);
+}
+#list__item2 .list__link:hover .hiddenword .char,
+#list__item2 .list__link .roller .char {
+  transform: translate3d(0, 0, 0) rotateX(0);
+  transition: var(--transitionTime) var(--transitionEase);
+}
+#list__item2 .list__link:hover .roller .char {
+  transform: translate3d(0, var(--positiveYt3d), 0)
+    rotateX(var(--positiveRotateXVal)) rotate(var(--positiveRotateVal));
+  transition: var(--transitionTime) var(--transitionEase);
+}
+
+/* LETTERA 1 */
+#list__item2 .list__link .hiddenword #char1,
+#list__item2 .list__link:hover .hiddenword #char1,
+#list__item2 .list__link .roller #char1,
+#list__item2 .list__link:hover .roller #char1 {
+  transition-delay: var(--delayChar1);
+}
+
+/* LETTERA 2 */
+#list__item2 .list__link .hiddenword #char2,
+#list__item2 .list__link:hover .hiddenword #char2,
+#list__item2 .list__link .roller #char2,
+#list__item2 .list__link:hover .roller #char2 {
+  transition-delay: var(--delayChar2);
+}
+
+/* LETTERA 3 */
+#list__item2 .list__link .hiddenword #char3,
+#list__item2 .list__link:hover .hiddenword #char3,
+#list__item2 .list__link .roller #char3,
+#list__item2 .list__link:hover .roller #char3 {
+  transition-delay: var(--delayChar3);
+}
+
+/* LETTERA 4 */
+#list__item2 .list__link .hiddenword #char4,
+#list__item2 .list__link:hover .hiddenword #char4,
+#list__item2 .list__link .roller #char4,
+#list__item2 .list__link:hover .roller #char4 {
+  transition-delay: var(--delayChar4);
+}
+
+/* LETTERA 5 */
+#list__item2 .list__link .hiddenword #char5,
+#list__item2 .list__link:hover .hiddenword #char5,
+#list__item2 .list__link .roller #char5,
+#list__item2 .list__link:hover .roller #char5 {
+  transition-delay: var(--delayChar5);
+}
