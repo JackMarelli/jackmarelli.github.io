@@ -134,14 +134,6 @@ nav svg {
   margin: var(--horizontal-padding) 0 0 0;
 }
 
-#jm {
-  display: none;
-}
-
-#jackmarelli {
-  display: inlin;
-}
-
 #my-pic img {
   height: 10vh;
   margin: 0 0 0 var(--horizontal-padding);
@@ -344,7 +336,7 @@ nav svg {
   );
   background-size: 100% 200%;
   background-position: bottom;
-  transition: background-position 800ms ease-in;
+  transition: background-position .15s cubic-bezier(0.215, 0.61, 0.355, 1);;
 }
 
 .mp div {
@@ -358,7 +350,7 @@ nav svg {
 .mp:hover {
   background-position: top;
   color: var(--primary);
-  transition: background-position 100ms ease;
+  transition: background-position .15s cubic-bezier(0.215, 0.61, 0.355, 1);
 }
 
 .mp:hover > div {
