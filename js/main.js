@@ -38,6 +38,7 @@ _app.hellos = [
 ];
 _app.initialX = 0;
 _app.initialY = 0;
+_app.mpList;
 _app.locoScroll = new LocomotiveScroll({
   el: document.querySelector("[data-scroll-container]"),
   smooth: true,
@@ -148,6 +149,27 @@ _app.initHelloCarousel = () => {
     }, 800);
   }
 };
+
+_app.initMpHoverAnimation = () => {
+  _app.mpList = document.querySelectorAll(".mp");
+  _app.mpList.forEach(i => {
+    i.addEventListener("mouseenter", () => {
+      console.log("animating mp");
+      i.childNodes.forEach(node => {
+        node.childNodes.forEach(underNode => {
+          if (underNode.NodeType = Node.TEXT_NODE) {
+            let initialText = underNode.nodeValue;
+            for (let j = 0; j < underNode.length; j++) {
+              initialText = initialText.substr(1);
+              underNode.nodeValue = initialText;
+              console.log(j);
+            }
+          }
+        });
+      })
+    });
+  });
+}
 
 _app.loadAllWork = () => {
   fetch(_app.worksJsonPath)
@@ -312,8 +334,10 @@ _app.startUp = () => {
     _app.initHelloCarousel();
     _app.loadFeaturedWork();
   }
-  if (_app.pageName === "Works") {
+  else if (_app.pageName === "Works") {
     _app.loadAllWork();
+  } else if (_app.pageName === "Playground") {
+    _app.initMpHoverAnimation();
   }
 
   _app.loadNav();

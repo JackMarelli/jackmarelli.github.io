@@ -341,12 +341,14 @@ nav svg {
 
 .mp div {
   color: var(--secondary);
+  padding-inline: 0;
 }
 
 .mp:first-child {
   border-top: 2px solid var(--secondary);
 }
 
+/*
 .mp:hover {
   background-position: top;
   color: var(--primary);
@@ -357,6 +359,7 @@ nav svg {
   color: var(--primary);
   transition: color 200ms ease;
 }
+*/
 
 .silvermist {
   font-family: "Silvermist Regular";
