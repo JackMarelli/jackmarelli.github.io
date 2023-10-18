@@ -153,18 +153,30 @@ _app.initHelloCarousel = () => {
 _app.initMpHoverAnimation = () => {
   _app.mpList = document.querySelectorAll(".mp");
   _app.mpList.forEach(i => {
+    i.mpMouseInAllowed = true;
     i.addEventListener("mouseenter", () => {
-      console.log("animating mp");
+      console.log(i.mpMouseInAllowed);
       i.childNodes.forEach(node => {
+        i.mpMouseInAllowed = true;
         node.childNodes.forEach(underNode => {
-          if (underNode.NodeType = Node.TEXT_NODE) {
+          console.log(underNode.NodeType);
+          if (underNode.NodeType == Node.TEXT_NODE && i.mpMouseInAllowed) {
+            i.mpMouseInAllowed = false;
+            console.log("mp animation start");
             let initialText = underNode.nodeValue;
-            for (let j = 0; j < underNode.length; j++) {
-              initialText = initialText.substr(1);
+            let c = 0;
+            let interval = setInterval(() => {
+              initialText = initialText.substring(1) + initialText[0];
               underNode.nodeValue = initialText;
-              console.log(j);
-            }
+              c++;
+              if (c == initialText.length) {
+                clearInterval(interval);
+                i.mpMouseInAllowed = true;
+                console.log("mp animation end");
+              }
+            }, 20);
           }
+
         });
       })
     });
