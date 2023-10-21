@@ -1,0 +1,42 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+
+  font-family: 'Courier New', Courier, monospace;
+}
+
+#container {
+  width: 500px;
+  aspect-ratio: 1 / 1;
+  position: relative;
+  animation: permaRotate linear 3s infinite;
+}
+
+#in {
+  width: 50vmax;
+  height: 45px;
+  margin: 50px;
+  padding: 20px 24px;
+}
+
+.main {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+  align-items: center;
+}
+
+@keyframes permaRotate {
+    0% {
+        transform: rotate(0);
+    }
+    50% {
+        transform: rotate(180deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
