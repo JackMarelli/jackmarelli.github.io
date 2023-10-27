@@ -184,6 +184,10 @@ nav svg {
   transform: scaleX(1);
 }
 
+#playground-header {
+  margin-bottom: 40vh;
+}
+
 #skills {
   margin-bottom: 24vh;
 }
@@ -336,7 +340,7 @@ nav svg {
   );
   background-size: 100% 200%;
   background-position: bottom;
-  transition: background-position .15s cubic-bezier(0.215, 0.61, 0.355, 1);;
+  transition: background-position 0.15s cubic-bezier(0.215, 0.61, 0.355, 1);
 }
 
 .mp div {
@@ -392,8 +396,16 @@ nav svg {
   transition: background-color 200ms ease;
 }
 
+.theme-light a {
+  color: var(--secondary);
+}
+
 .theme-light svg .cls-1 {
   fill: var(--secondary);
+}
+
+.theme-light .hover-underline-animation::after {
+  background-color: var(--secondary);
 }
 
 .theme-dark {
@@ -402,16 +414,16 @@ nav svg {
   transition: background-color 200ms ease;
 }
 
+.theme-dark a {
+  color: var(--primary);
+}
+
 .theme-dark svg .cls-1 {
   fill: var(--primary);
 }
 
 .theme-dark a {
   color: var(--primary);
-}
-
-.theme-light .hover-underline-animation::after {
-  background-color: var(--secondary);
 }
 
 .theme-dark .hover-underline-animation::after {

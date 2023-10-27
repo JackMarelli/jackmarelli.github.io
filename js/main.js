@@ -154,13 +154,14 @@ _app.initMpHoverAnimation = () => {
   _app.mpList = document.querySelectorAll(".mp");
   _app.mpList.forEach(i => {
     i.mpMouseInAllowed = true;
+
+    /* ANIMATION 1 (SHIFTING)
     i.addEventListener("mouseenter", () => {
       console.log(i.mpMouseInAllowed);
       i.childNodes.forEach(node => {
-        i.mpMouseInAllowed = true;
         node.childNodes.forEach(underNode => {
-          console.log(underNode.NodeType);
-          if (underNode.NodeType == Node.TEXT_NODE && i.mpMouseInAllowed) {
+          console.log(underNode);
+          if (i.mpMouseInAllowed) {
             i.mpMouseInAllowed = false;
             console.log("mp animation start");
             let initialText = underNode.nodeValue;
@@ -180,6 +181,33 @@ _app.initMpHoverAnimation = () => {
         });
       })
     });
+    */
+
+    /* ANIMATION 2 (RANDOMIZE) */
+    const mpRandAnimationSpeed = 0.6;
+    i.addEventListener("mouseenter", () => {
+      if (i.mpMouseInAllowed) {
+        i.mpMouseInAllowed = false;
+        i.childNodes.forEach(node => {
+          if (node.nodeType != Node.TEXT_NODE) {
+            let c = 0;
+            const initialText = node.innerHTML;
+            const inter = setInterval(() => {
+              node.innerHTML = node.innerHTML.shuffle();
+
+              c++;
+              if (c >= mpRandAnimationSpeed * 10) {
+                clearInterval(inter);
+                node.innerHTML = initialText;
+                i.mpMouseInAllowed = true;
+              }
+            }, 50 / mpRandAnimationSpeed);
+          }
+        });
+      }
+
+    });
+
   });
 }
 
@@ -363,3 +391,17 @@ _app.startUp();
 window.onresize = () => {
   _app.locoScroll.update();
 };
+
+//Extensions
+String.prototype.shuffle = function () {
+  var a = this.split(""),
+    n = a.length;
+
+  for (var i = n - 1; i > 0; i--) {
+    var j = Math.floor(Math.random() * (i + 1));
+    var tmp = a[i];
+    a[i] = a[j];
+    a[j] = tmp;
+  }
+  return a.join("");
+}
