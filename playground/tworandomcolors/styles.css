@@ -1,0 +1,56 @@
+@font-face {
+  font-family: "Gambetta";
+  src: url(Gambetta-Medium.otf);
+}
+
+:root {
+  --col1: #fff;
+  --col2: #000;
+}
+
+::selection {
+  background-color: var(--col2);
+  color: var(--col1);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+#rcb {
+  position: absolute;
+  bottom: 5vmax;
+  right: 5vmax;
+
+  padding: 1vmin 2.4vmin;
+  margin-bottom: 2vmin;
+  background-color: var(--col2);
+  color: var(--col1);
+  font-family: monospace;
+  letter-spacing: -1px;
+  font-size: 5vmin;
+  font-weight: 600;
+  border-radius: 999px;
+  cursor: pointer;
+  transition: all 100ms ease-in-out;
+}
+
+#rcb:hover {
+  filter: brightness(0.7);
+  transition: all 100ms ease-in-out;
+}
+
+.text {
+  width: 100%;
+  height: fit-content;
+  padding: 5vmax;
+
+  font-family: "Gambetta";
+  font-size: 9vmin;
+  text-align: justify;
+
+  background-color: var(--col1);
+  color: var(--col2);
+}
