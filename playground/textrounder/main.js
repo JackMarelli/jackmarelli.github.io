@@ -15,6 +15,7 @@ _app.inElement.addEventListener("input", (e) => {
     let r = (360 / textArr.length) * i;
     newChar.textContent = textArr[i];
     newChar.style.transform = `rotate(${r + 90}deg)`;
+    newChar.style.transformOrigin = "center center"
     newChar.style.position = "absolute";
     newChar.style.fontSize = "70px";
 

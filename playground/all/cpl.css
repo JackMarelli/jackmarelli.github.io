@@ -1,0 +1,25 @@
+.main {
+  margin: 3vmax;
+}
+
+h1 {
+  font-size: 8vmax;
+}
+
+ol {
+  list-style-position: inside;
+  list-style-type: decimal-leading-zero;
+  padding: 0;
+}
+
+li {
+  padding: 1vh 0;
+  font-size: 4vh;
+}
+
+li a {
+  color: inherit;
+}
+li a:hover {
+    background-color: lime;
+}
