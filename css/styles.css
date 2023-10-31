@@ -451,7 +451,7 @@ nav svg {
   cursor: pointer;
   display: flex;
   flex-flow: column;
-  height: 25vw;
+  aspect-ratio: 1.625 / 1;
   justify-content: end;
   margin-bottom: var(--horizontal-padding);
   overflow: hidden;
