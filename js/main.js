@@ -119,15 +119,15 @@ _app.updateDots = () => {
 
     if (Math.abs(1 - d.aspectRatio) <= _app.aspectRatioTolerance) {
       //img is approximatively square
-      d.style.width = "250px";
+      d.style.width = "16vw";
       d.style.height = "auto";
     } else {
       //img is NOT approximatively square
       if (d.width > d.height) {
-        d.style.height = "100px";
+        d.style.height = "10vh";
         d.style.width = "auto";
       } else {
-        d.style.width = "150px";
+        d.style.width = "10vw";
         d.style.height = "auto";
       }
     }
@@ -244,7 +244,7 @@ _app.loadFeaturedWork = () => {
         if (item.featured) {
           //new work
           let work = document.createElement("a");
-          work.className = "w inline-contain block-contain";
+          work.className = "w";
           work.href = item.redirect;
           work.target = "_blank";
 
@@ -288,12 +288,13 @@ _app.loadFeaturedWork = () => {
 _app.loadFooter = () => {
   if (_app.footerTag) {
     console.log("loading footer");
+    /*
     _app.footerTag.innerHTML = `
     <div class="container-fluid inline-contain block-contain h-100 d-flex flex-column justify-content-between">
       <div class="row">
-        <div class="col-12 col-md-6 fs-xl mb-5">
+        <div class="col-12 col-md-6 fs-xl mb-5 display">
           Hire me at
-          <a id="hireCtaMail" href="mailto:marellgiacomo@gmail.com">
+          <a class="display-italic" href="mailto:marellgiacomo@gmail.com">
             marelligiacomo@gmail.com
           </a>
           or throught any of my social pages.
@@ -321,6 +322,12 @@ _app.loadFooter = () => {
       </div>
       <div class="row footer-footer" data-scroll data-scroll-repeat data-scroll-call="_app.updateNav()"></div>
     </div>`;
+    */
+
+    /*
+    _app.footerTag.innerHTML = `
+    <div class="col-6 col-md-3"></div>`
+    */
 
     _app.backToTopBtn = document.querySelector("#backToTopBtn");
     _app.backToTopBtn.addEventListener("click", () => {
