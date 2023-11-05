@@ -5,13 +5,13 @@
   --fs-md: 20px;
   --fs-sm: 16px;
   --fs-xl: min(5vw, 48px);
-  --fs-xxl: 5.8vw;
+  --fs-xxl: 6.3vw;
   --fs-xs: 14px;
   --hm: #e325ca;
   --horizontal-padding: 24px;
   --nav-h: 6vh;
   --primary: #fbfbfb;
-  --secondary: #1a1a1a;
+  --secondary: #0a0a0a;
   --white: #fff;
 
   --two-col-width: calc(var(--one-col-width) * 2 + var(--horizontal-padding));
@@ -24,16 +24,6 @@
 }
 
 @font-face {
-  font-family: "Silvermist Regular";
-  src: url("../assets/font/silvermistregular-dodam.otf");
-}
-
-@font-face {
-  font-family: "Silvermist Italic";
-  src: url("../assets/font/silvermistitalic-al3m2.otf");
-}
-
-@font-face {
   font-family: "Instrument";
   src: url("../assets/font/InstrumentSerif-Regular.ttf");
 }
@@ -41,6 +31,16 @@
 @font-face {
   font-family: "Instrument Italic";
   src: url("../assets/font/InstrumentSerif-Italic.ttf");
+}
+
+@font-face {
+  font-family: "Symbola";
+  src: url("../assets/font/Symbola.ttf");
+}
+
+@font-face {
+  font-family: "Symbola";
+  src: url("../assets/font/Symbola.ttf");
 }
 
 * {
@@ -137,14 +137,6 @@ nav svg {
 #hello {
   font-size: var(--fs-xxl);
   padding: 1rem 0 0 0;
-}
-
-#hireCtaMail {
-  color: var(--hm);
-}
-
-#hireCtaMail .hover-underline-animation::after {
-  background-color: var(--hm) !important;
 }
 
 #ied {
@@ -295,7 +287,7 @@ nav svg {
 
 .display {
   font-family: "Instrument";
-  letter-spacing: -0.5px;
+  letter-spacing: -0px;
   line-height: 94%;
 }
 
@@ -338,7 +330,7 @@ nav svg {
 }
 
 .footer .footer-mail {
-  padding: 20vmin var(--horizontal-padding) 2vmin var(--horizontal-padding);
+  padding: 20vmin var(--horizontal-padding) calc(var(--horizontal-padding) * 1) var(--horizontal-padding);
 }
 
 .fs-xs {
@@ -497,6 +489,10 @@ nav svg {
 
 .social a:hover {
   opacity: 0.7;
+}
+
+.symbola {
+  font-family: "Symbola";
 }
 
 .theme-light {

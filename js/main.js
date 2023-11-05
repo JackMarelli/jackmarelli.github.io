@@ -152,7 +152,7 @@ _app.initHelloCarousel = () => {
 
 _app.initMpHoverAnimation = () => {
   _app.mpList = document.querySelectorAll(".mp");
-  _app.mpList.forEach(i => {
+  _app.mpList.forEach((i) => {
     i.mpMouseInAllowed = true;
 
     /* ANIMATION 1 (SHIFTING)
@@ -188,7 +188,7 @@ _app.initMpHoverAnimation = () => {
     i.addEventListener("mouseenter", () => {
       if (i.mpMouseInAllowed) {
         i.mpMouseInAllowed = false;
-        i.childNodes.forEach(node => {
+        i.childNodes.forEach((node) => {
           if (node.nodeType != Node.TEXT_NODE) {
             let c = 0;
             const initialText = node.innerHTML;
@@ -205,11 +205,9 @@ _app.initMpHoverAnimation = () => {
           }
         });
       }
-
     });
-
   });
-}
+};
 
 _app.loadAllWork = () => {
   fetch(_app.worksJsonPath)
@@ -288,46 +286,32 @@ _app.loadFeaturedWork = () => {
 _app.loadFooter = () => {
   if (_app.footerTag) {
     console.log("loading footer");
-    /*
-    _app.footerTag.innerHTML = `
-    <div class="container-fluid inline-contain block-contain h-100 d-flex flex-column justify-content-between">
-      <div class="row">
-        <div class="col-12 col-md-6 fs-xl mb-5 display">
-          Hire me at
-          <a class="display-italic" href="mailto:marellgiacomo@gmail.com">
-            marelligiacomo@gmail.com
-          </a>
-          or throught any of my social pages.
-        </div>
-        <div class="col-12 col-md-2"></div>
-        <div class="col-12 col-md-2 mb-4">
-          <ul class="social-list">
-            <li class="social fs-lg"><a href="https://www.linkedin.com/in/giacomo-marelli-6a8866230/">Linkedin</a></li>
-            <li class="social fs-lg"><a href="https://github.com/JackMarelli">Github</a></li>
-            <li class="social fs-lg"><a href="https://www.instagram.com/jack.marelli/">Instagram</a></li>
-            <li class="social fs-lg"><a href="https://twitter.com/jackmareIIi">Twitter</a></li>
-            <li class="social fs-lg m-0"><a href="https://www.behance.net/giacomomarelli1">Behance</a></li>
-          </ul>
-        </div>
-        <div class="col-12 col-md-2 fs-lg">Cantù, Italy</div>
-      </div>
-      <div class="row flex-grow-1">
-        <div class="col-8 d-none d-md-block"></div>
-        <div class="col-12 col-md-2 footer-logo d-flex align-items-start align-items-md-end">
-          ${_app.logoSvgString}
-        </div>
-        <div class="col-12 col-md-2 d-flex align-items-end">
-          <a id="backToTopBtn" class="back-to-top" data-scroll>Back to top</a>
-        </div>
-      </div>
-      <div class="row footer-footer" data-scroll data-scroll-repeat data-scroll-call="_app.updateNav()"></div>
-    </div>`;
-    */
 
-    /*
-    _app.footerTag.innerHTML = `
-    <div class="col-6 col-md-3"></div>`
-    */
+    _app.footerTag.innerHTML = `<div class="inline-contain section-title fs-lg">Links</div>
+      <div class="inline-contain footer-links">
+        <div class="footer-list">
+          <div class="fs-lg">Cantù, Italy</div>
+        </div>
+        <div class="fs-lg footer-list">
+          <a href="https://www.linkedin.com/in/giacomo-marelli-6a8866230/">Linkedin</a>
+          <a href="https://github.com/JackMarelli">Github</a>
+          <a href="https://www.behance.net/giacomomarelli1">Behance</a>
+        </div>
+        <div class="fs-lg footer-list">
+          <a href="https://www.instagram.com/jack.marelli/">Instagram</a>
+          <a href="https://twitter.com/jackmareIIi">X</a>
+        </div>
+        <div class="fs-lg footer-list">
+          <a href="projects/">Works</a>
+          <a href="playground/">Playground</a>
+          <a href="mailto:marellgiacomo@gmail.com">Contact</a>
+          <a id="backToTopBtn" href="#">Back to top ⇡</a>
+        </div>
+      </div>
+      <div class="inline-contain display fs-xxl footer-mail">Hire me at <span class="symbola">⤵</span> <br><a class="display-italic"
+          href="mailto:marellgiacomo@gmail.com">marellgiacomo@gmail.com</a>
+      </div>
+      `;
 
     _app.backToTopBtn = document.querySelector("#backToTopBtn");
     _app.backToTopBtn.addEventListener("click", () => {
@@ -380,8 +364,7 @@ _app.startUp = () => {
     _app.initFoldCursorCarousel();
     _app.initHelloCarousel();
     _app.loadFeaturedWork();
-  }
-  else if (_app.pageName === "Works") {
+  } else if (_app.pageName === "Works") {
     _app.loadAllWork();
   } else if (_app.pageName === "Playground") {
     _app.initMpHoverAnimation();
@@ -411,4 +394,4 @@ String.prototype.shuffle = function () {
     a[j] = tmp;
   }
   return a.join("");
-}
+};
