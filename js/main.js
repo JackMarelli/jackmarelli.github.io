@@ -319,7 +319,6 @@ _app.loadFeaturedWork = () => {
 _app.loadFooter = () => {
   if (_app.footerTag) {
     console.log("loading footer");
-<<<<<<< Updated upstream
 
     _app.footerTag.innerHTML = `<div class="inline-contain section-title fs-lg">Links</div>
       <div class="inline-contain footer-links">
@@ -339,7 +338,7 @@ _app.loadFooter = () => {
           <a href="projects/">Works</a>
           <a href="playground/">Playground</a>
           <a href="mailto:marellgiacomo@gmail.com">Contact</a>
-          <a id="backToTopBtn" href="#">Back to top ⇡</a>
+          <a id="backToTopBtn" href="#">Back to top <span class="symbola">⇡</span></a>
         </div>
       </div>
       <div class="inline-contain display fs-xxl footer-mail">Hire me at <span class="symbola">⤵</span> <br><a class="display-italic"
