@@ -406,6 +406,7 @@ _app.startUp = () => {
 
   _app.loadNav();
   _app.loadFooter();
+  _app.initHoverAnimations();
 
   _app.locoScroll.update();
 };
