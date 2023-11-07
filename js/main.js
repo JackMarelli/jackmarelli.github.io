@@ -55,6 +55,7 @@ _app.logoSvgString = `
 _app.navTag = document.querySelector("nav");
 _app.nidProgress = 0;
 _app.pageName = document.querySelector("#pageName").innerHTML;
+_app.randomizeAnimationSpeed = 0.6;
 _app.scrollProgressPx = 0;
 _app.seekingImg = document.createElement("img");
 _app.step = 60;
@@ -74,6 +75,39 @@ _app.initFoldCursorCarousel = () => {
     }
   });
 };
+
+_app.initHoverAnimations = () => {
+  document.querySelectorAll(".test").forEach(e => {
+    e.childNodes.forEach(f => {
+      _app.applyRandomizeAnimation(f);
+    })
+  });
+}
+
+_app.applyRandomizeAnimation = (el) => {
+  console.log("applying randomize animation on ", el);
+  el.mpMouseInAllowed = true
+  el.addEventListener("mouseenter", () => {
+      if (el.mpMouseInAllowed) {
+        el.mpMouseInAllowed = false;
+          if (node.nodeType != Node.TEXT_NODE) {
+            let c = 0;
+            const initialText = node.innerHTML;
+            const inter = setInterval(() => {
+              node.innerHTML = node.innerHTML.shuffle();
+
+              c++;
+              if (c >= _app.randomizeAnimationSpeed * 10) {
+                clearInterval(inter);
+                node.innerHTML = initialText;
+                el.mpMouseInAllowed = true;
+              }
+            }, 50 / _app.randomizeAnimationSpeed );
+          }
+      }
+
+    });
+}
 
 _app.createDot = (width, x, y) => {
   if (_app.dots.length >= _app.cursorCarouselElementsNum) {
@@ -184,7 +218,6 @@ _app.initMpHoverAnimation = () => {
     */
 
     /* ANIMATION 2 (RANDOMIZE) */
-    const mpRandAnimationSpeed = 0.6;
     i.addEventListener("mouseenter", () => {
       if (i.mpMouseInAllowed) {
         i.mpMouseInAllowed = false;
@@ -196,12 +229,12 @@ _app.initMpHoverAnimation = () => {
               node.innerHTML = node.innerHTML.shuffle();
 
               c++;
-              if (c >= mpRandAnimationSpeed * 10) {
+              if (c >= _app.randomizeAnimationSpeed * 10) {
                 clearInterval(inter);
                 node.innerHTML = initialText;
                 i.mpMouseInAllowed = true;
               }
-            }, 50 / mpRandAnimationSpeed);
+            }, 50 / _app.randomizeAnimationSpeed );
           }
         });
       }
@@ -286,6 +319,7 @@ _app.loadFeaturedWork = () => {
 _app.loadFooter = () => {
   if (_app.footerTag) {
     console.log("loading footer");
+<<<<<<< Updated upstream
 
     _app.footerTag.innerHTML = `<div class="inline-contain section-title fs-lg">Links</div>
       <div class="inline-contain footer-links">
