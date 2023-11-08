@@ -8,14 +8,14 @@
   --fs-xxl: 6.3vw;
   --fs-xs: 14px;
   --hm: #e325ca;
-  --horizontal-padding: 24px;
+  --gdu: 24px;
   --nav-h: 6vh;
   --primary: #fbfbfb;
   --secondary: #0a0a0a;
   --white: #fff;
 
-  --two-col-width: calc(var(--one-col-width) * 2 + var(--horizontal-padding));
-  --one-col-width: calc((100vw - (var(--horizontal-padding) * 5)) / 4);
+  --two-col-width: calc(var(--one-col-width) * 2 + var(--gdu));
+  --one-col-width: calc((100vw - (var(--gdu) * 5)) / 4);
 }
 
 @font-face {
@@ -83,7 +83,7 @@ nav {
 }
 
 nav .nav-separator {
-  padding: 0 calc(var(--horizontal-padding) / 2);
+  padding: 0 calc(var(--gdu) / 2);
 }
 
 nav .page-name {
@@ -128,10 +128,35 @@ nav svg {
   align-items: end;
   display: flex;
   justify-content: space-between;
-  padding: var(--horizontal-padding) 0;
+  padding: var(--gdu) 0;
   color: var(--primary);
   mix-blend-mode: exclusion;
   z-index: 1;
+}
+
+#grid {
+  width: 100%;
+  height: 100%;
+
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+
+  display: flex; /* set to "flex" to show */
+  flex-flow: row nowrap;
+  justify-content: space-between;
+  padding: 0 var(--gdu);
+
+  z-index: 9999;
+  pointer-events: none;
+}
+
+#grid .col {
+  height: 100vh;
+  background-color: var(--black);
+  opacity: 0.1;
 }
 
 #hello {
@@ -140,12 +165,12 @@ nav svg {
 }
 
 #ied {
-  margin: var(--horizontal-padding) 0 0 0;
+  margin: var(--gdu) 0 0 0;
 }
 
 #my-pic img {
   height: 10vh;
-  margin: 0 0 0 var(--horizontal-padding);
+  margin: 0 0 0 var(--gdu);
   min-height: 220px;
   min-width: 220px;
   object-fit: cover;
@@ -168,7 +193,7 @@ nav svg {
   height: 100vh;
   justify-content: start;
   left: 0;
-  padding: var(--horizontal-padding);
+  padding: var(--gdu);
   position: fixed;
   top: 0;
   width: 100vw;
@@ -179,7 +204,7 @@ nav svg {
   display: flex;
   font-size: var(--fs-xl);
   justify-content: center;
-  margin: var(--horizontal-padding) 0;
+  margin: var(--gdu) 0;
 }
 
 #overlayMenu .links .menu-link::before {
@@ -218,32 +243,6 @@ nav svg {
   justify-content: space-between;
 }
 
-.cols-grid-4 {
-  width: 100%;
-  height: 100%;
-  
-  position: fixed;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  
-  display: none; /* set to "flex" to show */
-  flex-flow: row nowrap;
-  justify-content: space-between;
-  padding: 0 var(--horizontal-padding);
-  
-  z-index: 9999;
-  pointer-events: none;
-}
-
-.cols-grid-4 .col {
-  width: calc((100vw - (var(--horizontal-padding) * 5)) / 4);
-  height: 100vh;
-  background-color: var(--black);
-  opacity: 0.1;
-}
-
 .all-works-container {
   display: flex;
   flex-flow: column wrap;
@@ -258,8 +257,8 @@ nav svg {
   border: 1px solid var(--primary);
   border-radius: 999px;
   opacity: 0.5;
-  padding-block: calc(var(--horizontal-padding) / 3);
-  padding-inline: calc(var(--horizontal-padding) / 1);
+  padding-block: calc(var(--gdu) / 3);
+  padding-inline: calc(var(--gdu) / 1);
   width: fit-content;
 }
 
@@ -282,7 +281,7 @@ nav svg {
 }
 
 .block-contain {
-  padding-block: var(--horizontal-padding);
+  padding-block: var(--gdu);
 }
 
 .display {
@@ -317,20 +316,21 @@ nav svg {
 
 .footer .footer-list {
   border-top: 2px solid var(--secondary);
-  width: calc((100vw - (var(--horizontal-padding) * 5)) / 4);
+  width: calc((100vw - (var(--gdu) * 5)) / 4);
   display: flex;
   flex-flow: column nowrap;
   justify-content: start;
-  padding: calc(var(--horizontal-padding) / 3) 0 0 0;
-  margin: 0 0 var(--horizontal-padding) 0;
+  padding: calc(var(--gdu) / 3) 0 0 0;
+  margin: 0 0 var(--gdu) 0;
 }
 
 .footer .footer-links .footer-list a {
-  margin: 0 0 calc(var(--horizontal-padding) / 3) 0;
+  margin: 0 0 calc(var(--gdu) / 3) 0;
 }
 
 .footer .footer-mail {
-  padding: 20vmin var(--horizontal-padding) calc(var(--horizontal-padding) * 1) var(--horizontal-padding);
+  padding: 20vmin var(--gdu) calc(var(--gdu) * 1)
+    var(--gdu);
 }
 
 .fs-xs {
@@ -358,7 +358,7 @@ nav svg {
 }
 
 .full-width-hr {
-  margin: 0 var(--horizontal-padding);
+  margin: 0 var(--gdu);
   height: 2px;
   background-color: var(--secondary);
 }
@@ -388,7 +388,7 @@ nav svg {
 }
 
 .inline-contain {
-  padding-inline: var(--horizontal-padding);
+  padding-inline: var(--gdu);
 }
 
 .link-dark {
@@ -410,7 +410,7 @@ nav svg {
 .mp {
   overflow: hidden;
   border-bottom: 2px solid var(--secondary);
-  padding-block: calc(var(--horizontal-padding) / 3);
+  padding-block: calc(var(--gdu) / 3);
 
   background-image: linear-gradient(
     to bottom,
@@ -432,7 +432,7 @@ nav svg {
 }
 
 .section-title {
-  margin: 0 0 calc(var(--horizontal-padding) / 2) 0;
+  margin: 0 0 calc(var(--gdu) / 2) 0;
 }
 
 .skills-container {
@@ -443,11 +443,11 @@ nav svg {
 .skill-row {
   display: flex;
   flex-flow: row nowrap;
-  padding: calc(var(--horizontal-padding) / 3) 0;
+  padding: calc(var(--gdu) / 3) 0;
   border-top: 2px solid var(--secondary);
 
   width: 75%;
-  margin: 0 0 0 calc(var(--one-col-width) + var(--horizontal-padding));
+  margin: 0 0 0 calc(var(--one-col-width) + var(--gdu));
 }
 
 .skill-row .skill-name {
@@ -456,7 +456,7 @@ nav svg {
 
 .skill-row .skill-usage {
   width: var(--two-col-width);
-  margin: 0 0 0 var(--horizontal-padding);
+  margin: 0 0 0 var(--gdu);
 }
 
 .skill-title-row {
@@ -466,12 +466,12 @@ nav svg {
 
 .skill-title-row .skill-name {
   width: var(--one-col-width);
-  margin: 0 0 0 var(--horizontal-padding);
+  margin: 0 0 0 var(--gdu);
 }
 
 .skill-title-row .skill-usage {
   width: var(--two-col-width);
-  margin: 0 0 0 var(--horizontal-padding);
+  margin: 0 0 0 var(--gdu);
 }
 
 .skill-title {
@@ -484,7 +484,7 @@ nav svg {
 }
 
 .social {
-  margin: 0 0 calc(var(--horizontal-padding) / 4) 0;
+  margin: 0 0 calc(var(--gdu) / 4) 0;
 }
 
 .social a:hover {
@@ -536,25 +536,25 @@ nav svg {
 }
 
 .tool {
-  margin-inline: var(--horizontal-padding);
+  margin-inline: var(--gdu);
 }
 
 .tool > :not(div:nth-child(1)) {
-  padding-block: calc(var(--horizontal-padding) / 3);
+  padding-block: calc(var(--gdu) / 3);
   border-top: 2px solid var(--secondary);
 }
 
 .tool .title {
-  padding-top: calc(var(--horizontal-padding) / 2);
+  padding-top: calc(var(--gdu) / 2);
   border-top: 2px solid var(--secondary);
   font-size: var(--fs-lg);
 }
 
 .w {
-  width: calc((100vw - (var(--horizontal-padding) * 3)) / 2);
+  width: calc((100vw - (var(--gdu) * 3)) / 2);
   aspect-ratio: 1.625 / 1;
-  margin-bottom: var(--horizontal-padding);
-  padding: var(--horizontal-padding);
+  margin-bottom: var(--gdu);
+  padding: var(--gdu);
 
   display: flex;
   flex-flow: column;
@@ -589,7 +589,7 @@ nav svg {
 
 .w .title {
   font-size: var(--fs-lg);
-  margin: 0 0 calc(var(--horizontal-padding) / 2) 0;
+  margin: 0 0 calc(var(--gdu) / 2) 0;
 }
 
 .w .title,
@@ -602,8 +602,8 @@ nav svg {
 }
 
 .work {
-  width: calc(33.33333333% - var(--horizontal-padding) * 2 / 3);
-  margin-bottom: var(--horizontal-padding);
+  width: calc(33.33333333% - var(--gdu) * 2 / 3);
+  margin-bottom: var(--gdu);
   border-radius: 16px;
   height: fit-content;
   overflow: hidden;
@@ -634,7 +634,7 @@ nav svg {
   transform: rotate(0deg);
   font-size: var(--fs-xl);
   white-space: nowrap;
-  margin: 0 0 var(--horizontal-padding) 0;
+  margin: 0 0 var(--gdu) 0;
 }
 
 .your-project:hover > img {
@@ -651,7 +651,7 @@ nav svg {
     --fs-xl: min(7.5vw, 31px);
     --fs-xs: 12px;
     --fs-xxl: 8.8vw;
-    --horizontal-padding: 16px;
+    --gdu: 16px;
   }
 
   nav {
@@ -676,7 +676,7 @@ nav svg {
   }
 
   #fold-about {
-    margin-top: calc(var(--horizontal-padding) * 2.4);
+    margin-top: calc(var(--gdu) * 2.4);
   }
 
   #fold-bottom {
@@ -704,7 +704,7 @@ nav svg {
 
   #my-pic img {
     height: 50vw;
-    margin: 0 0 var(--horizontal-padding) 0;
+    margin: 0 0 var(--gdu) 0;
     width: 100%;
   }
 
@@ -714,7 +714,7 @@ nav svg {
 
   .back-to-top {
     width: 100%;
-    padding-block: calc(var(--horizontal-padding) / 1);
+    padding-block: calc(var(--gdu) / 1);
     text-align: center;
     opacity: 1;
   }
@@ -736,7 +736,7 @@ nav svg {
 
   .skill-row {
     width: var(--two-col-width);
-    margin: 0 0 0 calc(var(--two-col-width) + var(--horizontal-padding));
+    margin: 0 0 0 calc(var(--two-col-width) + var(--gdu));
   }
 
   .skill-row .skill-name {
@@ -753,32 +753,32 @@ nav svg {
   }
 
   .tool {
-    margin-inline: var(--horizontal-padding);
+    margin-inline: var(--gdu);
   }
 
   .tool > :not(div:nth-child(1)) {
-    padding-block: calc(var(--horizontal-padding) / 3);
+    padding-block: calc(var(--gdu) / 3);
     border-top: none;
   }
 
   .tool > div:nth-child(n + 3) {
-    padding-block: calc(var(--horizontal-padding) / 3);
+    padding-block: calc(var(--gdu) / 3);
     border-top: 1px solid var(--secondary);
   }
 
   .tool-list .tool:last-child {
-    padding-bottom: var(--horizontal-padding);
+    padding-bottom: var(--gdu);
   }
 
   .tool .title {
-    padding-block: calc(var(--horizontal-padding) / 2);
+    padding-block: calc(var(--gdu) / 2);
     border-top: 1px solid var(--secondary);
   }
 
   .w {
     border-radius: 16px;
     height: 60vw;
-    margin: 0 0 var(--horizontal-padding) 0;
+    margin: 0 0 var(--gdu) 0;
     width: 100%;
   }
 

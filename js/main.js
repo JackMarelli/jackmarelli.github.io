@@ -12,6 +12,8 @@ _app.defaultPathToMenuIcon = "assets/icons/menu.svg";
 _app.dots = [];
 _app.fold = document.querySelector("#fold");
 _app.footerTag = document.querySelector("footer");
+_app.gdu = getComputedStyle(document.documentElement).getPropertyValue('--gdu'); // general distance unit
+_app.gridContainer = document.querySelector("#grid");
 _app.helloDiv = document.querySelector("#hello");
 _app.hellos = [
   "Hello",
@@ -88,25 +90,25 @@ _app.applyRandomizeAnimation = (el) => {
   console.log("applying randomize animation on ", el);
   el.mpMouseInAllowed = true
   el.addEventListener("mouseenter", () => {
-      if (el.mpMouseInAllowed) {
-        el.mpMouseInAllowed = false;
-          if (node.nodeType != Node.TEXT_NODE) {
-            let c = 0;
-            const initialText = node.innerHTML;
-            const inter = setInterval(() => {
-              node.innerHTML = node.innerHTML.shuffle();
+    if (el.mpMouseInAllowed) {
+      el.mpMouseInAllowed = false;
+      if (node.nodeType != Node.TEXT_NODE) {
+        let c = 0;
+        const initialText = node.innerHTML;
+        const inter = setInterval(() => {
+          node.innerHTML = node.innerHTML.shuffle();
 
-              c++;
-              if (c >= _app.randomizeAnimationSpeed * 10) {
-                clearInterval(inter);
-                node.innerHTML = initialText;
-                el.mpMouseInAllowed = true;
-              }
-            }, 50 / _app.randomizeAnimationSpeed );
+          c++;
+          if (c >= _app.randomizeAnimationSpeed * 10) {
+            clearInterval(inter);
+            node.innerHTML = initialText;
+            el.mpMouseInAllowed = true;
           }
+        }, 50 / _app.randomizeAnimationSpeed);
       }
+    }
 
-    });
+  });
 }
 
 _app.createDot = (width, x, y) => {
@@ -169,6 +171,18 @@ _app.updateDots = () => {
     _app.fold.appendChild(d);
   }
 };
+
+_app.updateGrid = () => {
+  let gridClassName = _app.gridContainer.className;
+  let cols = parseInt(gridClassName.substring(gridClassName.length - 1));
+
+  for (let i = 0; i < cols; i++) {
+    let newCol = document.createElement("div");
+    newCol.className = "col";
+    newCol.style.width = `calc(100vw - (var(--gdu) * ${cols+1}) / ${cols})`;
+    _app.gridContainer.append(newCol);
+  }
+}
 
 _app.initHelloCarousel = () => {
   if (_app.helloDiv) {
@@ -234,7 +248,7 @@ _app.initMpHoverAnimation = () => {
                 node.innerHTML = initialText;
                 i.mpMouseInAllowed = true;
               }
-            }, 50 / _app.randomizeAnimationSpeed );
+            }, 50 / _app.randomizeAnimationSpeed);
           }
         });
       }
@@ -415,6 +429,11 @@ _app.startUp();
 window.onresize = () => {
   _app.locoScroll.update();
 };
+
+window.onload = () => {
+  //_app.updateGrid();
+}
+
 
 //Extensions
 String.prototype.shuffle = function () {
