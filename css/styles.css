@@ -51,6 +51,8 @@
   padding: 0;
   text-decoration: none;
   box-sizing: border-box;
+
+  background-color: var(--primary);
 }
 
 a {
@@ -229,10 +231,6 @@ nav svg {
   margin-bottom: 40vh;
 }
 
-#skills {
-  margin-bottom: 24vh;
-}
-
 #works {
   margin: 3em 0 24vh 0;
 }
@@ -305,6 +303,7 @@ nav svg {
 
 .footer {
   width: 100%;
+  margin-top: 24vh;
 }
 
 .footer-links {

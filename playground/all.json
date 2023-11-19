@@ -1,0 +1,100 @@
+[
+    {
+        "title": "Pac-Mouse",
+        "description": "",
+        "betterOn": "desktop",
+        "public": true,
+        "relPath": "./pacmouse"
+    },
+    {
+        "title": "Nyan-Square",
+        "description": "",
+        "betterOn": "",
+        "public": true,
+        "relPath": "./nyansquare"
+    },
+    {
+        "title": "Two Random Colors text",
+        "description": "",
+        "betterOn": "",
+        "public": true,
+        "relPath": "./tworandomcolors"
+    },
+    {
+        "title": "Text Rounder",
+        "description": "",
+        "betterOn": "",
+        "public": true,
+        "relPath": "./textrounder"
+    },
+    {
+        "title": "Testing Locomotive Scroll",
+        "description": "",
+        "betterOn": "",
+        "public": false,
+        "relPath": "./locomotive_scroll_testing"
+    },
+    {
+        "title": "Linked Circles Snake",
+        "description": "",
+        "betterOn": "",
+        "public": true,
+        "relPath": "./linked_circles_snake"
+    },
+    {
+        "title": "Detective Cursor",
+        "description": "",
+        "betterOn": "desktop",
+        "public": true,
+        "relPath": "./detective"
+    },
+    {
+        "title": "Slippy Text",
+        "description": "",
+        "betterOn": "desktop",
+        "public": true,
+        "relPath": "./20230307_troll_text"
+    },
+    {
+        "title": "Handmade smooth horizontal scroll",
+        "description": "",
+        "betterOn": "",
+        "public": true,
+        "relPath": "./20230307_horizontal_scroll_handmade"
+    },
+    {
+        "title": "CSS Radar",
+        "description": "",
+        "betterOn": "",
+        "public": true,
+        "relPath": "./20211111_radar"
+    },
+    {
+        "title": "Rolling Animated Text",
+        "description": "",
+        "betterOn": "desktop",
+        "public": true,
+        "relPath": "./20210617_roller"
+    },
+    {
+        "title": "Normal to bold text",
+        "description": "",
+        "betterOn": "",
+        "public": false,
+        "relPath": "./20210618_normal2bold"
+    },
+    {
+        "title": "Timer",
+        "description": "",
+        "betterOn": "",
+        "public": false,
+        "relPath": "./20211029_timer"
+    },
+    {
+        "title": "Filling Text",
+        "description": "",
+        "betterOn": "",
+        "public": false,
+        "relPath": "./20210618_textFill"
+    }
+]

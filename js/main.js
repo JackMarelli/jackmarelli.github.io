@@ -61,7 +61,8 @@ _app.randomizeAnimationSpeed = 0.6;
 _app.scrollProgressPx = 0;
 _app.seekingImg = document.createElement("img");
 _app.step = 60;
-_app.worksJsonPath = "../assets/works.json";
+_app.relativePlaygroundJsonPath = "./all.json"; //path to the all playground projecs file when you are in playground index
+_app.relativeWorksJsonPath = "../assets/works.json"; //path to the works file when you are in website 0index
 _app.worksListNode = document.querySelector("#worksList");
 
 _app.initFoldCursorCarousel = () => {
@@ -257,7 +258,7 @@ _app.initMpHoverAnimation = () => {
 };
 
 _app.loadAllWork = () => {
-  fetch(_app.worksJsonPath)
+  fetch(_app.relativeWorksJsonPath)
     .then((response) => response.json())
     .then((json) => {
       json.works.forEach((item) => {
@@ -282,7 +283,7 @@ _app.loadAllWork = () => {
 };
 
 _app.loadFeaturedWork = () => {
-  fetch(_app.worksJsonPath)
+  fetch(_app.relativeWorksJsonPath)
     .then((response) => response.json())
     .then((json) => {
       json.works.forEach((item) => {
@@ -393,6 +394,55 @@ _app.loadNav = () => {
     console.log("missing <nav> tag");
   }
 };
+
+_app.loadPlayground = () => {
+  fetch(_app.relativeWorksJsonPath)
+    .then((response) => response.json())
+    .then((json) => {
+      json.works.forEach((item) => {
+        if (item.featured) {
+          //new work
+          let work = document.createElement("a");
+          work.className = "w";
+          work.href = item.redirect;
+          work.target = "_blank";
+
+          //work text container
+          let text = document.createElement("div");
+          text.className = "text";
+
+          //work title
+          let title = document.createElement("div");
+          title.className = "title";
+          title.innerText = item.title;
+
+          //work expertiece
+          let expertiece = document.createElement("div");
+          expertiece.className = "exp";
+          let expText = "";
+          for (let i = 0; i < item.expertiece.length; i++) {
+            expText += item.expertiece[i] += ", ";
+          }
+          expertiece.innerText = expText.slice(0, expText.length - 2);
+
+          //image
+          let img = document.createElement("img");
+          img.src = `assets/images/thumbnails/${item.imageName}`;
+
+          //append everything
+          text.appendChild(title);
+          text.appendChild(expertiece);
+          work.appendChild(text);
+          work.appendChild(img);
+          _app.worksListNode.insertBefore(work, document.querySelector("#yp"));
+        }
+      });
+    })
+    .then(() => {
+      console.log("loco scroll update");
+      _app.locoScroll.update();
+    });
+}
 
 _app.locoScroll.on("call", (e) => {
   eval(e);
