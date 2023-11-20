@@ -10,7 +10,7 @@
   --hm: #e325ca;
   --gdu: 24px;
   --nav-h: 6vh;
-  --primary: #fbfbfb;
+  --primary: #fff;
   --secondary: #0a0a0a;
   --white: #fff;
 
@@ -46,7 +46,7 @@
 * {
   font-family: "Neue Haas", sans-serif;
   letter-spacing: 0px;
-  line-height: 94%;
+  line-height: 96%;
   margin: 0;
   padding: 0;
   text-decoration: none;
@@ -84,10 +84,6 @@ nav {
 
 nav .nav-separator {
   padding: 0 calc(var(--gdu) / 2);
-}
-
-nav .page-name {
-  line-height: 0; /* to fix: il nome pagina non è centrato con il logo */
 }
 
 nav svg {
@@ -229,10 +225,6 @@ nav svg {
   margin-bottom: 40vh;
 }
 
-#skills {
-  margin-bottom: 24vh;
-}
-
 #works {
   margin: 3em 0 24vh 0;
 }
@@ -305,6 +297,7 @@ nav svg {
 
 .footer {
   width: 100%;
+  margin-top: 27vh;
 }
 
 .footer-links {
@@ -325,7 +318,7 @@ nav svg {
 }
 
 .footer .footer-links .footer-list a {
-  margin: 0 0 calc(var(--gdu) / 3) 0;
+  margin: 0 0 calc(var(--gdu) / 4) 0;
 }
 
 .footer .footer-mail {
@@ -717,9 +710,6 @@ nav svg {
     padding-block: calc(var(--gdu) / 1);
     text-align: center;
     opacity: 1;
-  }
-
-  .footer {
   }
 
   .footer .footer-list {
