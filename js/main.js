@@ -10,10 +10,9 @@ _app.cursorCarouselElementsNum = 7;
 _app.defaultPathToLogo = "assets/icons/logo_black.svg";
 _app.defaultPathToMenuIcon = "assets/icons/menu.svg";
 _app.dots = [];
-_app.featuredPlayground = document.querySelector("#featuredPlayground");
 _app.fold = document.querySelector("#fold");
 _app.footerTag = document.querySelector("footer");
-_app.gdu = getComputedStyle(document.documentElement).getPropertyValue("--gdu"); // general distance unit
+_app.gdu = getComputedStyle(document.documentElement).getPropertyValue('--gdu'); // general distance unit
 _app.gridContainer = document.querySelector("#grid");
 _app.helloDiv = document.querySelector("#hello");
 _app.hellos = [
@@ -62,8 +61,7 @@ _app.randomizeAnimationSpeed = 0.6;
 _app.scrollProgressPx = 0;
 _app.seekingImg = document.createElement("img");
 _app.step = 60;
-_app.relativePlaygroundJsonPath = "./all.json"; //path to the all playground projecs file when you are in playground index
-_app.relativeWorksJsonPath = "../assets/works.json"; //path to the works file when you are in website 0index
+_app.worksJsonPath = "../assets/works.json";
 _app.worksListNode = document.querySelector("#worksList");
 
 _app.initFoldCursorCarousel = () => {
@@ -81,16 +79,16 @@ _app.initFoldCursorCarousel = () => {
 };
 
 _app.initHoverAnimations = () => {
-  document.querySelectorAll(".test").forEach((e) => {
-    e.childNodes.forEach((f) => {
+  document.querySelectorAll(".test").forEach(e => {
+    e.childNodes.forEach(f => {
       _app.applyRandomizeAnimation(f);
-    });
+    })
   });
-};
+}
 
 _app.applyRandomizeAnimation = (el) => {
   console.log("applying randomize animation on ", el);
-  el.mpMouseInAllowed = true;
+  el.mpMouseInAllowed = true
   el.addEventListener("mouseenter", () => {
     if (el.mpMouseInAllowed) {
       el.mpMouseInAllowed = false;
@@ -109,8 +107,9 @@ _app.applyRandomizeAnimation = (el) => {
         }, 50 / _app.randomizeAnimationSpeed);
       }
     }
+
   });
-};
+}
 
 _app.createDot = (width, x, y) => {
   if (_app.dots.length >= _app.cursorCarouselElementsNum) {
@@ -180,10 +179,10 @@ _app.updateGrid = () => {
   for (let i = 0; i < cols; i++) {
     let newCol = document.createElement("div");
     newCol.className = "col";
-    newCol.style.width = `calc(100vw - (var(--gdu) * ${cols + 1}) / ${cols})`;
+    newCol.style.width = `calc(100vw - (var(--gdu) * ${cols+1}) / ${cols})`;
     _app.gridContainer.append(newCol);
   }
-};
+}
 
 _app.initHelloCarousel = () => {
   if (_app.helloDiv) {
@@ -203,6 +202,34 @@ _app.initMpHoverAnimation = () => {
   _app.mpList = document.querySelectorAll(".mp");
   _app.mpList.forEach((i) => {
     i.mpMouseInAllowed = true;
+
+    /* ANIMATION 1 (SHIFTING)
+    i.addEventListener("mouseenter", () => {
+      console.log(i.mpMouseInAllowed);
+      i.childNodes.forEach(node => {
+        node.childNodes.forEach(underNode => {
+          console.log(underNode);
+          if (i.mpMouseInAllowed) {
+            i.mpMouseInAllowed = false;
+            console.log("mp animation start");
+            let initialText = underNode.nodeValue;
+            let c = 0;
+            let interval = setInterval(() => {
+              initialText = initialText.substring(1) + initialText[0];
+              underNode.nodeValue = initialText;
+              c++;
+              if (c == initialText.length) {
+                clearInterval(interval);
+                i.mpMouseInAllowed = true;
+                console.log("mp animation end");
+              }
+            }, 20);
+          }
+
+        });
+      })
+    });
+    */
 
     /* ANIMATION 2 (RANDOMIZE) */
     i.addEventListener("mouseenter", () => {
@@ -230,7 +257,7 @@ _app.initMpHoverAnimation = () => {
 };
 
 _app.loadAllWork = () => {
-  fetch(_app.relativeWorksJsonPath)
+  fetch(_app.worksJsonPath)
     .then((response) => response.json())
     .then((json) => {
       json.works.forEach((item) => {
@@ -255,7 +282,7 @@ _app.loadAllWork = () => {
 };
 
 _app.loadFeaturedWork = () => {
-  fetch(_app.relativeWorksJsonPath)
+  fetch(_app.worksJsonPath)
     .then((response) => response.json())
     .then((json) => {
       json.works.forEach((item) => {
@@ -322,8 +349,8 @@ _app.loadFooter = () => {
           <a href="https://twitter.com/jackmareIIi">X</a>
         </div>
         <div class="fs-lg footer-list">
-          <a href="https://www.jackmarelli.com/projects/">Works</a>
-          <a href="https://www.jackmarelli.com/playground/">Playground</a>
+          <a href="projects/">Works</a>
+          <a href="playground/">Playground</a>
           <a href="mailto:marellgiacomo@gmail.com">Contact</a>
           <a id="backToTopBtn" href="#">Back to top <span class="symbola">⇡</span></a>
         </div>
@@ -367,51 +394,6 @@ _app.loadNav = () => {
   }
 };
 
-_app.loadPlayground = () => {
-  fetch(_app.relativePlaygroundJsonPath)
-    .then((response) => response.json())
-    .then((json) => {
-      json.mps.forEach((item) => {
-        if (item.public) {
-          //new microproject
-          let mp = document.createElement("a");
-          mp.className = "row mp";
-          mp.href = item.relPath;
-          mp.target = "_blank";
-
-          //mp title
-          let title = document.createElement("div");
-          title.className = "col-10 col-md-6 fs-lg";
-          title.innerHTML = item.title;
-
-          //mp better on desktop
-          let betterOn = document.createElement("div");
-          betterOn.className = "col-0 col-md-6 d-none d-md-block fs-lg";
-          if (item.betterOn == "desktop") {
-            betterOn.innerHTML = "Better on desktop";
-          } else if (item.betterOn == "mobile") {
-            betterOn.innerHTML = "Better on mobile";
-          }
-
-          //mp better on desktop short for mobile
-          let betterOnShort = document.createElement("div");
-          betterOnShort.className = "col-2 d-md-none fs-lg";
-          betterOnShort.innerHTML = item.betterOn == "desktop" ? "D" : "M";
-
-          //append everything
-          mp.appendChild(title);
-          mp.appendChild(betterOn);
-          mp.appendChild(betterOnShort);
-          _app.featuredPlayground.appendChild(mp);
-        }
-      });
-    })
-    .then(() => {
-      _app.initMpHoverAnimation();
-      _app.locoScroll.update();
-    });
-};
-
 _app.locoScroll.on("call", (e) => {
   eval(e);
 });
@@ -432,7 +414,7 @@ _app.startUp = () => {
   } else if (_app.pageName === "Works") {
     _app.loadAllWork();
   } else if (_app.pageName === "Playground") {
-    _app.loadPlayground();
+    _app.initMpHoverAnimation();
   }
 
   _app.loadNav();
@@ -450,7 +432,8 @@ window.onresize = () => {
 
 window.onload = () => {
   //_app.updateGrid();
-};
+}
+
 
 //Extensions
 String.prototype.shuffle = function () {
