@@ -218,8 +218,14 @@ nav svg {
   display: none;
 }
 
-#playground-header {
-  margin-bottom: 40vmin;
+#playground-desc {
+  width: 50%;
+  text-align: center;
+  margin: 5vh auto;
+}
+
+#playground-title {
+  text-align: center;
 }
 
 #works {
@@ -641,7 +647,7 @@ nav svg {
     --fs-sm: 14px;
     --fs-xl: min(7.5vw, 31px);
     --fs-xs: 12px;
-    --fs-xxl: 9.1vw;
+    --fs-xxl: 8.8vw;
     --gdu: 16px;
   }
 
@@ -697,6 +703,10 @@ nav svg {
     height: 50vw;
     margin: 0 0 var(--gdu) 0;
     width: 100%;
+  }
+
+  #playground-desc {
+    width: 90%;
   }
 
   .all-works-container {
