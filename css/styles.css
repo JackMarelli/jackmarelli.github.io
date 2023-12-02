@@ -1,13 +1,11 @@
 :root {
-  --accent: #bca480;
   --black: #000;
   --fs-lg: 28px;
   --fs-md: 20px;
   --fs-sm: 16px;
   --fs-xl: min(5vw, 48px);
-  --fs-xxl: 6.3vw;
+  --fs-xxl: 6.4vw;
   --fs-xs: 14px;
-  --hm: #e325ca;
   --gdu: 24px;
   --nav-h: 6vh;
   --primary: #fff;
@@ -45,7 +43,6 @@
 
 * {
   font-family: "Neue Haas", sans-serif;
-  letter-spacing: 0px;
   line-height: 96%;
   margin: 0;
   padding: 0;
@@ -222,7 +219,7 @@ nav svg {
 }
 
 #playground-header {
-  margin-bottom: 40vh;
+  margin-bottom: 40vmin;
 }
 
 #works {
@@ -278,7 +275,6 @@ nav svg {
 
 .display {
   font-family: "Instrument";
-  letter-spacing: -0px;
   line-height: 94%;
 }
 
@@ -322,8 +318,7 @@ nav svg {
 }
 
 .footer .footer-mail {
-  padding: 20vmin var(--gdu) calc(var(--gdu) * 1)
-    var(--gdu);
+  padding: 20vmin var(--gdu) calc(var(--gdu) * 1) var(--gdu);
 }
 
 .fs-xs {
@@ -401,23 +396,26 @@ nav svg {
 }
 
 .mp {
-  overflow: hidden;
+  width: 100%;
   border-bottom: 2px solid var(--secondary);
   padding-block: calc(var(--gdu) / 3);
 
-  background-image: linear-gradient(
-    to bottom,
-    var(--secondary) 50%,
-    transparent 50%
-  );
-  background-size: 100% 200%;
-  background-position: bottom;
-  transition: background-position 0.15s cubic-bezier(0.215, 0.61, 0.355, 1);
+  display: flex;
+  justify-content: space-between;
 }
 
 .mp div {
   color: var(--secondary);
   padding-inline: 0;
+}
+
+.mp .betterOn {
+  text-align: end;
+}
+
+.mp .betterOnShort {
+  display: none;
+  text-align: end;
 }
 
 .mp:first-child {
@@ -643,7 +641,7 @@ nav svg {
     --fs-sm: 14px;
     --fs-xl: min(7.5vw, 31px);
     --fs-xs: 12px;
-    --fs-xxl: 8.8vw;
+    --fs-xxl: 9.1vw;
     --gdu: 16px;
   }
 
@@ -710,6 +708,14 @@ nav svg {
     padding-block: calc(var(--gdu) / 1);
     text-align: center;
     opacity: 1;
+  }
+
+  .mp .betterOnShort {
+    display: block;
+  }
+
+  .mp .betterOn {
+    display: none;
   }
 
   .footer .footer-list {

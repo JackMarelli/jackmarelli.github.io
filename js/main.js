@@ -12,7 +12,7 @@ _app.defaultPathToMenuIcon = "assets/icons/menu.svg";
 _app.dots = [];
 _app.fold = document.querySelector("#fold");
 _app.footerTag = document.querySelector("footer");
-_app.gdu = getComputedStyle(document.documentElement).getPropertyValue('--gdu'); // general distance unit
+_app.gdu = getComputedStyle(document.documentElement).getPropertyValue("--gdu"); // general distance unit
 _app.gridContainer = document.querySelector("#grid");
 _app.helloDiv = document.querySelector("#hello");
 _app.hellos = [
@@ -41,6 +41,7 @@ _app.hellos = [
 _app.initialX = 0;
 _app.initialY = 0;
 _app.mpList;
+_app.mpListContainer = document.querySelector("#featuredPlayground");
 _app.locoScroll = new LocomotiveScroll({
   el: document.querySelector("[data-scroll-container]"),
   smooth: true,
@@ -57,11 +58,12 @@ _app.logoSvgString = `
 _app.navTag = document.querySelector("nav");
 _app.nidProgress = 0;
 _app.pageName = document.querySelector("#pageName").innerHTML;
-_app.randomizeAnimationSpeed = 0.6;
+_app.randomizeAnimationSpeed = 0.4;
 _app.scrollProgressPx = 0;
 _app.seekingImg = document.createElement("img");
 _app.step = 60;
-_app.worksJsonPath = "../assets/works.json";
+_app.relativeWorksPath = "../assets/works.json";
+_app.relativePlaygroundPath = "../playground/all.json";
 _app.worksListNode = document.querySelector("#worksList");
 
 _app.initFoldCursorCarousel = () => {
@@ -79,16 +81,16 @@ _app.initFoldCursorCarousel = () => {
 };
 
 _app.initHoverAnimations = () => {
-  document.querySelectorAll(".test").forEach(e => {
-    e.childNodes.forEach(f => {
+  document.querySelectorAll(".test").forEach((e) => {
+    e.childNodes.forEach((f) => {
       _app.applyRandomizeAnimation(f);
-    })
+    });
   });
-}
+};
 
 _app.applyRandomizeAnimation = (el) => {
   console.log("applying randomize animation on ", el);
-  el.mpMouseInAllowed = true
+  el.mpMouseInAllowed = true;
   el.addEventListener("mouseenter", () => {
     if (el.mpMouseInAllowed) {
       el.mpMouseInAllowed = false;
@@ -107,9 +109,8 @@ _app.applyRandomizeAnimation = (el) => {
         }, 50 / _app.randomizeAnimationSpeed);
       }
     }
-
   });
-}
+};
 
 _app.createDot = (width, x, y) => {
   if (_app.dots.length >= _app.cursorCarouselElementsNum) {
@@ -179,10 +180,10 @@ _app.updateGrid = () => {
   for (let i = 0; i < cols; i++) {
     let newCol = document.createElement("div");
     newCol.className = "col";
-    newCol.style.width = `calc(100vw - (var(--gdu) * ${cols+1}) / ${cols})`;
+    newCol.style.width = `calc(100vw - (var(--gdu) * ${cols + 1}) / ${cols})`;
     _app.gridContainer.append(newCol);
   }
-}
+};
 
 _app.initHelloCarousel = () => {
   if (_app.helloDiv) {
@@ -257,7 +258,7 @@ _app.initMpHoverAnimation = () => {
 };
 
 _app.loadAllWork = () => {
-  fetch(_app.worksJsonPath)
+  fetch(_app.relativeWorksPath)
     .then((response) => response.json())
     .then((json) => {
       json.works.forEach((item) => {
@@ -282,7 +283,7 @@ _app.loadAllWork = () => {
 };
 
 _app.loadFeaturedWork = () => {
-  fetch(_app.worksJsonPath)
+  fetch(_app.relativeWorksPath)
     .then((response) => response.json())
     .then((json) => {
       json.works.forEach((item) => {
@@ -349,14 +350,15 @@ _app.loadFooter = () => {
           <a href="https://twitter.com/jackmareIIi">X</a>
         </div>
         <div class="fs-lg footer-list">
-          <a href="projects/">Works</a>
-          <a href="playground/">Playground</a>
-          <a href="mailto:marellgiacomo@gmail.com">Contact</a>
+          <a href="https://www.jackmarelli.com/">Home</a>
+          <a href="https://www.jackmarelli.com/projects/">Works</a>
+          <a href="https://www.jackmarelli.com/playground/">Playground</a>
+          <a href="mailto:marelligiacomo@gmail.com">Contact</a>
           <a id="backToTopBtn" href="#">Back to top <span class="symbola">⇡</span></a>
         </div>
       </div>
       <div class="inline-contain display fs-xxl footer-mail">Hire me at <span class="symbola">⤵</span> <br><a class="display-italic"
-          href="mailto:marellgiacomo@gmail.com">marellgiacomo@gmail.com</a>
+          href="mailto:marelligiacomo@gmail.com">marelligiacomo@gmail.com</a>
       </div>
       `;
 
@@ -394,6 +396,52 @@ _app.loadNav = () => {
   }
 };
 
+_app.loadPublicPlayground = () => {
+  fetch(_app.relativePlaygroundPath)
+    .then((response) => response.json())
+    .then((json) => {
+      json.projects.forEach((item) => {
+        if (item.public) {
+          //new newMp
+          let newMp = document.createElement("a");
+          newMp.className = "mp fs-lg";
+          newMp.href = item.relPath;
+
+          //newMp text
+          let title = document.createElement("div");
+          title.innerHTML = item.title;
+
+          //newMp betterOn
+          let betterOn = document.createElement("div");
+          betterOn.innerHTML = item.betterOn !== "" ? "better on " + item.betterOn : "";
+          betterOn.className = "betterOn";
+
+          //newMp betterOn (mobile)
+          let betterOnShort = document.createElement("div");
+          if (item.betterOn === "desktop") {
+            betterOnShort.innerHTML = "DE";
+          } else if (item.betterOn === "mobile") {
+            betterOnShort.innerHTML = "MO";
+          } else {
+            betterOnShort.innerHTML = "";
+          }
+          betterOnShort.className = "betterOnShort";
+
+          //append everything
+          newMp.appendChild(title);
+          newMp.appendChild(betterOn);
+          newMp.appendChild(betterOnShort);
+          _app.mpListContainer.appendChild(newMp);
+        }
+      });
+    })
+    .then(() => {
+      console.log("loco scroll update");
+      _app.initMpHoverAnimation();
+      _app.locoScroll.update();
+    });
+};
+
 _app.locoScroll.on("call", (e) => {
   eval(e);
 });
@@ -414,7 +462,7 @@ _app.startUp = () => {
   } else if (_app.pageName === "Works") {
     _app.loadAllWork();
   } else if (_app.pageName === "Playground") {
-    _app.initMpHoverAnimation();
+    _app.loadPublicPlayground();
   }
 
   _app.loadNav();
@@ -432,8 +480,7 @@ window.onresize = () => {
 
 window.onload = () => {
   //_app.updateGrid();
-}
-
+};
 
 //Extensions
 String.prototype.shuffle = function () {
