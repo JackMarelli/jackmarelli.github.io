@@ -653,6 +653,7 @@ nav svg {
 
   nav {
     font: var(--fs-md) sans-serif;
+    display: flex;
   }
 
   nav img {
