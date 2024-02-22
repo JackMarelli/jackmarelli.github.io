@@ -354,10 +354,10 @@ _app.loadFooter = () => {
           <a href="https://www.jackmarelli.com/projects/">Works</a>
           <a href="https://www.jackmarelli.com/playground/">Playground</a>
           <a href="mailto:marelligiacomo@gmail.com">Contact</a>
-          <a id="backToTopBtn" href="#">Back to top <span class="symbola">⇡</span></a>
+          <a id="backToTopBtn" href="#">Back to top <span class="symbola">☝</span></a>
         </div>
       </div>
-      <div class="inline-contain display fs-xxl footer-mail">Hire me at <span class="symbola">⤵</span> <br><a class="display-italic"
+      <div class="inline-contain display fs-2xl footer-mail">Hire me at <span class="symbola">⤵</span> <br><a class="display-italic"
           href="mailto:marelligiacomo@gmail.com">marelligiacomo@gmail.com</a>
       </div>
       `;
@@ -413,7 +413,8 @@ _app.loadPublicPlayground = () => {
 
           //newMp betterOn
           let betterOn = document.createElement("div");
-          betterOn.innerHTML = item.betterOn !== "" ? "better on " + item.betterOn : "";
+          betterOn.innerHTML =
+            item.betterOn !== "" ? "better on " + item.betterOn : "";
           betterOn.className = "betterOn";
 
           //newMp betterOn (mobile)
@@ -478,9 +479,16 @@ window.onresize = () => {
   _app.locoScroll.update();
 };
 
-window.onload = () => {
-  //_app.updateGrid();
-};
+document.addEventListener("DOMContentLoaded", function () {
+  var images = document.querySelectorAll("img");
+
+  images.forEach(function (img) {
+    img.addEventListener("load", function () {
+      console.log(img.src);
+      _app.locoScroll.update();
+    });
+  });
+});
 
 //Extensions
 String.prototype.shuffle = function () {

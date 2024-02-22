@@ -1,41 +1,113 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
+  <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Work | Jack Marelli</title>
-    <link rel="icon" href="../favicon.ico?v=2" type="image/x-icon"/>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous" />
+    <link rel="icon" href="../favicon.ico?v=2" type="image/x-icon" />
     <link rel="stylesheet" href="../css/locomotive-scroll.css" />
     <link rel="stylesheet" href="../css/styles.css" />
-</head>
+  </head>
 
-<body>
+  <body>
     <div id="pageName" class="d-none">Works</div>
     <div class="main" data-scroll data-scroll-container>
-        <div id="overlayMenu">
-            <div class="links">
-                <div class="menu-link">About</div>
-                <div class="menu-link">Projects</div>
-                <div class="menu-link">Contact</div>
-            </div>
+      <div id="overlayMenu">
+        <div class="links">
+          <div class="menu-link">About</div>
+          <div class="menu-link">Projects</div>
+          <div class="menu-link">Contact</div>
         </div>
-        <nav class="inline-contain theme-light" data-scroll data-scroll-sticky data-scroll-target=".main"></nav>
-        <div class="container-fluid inline-contain block-contain theme-light">
-            <div class="all-works-container">
-                <!-- content added via js -->
-            </div>
+      </div>
+      <nav
+        class="inline-contain theme-light"
+        data-scroll
+        data-scroll-sticky
+        data-scroll-target=".main"
+      ></nav>
+      <div id="projects-title" class="inline-contain block-contain display fs-4xl">All Projects</div>
+      <div class="inline-contain block-contain fs-lg"><bdi class="symbola">⚞</bdi> Scroll to explore <bdi class="symbola">⚟</bdi></div>
+      <section id="fw" data-scroll>
+        <hr class="hide-on-mobile" />
+        <div class="fw-container inline-contain block-contain">
+          <a
+            href="https://www.behance.net/gallery/169770509/UNIQ-Bar-Restourant-Identity-Concept"
+            target="_blank"
+            class="fw-w fw-w-large"
+          >
+            <img src="../assets/images/thumbnails/uniq-thumb.png" alt="" /><span
+              class="display fs-xl"
+              >UNIQ Bar & Bistrot</span
+            >
+          </a>
+          <a
+            href="https://pitch.com/public/a11bd9a9-6432-4e14-8989-5f6288e39d51/4cb5ad97-18fa-47b2-ae99-d8e90e164b47"
+            target="_blank"
+            class="fw-w fw-w-small"
+          >
+            <video autoplay muted preload loop>
+              <source src="../assets/video/JackLogo.mp4" />
+              Your browser does not support the video tag.</video
+            ><span class="display fs-lg">Personal Identity</span>
+          </a>
+          <a
+            href="http://www.vev-cleangarden.it/"
+            target="_blank"
+            class="fw-w fw-w-small based"
+          >
+            <img
+              src="../assets/images/fullsize/vev/square-vev.png"
+              alt=""
+            /><span class="display fs-lg">V&V Clean And Garden</span>
+          </a>
+          <div
+            class="fw-w fw-w-small hide-on-mobile"
+            data-scroll
+            data-scroll-speed="-2"
+          ></div>
+          <a
+            href="https://www.misuraemme.it/en/materials/moodboard-creator"
+            target="_blank"
+            class="fw-w fw-w-large"
+          >
+            <video autoplay muted preload loop>
+              <source
+                src="../assets/video/misuraemme-fasi-lavorazione-1920.mp4"
+              />
+              Your browser does not support the video tag.</video
+            ><span class="display fs-xl">MisuraEmme Moodboard Generator</span>
+          </a>
+          <a href="./regular/" target="" class="fw-w fw-w-small based">
+            <img
+              src="../assets/images/fullsize/regular/regularCoverVertical.png"
+              alt=""
+            /><span class="display fs-lg">Regular Magazine</span>
+          </a>
+          <div class="fw-w fw-w-small hide-on-mobile"></div>
+          <div class="fw-w fw-w-small hide-on-mobile"></div>
+          <a href="./sinapsi/" class="fw-w fw-w-small">
+            <img src="sinapsi/assets/images/propic_negative.png" alt="" /><span
+              class="display fs-lg"
+              >Sinapsi</span
+            >
+          </a>
         </div>
-        <footer class="theme-light footer"></footer>
+        <p class="display fs-xl one-col-indent inline-contain">
+          If you wish to start a project with me in order to enhance your
+          brand's identity and visibility, online and offline, drop a line to my
+          mail or contact me throught any of my socials.
+        </p>
+      </section>
+      <footer class="theme-light footer"></footer>
     </div>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"
-        integrity="sha512-16esztaSRplJROstbIIdwX3N97V1+pZvV33ABoG1H2OyTttBxEGkTsoIVsiP1iaTtM8b3+hu2kB6pQ4Clr5yug=="
-        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"
+      integrity="sha512-16esztaSRplJROstbIIdwX3N97V1+pZvV33ABoG1H2OyTttBxEGkTsoIVsiP1iaTtM8b3+hu2kB6pQ4Clr5yug=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
     <script src="../js/locomotive-scroll.min.js"></script>
     <script src="../js/main.js" type="module"></script>
-</body>
-
-</html> 
+  </body>
+</html>

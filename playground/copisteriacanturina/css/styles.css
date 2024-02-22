@@ -1,0 +1,335 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+
+  font-family: "Inter", sans-serif;
+  letter-spacing: -0.6px;
+  line-height: 120%;
+}
+
+:root {
+  --white: #fff;
+  --black: #242323;
+  --yellow: #ffde25;
+
+  --horizontal-padding: 24px;
+
+  --fs-sm: 1em;
+  --fs-md: 1.5em;
+  --fs-lg: 2em;
+  --fs-xl: 3em;
+  --fs-xxl: 4em;
+}
+
+nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  padding: 1em var(--horizontal-padding);
+
+  font-weight: 600;
+  color: var(--white);
+}
+
+nav ul {
+  display: flex;
+  list-style: none;
+  justify-content: end;
+  align-items: center;
+}
+
+nav ul li {
+  padding: 0 0 0 30px;
+}
+
+nav .logo {
+  min-width: 120px;
+  width: 20vw;
+  max-width: 200px;
+}
+
+nav .logo img {
+  width: 100%;
+  height: auto;
+}
+
+header {
+  background: url("../assets/fullsize/hero.png") center center no-repeat;
+  background-size: cover;
+  height: 100vh;
+}
+
+header h2 {
+  position: absolute;
+  bottom: 1em;
+  left: var(--horizontal-padding);
+  right: var(--horizontal-padding);
+  color: var(--white);
+  font-size: var(--fs-lg);
+}
+
+a {
+  text-decoration: none;
+}
+
+section {
+  padding: var(--horizontal-padding) 0;
+}
+
+#partners-scroller {
+  display: none;
+  align-items: center;
+  overflow: hidden;
+
+  width: 100vw;
+  height: fit-content;
+}
+
+#partners-scroller .partner {
+  width: fit-content;
+  height: auto;
+}
+
+#partners-scroller .partner img {
+  width: auto;
+  height: 100%;
+}
+
+#small-about p {
+  width: 80%;
+  max-width: 1200px;
+  padding: var(--horizontal-padding);
+  font-size: var(--fs-lg);
+  font-weight: 600;
+}
+
+.row-to-col,
+.row {
+  padding: 0 var(--horizontal-padding) var(--horizontal-padding);
+}
+
+.row-to-col {
+  display: flex;
+  flex-flow: row nowrap;
+  width: 100%;
+}
+
+.row-to-col > * {
+  width: 50%;
+}
+
+.row-to-col img {
+  object-fit: cover;
+}
+
+.row-to-col > *:last-child {
+  padding: 0 0 0 var(--horizontal-padding);
+}
+
+.row {
+  width: 100%;
+}
+
+.row img {
+  object-fit: cover;
+  width: 100%;
+}
+
+#servizi-e-prodotti h2 {
+  font-size: var(--fs-xl);
+}
+
+#servizi-e-prodotti ul {
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: start;
+  list-style: none;
+  padding: calc(var(--horizontal-padding) / 2) 0;
+}
+
+#servizi-e-prodotti ul a {
+  width: 100%;
+  text-align: center;
+  padding: calc(var(--horizontal-padding) / 2);
+  margin: 0 0 calc(var(--horizontal-padding) / 2.4) 0;
+  border-radius: 12px;
+
+  font-size: var(--fs-md);
+  font-weight: 600;
+}
+
+#servizi-e-prodotti .servizio {
+  color: var(--white);
+  background-color: var(--black);
+}
+
+#servizi-e-prodotti .prodotto {
+  color: var(--black);
+  background-color: var(--yellow);
+}
+
+#servizi-e-prodotti .cta {
+  width: 100%;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: end;
+  align-items: center;
+  cursor: pointer;
+
+  font-size: var(--fs-md);
+  font-weight: 600;
+}
+
+#servizi-e-prodotti .cta img {
+  height: 0.7em;
+  object-fit: contain;
+}
+
+#servizi-e-prodotti .cta > * {
+  padding: 0 0 0 1em;
+}
+
+#servizi-e-prodotti .cta:hover {
+  text-decoration: underline;
+}
+
+.title-text h1 {
+  font-size: var(--fs-xxl);
+  font-weight: 600;
+}
+
+.title-text p {
+  font-size: var(--fs-lg);
+  padding: 0 0 var(--horizontal-padding) 0;
+  font-weight: 600;
+}
+
+.title-text a {
+  font-size: var(--fs-md);
+  cursor: pointer;
+}
+
+.title-text a:hover {
+  text-decoration: underline;
+}
+
+#orari #orari-list {
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: start;
+  align-items: start;
+}
+
+#orari .day {
+  width: 100%;
+  border-bottom: 1px solid var(--black);
+
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
+  padding: calc(var(--horizontal-padding) / 2) 1px;
+
+  font-size: var(--fs-sm);
+}
+
+#orari .day:first-child {
+  border-top: 1px solid var(--black);
+}
+
+#orari .day > * {
+  width: 30%;
+  text-align: start;
+}
+
+#orari .day > *:first-child {
+  font-weight: 600;
+}
+
+#contacts {
+  background: var(--black);
+  color: var(--white);
+  padding: var(--horizontal-padding) 0 0 0;
+
+  display: flex;
+  flex-flow: column;
+}
+
+#contacts {
+  height: 100vh;
+}
+
+#contacts a {
+  columns: var(--white);
+}
+
+footer {
+  height: fit-content;
+  padding: calc(var(--horizontal-padding) / 2) var(--horizontal-padding);
+  background: var(--yellow);
+  display: flex;
+  justify-content: space-between;
+}
+
+.link-dark {
+  color: var(--black);
+}
+
+.link-light {
+  color: var(--white);
+}
+
+@media screen and (max-width: 992px) {
+  :root {
+    --horizontal-padding: 16px;
+
+    --fs-sm: 0.9em;
+    --fs-md: 1em;
+    --fs-lg: 1.2em;
+    --fs-xl: 2.4em;
+    --fs-xxl: 2.8em;
+  }
+
+  .nav-text-link {
+    display: none;
+  }
+
+  nav ul li img {
+    height: 1em;
+    object-fit: contain;
+  }
+
+  #small-about p {
+    width: 100%;
+  }
+
+  .row-to-col {
+    flex-flow: column nowrap;
+  }
+
+  .row-to-col > * {
+    width: 100%;
+  }
+
+  .row-to-col > *:last-child {
+    padding: var(--horizontal-padding) 0 0 0;
+  }
+
+  #servizi-e-prodotti h2 {
+    font-size: var(--fs-lg);
+  }
+
+  #servizi-e-prodotti ul a {
+    border-radius: 8px;
+    font-size: var(--fs-sm);
+  }
+
+  #servizi-e-prodotti .cta {
+    font-size: var(--fs-sm);
+  }
+}
