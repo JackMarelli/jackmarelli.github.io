@@ -494,6 +494,7 @@ section {
 
 .pd-text {
   display: inline;
+  max-height: fit-content;
   padding: var(--gdu) calc(var(--gdu) * 2) var(--gdu) 0;
 }
 
