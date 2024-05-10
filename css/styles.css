@@ -804,7 +804,8 @@ section {
     width: 100%;
   }
 
-  .pd-title, .pd-desc {
+  .pd-title,
+  .pd-desc {
     justify-content: start;
   }
 
