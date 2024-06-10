@@ -125,6 +125,15 @@
             "betterOn": "",
             "public": false,
             "relPath": "./20210618_textFill"
+        },
+        {
+            "title": "Pills Menu",
+            "description": "",
+            "date": "20240610",
+            "last_edited": "20240610",
+            "betterOn": "",
+            "public": true,
+            "relPath": "./wordsflex"
         }
     ]
 }
